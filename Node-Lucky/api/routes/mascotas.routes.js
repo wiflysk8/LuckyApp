@@ -27,33 +27,10 @@ router.get("/:nombre", async (req, res) => {
   }
 });
 
-router.post("/", [upload.single("image"), uploadToCloudinary], async (req, res, next) => {
+router.post("/", [upload.single("imagen"), uploadToCloudinary], async (req, res, next) => {
   try {
-    const newMascota = new Mascotas({
-      imagen: req.body.imagen,
-      nombre: req.body.nombre,
-      sexo: req.body.sexo,
-      ciudad: req.body.ciudad,
-      proceso: req.body.proceso,
-
-      especie: req.body.especie,
-      fecha: req.body.fecha,
-      tamano: req.body.tamano,
-      peso: req.body.peso,
-      personalidad: req.body.personalidad,
-      historia: req.body.historia,
-
-      vacunado: req.body.vacunado,
-      desparasitado: req.body.desparasitado,
-      sano: req.body.sano,
-      esterilizado: req.body.esterilizado,
-      identificado: req.body.identificado,
-      microchip: req.body.microchip,
-
-      requisitos: req.body.requisitos,
-      tasa: req.body.tasa,
-      envio: req.body.envio,
-    });
+    req.body.imagen = req.file_url;
+    const newMascota = new Mascotas(req.body);
     const createdMascota = await newMascota.save();
     return res.status(201).json(createdMascota);
   } catch (error) {
