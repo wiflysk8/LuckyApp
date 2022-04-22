@@ -14,7 +14,7 @@ function App() {
   const landingOut = () => {
     setTimeout(() => {
       setLanding(false);
-    }, 10);
+    }, 2000);
   };
 
   useEffect(() => {

@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import welcome from "../../assets/welcomepng.png";
+import Nav from "../../shared/components/Nav/Nav";
 
 import "./WelcomePage.scss";
 
@@ -17,6 +18,7 @@ const WelcomePage = () => {
       <Link className="c-welcome-link2" to="/register">
         <p className="c-welcome-p">Registrarse en otro momento</p>
       </Link>
+      <Nav />
     </section>
   );
 };
