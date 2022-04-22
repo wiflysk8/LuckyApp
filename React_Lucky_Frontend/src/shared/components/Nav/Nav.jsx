@@ -7,6 +7,8 @@ import mapSecondary from "../../../assets/map1.png";
 import petPrimary from "../../../assets/pet2.png";
 import petSecondary from "../../../assets/pet1.png";
 import profileImg from "../../../assets/profile.jpg";
+import moreSecondary from "../../../assets/mas1.png";
+import morePrimary from "../../../assets/mas2.png";
 import "./Nav.scss";
 
 const Nav = () => {
@@ -30,10 +32,10 @@ const Nav = () => {
           </NavLink>
         )}
 
-        {location.pathname === "/welcome" ? (
+        {location.pathname === "/map" ? (
           <img className="c-navbar__icon" src={mapSecondary} alt="home" />
         ) : (
-          <NavLink to="/welcome">
+          <NavLink to="/map">
             <img className="c-navbar__icon" src={mapPrimary} alt="home" />
           </NavLink>
         )}
@@ -43,6 +45,14 @@ const Nav = () => {
         ) : (
           <NavLink to="/profile">
             <img className="c-navbar__img" src={profileImg} alt="home" />
+          </NavLink>
+        )}
+
+        {location.pathname === "/mas" ? (
+          <img className="c-navbar__icon" src={moreSecondary} alt="home" />
+        ) : (
+          <NavLink to="/mas">
+            <img className="c-navbar__icon" src={morePrimary} alt="home" />
           </NavLink>
         )}
       </nav>

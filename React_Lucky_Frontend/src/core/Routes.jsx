@@ -10,6 +10,8 @@ import ProfilePage from "../pages/ProfilePage/ProfilePage";
 import HomePage from "../pages/HomePage/HomePage";
 import PrivateRoute from "../shared/components/PrivateRoute/PrivateRoute";
 import AdopcionPage from "../pages/AdopcionPage/AdopcionPage";
+import MapPage from "../pages/MapPage/MapPage";
+import MorePage from "../pages/MorePage/MorePage";
 
 const RoutesFile = () => {
   return (
@@ -32,6 +34,12 @@ const RoutesFile = () => {
         </PrivateRoute>
         <PrivateRoute path="/users">
           <UsersPage />
+        </PrivateRoute>
+        <PrivateRoute path="/map">
+          <MapPage />
+        </PrivateRoute>
+        <PrivateRoute path="/mas">
+          <MorePage />
         </PrivateRoute>
         <Route path="/login">
           <LoginPage />

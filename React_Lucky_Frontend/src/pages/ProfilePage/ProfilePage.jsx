@@ -8,6 +8,7 @@ export default function ProfilePage() {
 
   return (
     <div>
+      <h1>PROFILE PAGE</h1>
       Hello {user.name}
       <Nav />
     </div>
