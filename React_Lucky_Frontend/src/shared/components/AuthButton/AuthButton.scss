@@ -1,0 +1,16 @@
+.c-auth {
+  &__p {
+    margin: 5% 8%;
+    position: absolute;
+    font-size: 22px;
+    font-weight: 500;
+    top: 26%;
+  }
+
+  &__btn {
+    border-radius: 4px;
+    background-color: var(--color-secondary);
+    border: none;
+    margin: 10px;
+  }
+}

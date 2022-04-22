@@ -1,0 +1,81 @@
+.c-register {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  &-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    position: absolute;
+    top: 14%;
+    &__logo {
+      width: 30%;
+      margin: 0 10px;
+      object-fit: cover;
+    }
+    &__title {
+      object-fit: cover;
+      width: 30%;
+    }
+  }
+  &-link {
+    width: 40%;
+  }
+
+  &-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    align-items: center;
+    top: 40%;
+    height: 60vh;
+    &__input {
+      width: 80%;
+      margin: 2px;
+      height: 40px;
+      font-size: 12px;
+      color: gray;
+      border: none;
+      border-bottom: 1px solid #ccc;
+      &:focus {
+        outline: none;
+        border: 1px solid #ccc;
+      }
+    }
+    &__btn {
+      position: absolute;
+      top: 36%;
+      cursor: pointer;
+      margin: 30px;
+      width: 50%;
+      height: 40px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      color: rgb(226, 222, 222);
+      background-color: var(--color-primary);
+      &--white {
+        background-color: white;
+        border-color: var(--color-primary);
+        color: var(--color-primary);
+        text-align: center;
+      }
+    }
+    &__eye {
+      position: relative;
+      bottom: 7%;
+      left: 34%;
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  &-link {
+    position: absolute;
+    top: 52%;
+    width: 100%;
+    text-align: center;
+  }
+}
