@@ -1,14 +1,15 @@
 import React from "react";
-import AuthButton from "../../shared/components/AuthButton/AuthButton";
+import { getCookieUtil } from "../../shared/utils/getCookieUtil";
 import Nav from "../../shared/components/Nav/Nav";
 import "./HomePage.scss";
 
 export default function HomePage() {
+  const stringUser = getCookieUtil("user");
+  const user = JSON.parse(stringUser ? stringUser : "{}");
   return (
     <section className="c-home">
-      <AuthButton />
+      <h2>¡Hola {user.name}!</h2>
       <Nav />
-      HOMEPAGE
     </section>
   );
 }

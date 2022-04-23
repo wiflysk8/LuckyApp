@@ -8,9 +8,15 @@
   }
 
   &__btn {
+    position: absolute;
+    left: 16px;
+    width: 92%;
+    height: 7vh;
+    bottom: 19%;
     border-radius: 4px;
-    background-color: var(--color-secondary);
+    background-color: transparent;
     border: none;
-    margin: 10px;
+    cursor: pointer;
+    z-index: 99;
   }
 }

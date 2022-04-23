@@ -13,7 +13,7 @@ const MapPage = () => {
         <input type="text" className="c-map__input" placeholder="¿Qué estás buscando?" />
         <img className="c-map__logo" src={SearchLogo} alt="lupa" />
         <img className="c-map__logo c-map__logo--filter" src={Filter} alt="lupa" />
-        <img className="c-map__img" src={Map} />
+        <img className="c-map__img" src={Map} alt="logo" />
         <Nav />
       </div>
     </section>
