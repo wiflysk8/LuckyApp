@@ -7,14 +7,14 @@
   &-img {
     position: absolute;
     z-index: -1;
-    height: 95vh;
+    height: 85vh;
     width: 100vw;
   }
   &__title {
     position: absolute;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 22px;
-    top: 60%;
+    top: 54%;
     font-weight: 600;
     color: var(--color-terciary);
   }
@@ -38,7 +38,7 @@
   }
   &-link {
     position: absolute;
-    bottom: 10%;
+    bottom: 18%;
     width: 100%;
     text-align: center;
     text-decoration: none;
@@ -51,7 +51,7 @@
     color: var(--color-primary);
     text-align: center;
     width: 100vw;
-    bottom: 10%;
+    bottom: 18%;
     color: var(--color-terciary);
     font-weight: bold;
   }
