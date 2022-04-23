@@ -12,11 +12,15 @@ import PrivateRoute from "../shared/components/PrivateRoute/PrivateRoute";
 import AdopcionPage from "../pages/AdopcionPage/AdopcionPage";
 import MapPage from "../pages/MapPage/MapPage";
 import MorePage from "../pages/MorePage/MorePage";
+import Slider from "../shared/components/Slider/Slider";
 
 const RoutesFile = () => {
   return (
     <div>
       <Switch>
+        <Route path="/slider">
+          <Slider />
+        </Route>
         <Route path="/welcome">
           <WelcomePage />
         </Route>
@@ -44,7 +48,7 @@ const RoutesFile = () => {
         <Route path="/login">
           <LoginPage />
         </Route>
-        <Redirect from="/" to="welcome" />
+        <Redirect from="/" to="slider" />
       </Switch>
     </div>
   );
