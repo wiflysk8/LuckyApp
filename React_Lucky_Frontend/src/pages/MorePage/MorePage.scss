@@ -1,4 +1,4 @@
-.c-profile {
+.c-more {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -24,7 +24,7 @@
   }
   &-top {
     position: absolute;
-    top: 20%;
+    top: 6%;
     &__button {
       display: flex;
       justify-content: space-between;
@@ -61,6 +61,6 @@
   }
   &-bottom {
     position: absolute;
-    top: 60%;
+    top: 72%;
   }
 }

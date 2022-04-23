@@ -18,6 +18,7 @@ const Slider = () => {
         el: ".swiper-pagination",
       },
     });
+    console.log(swiper);
   }, []);
 
   return (
@@ -28,16 +29,16 @@ const Slider = () => {
       <div className="c-slider swiper">
         <div className="swiper-wrapper">
           <div className="swiper-slide">
-            <img className="c-slider__img" src={Slide1} />
+            <img className="c-slider__img" src={Slide1} alt="slide1" />
             <h3 className="c-slider__title c-slider__title--first">Encuentra todo tipo de servicios que tienes cerca de ti</h3>
           </div>
           <div className="swiper-slide">
-            <img className="c-slider__img" src={Slide2} />
+            <img className="c-slider__img" src={Slide2} alt="slide2" />
             <h3 className="c-slider__title">Adopta desde tu móvil</h3>
             <p className="c-slider__p">Puedes acceder al perfil de muchos animales que estan en adopcion y filtrarlos para encontrar el que mejor se adapte a ti</p>
           </div>
           <div className="swiper-slide">
-            <img className="c-slider__img" src={Slide3} />
+            <img className="c-slider__img" src={Slide3} alt="slide3" />
             <h3 className="c-slider__title c-slider__title--first">Si eres una asociación sube a tus peludos para darles más difusión</h3>
           </div>
           ...

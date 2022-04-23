@@ -1,0 +1,35 @@
+.c-card {
+  border: 3px solid var(--color-primary-transparent);
+  border-radius: 8px;
+  margin-bottom: 20px;
+
+  &__img {
+    border-radius: 5px 5px 0 0;
+    width: 100%;
+    height: 100%;
+    border-bottom: 2px solid var(--color-primary-transparent);
+  }
+  &__name {
+    margin: 0 0 2px 0;
+    font-size: 24px;
+    padding: 10px;
+  }
+  &__footer {
+    display: flex;
+    justify-content: space-between;
+    &-right {
+      display: flex;
+      flex-direction: column;
+      &__p {
+        margin: 4px 8px 0 0;
+        padding: 0px;
+        color: black;
+        font-size: 16px;
+        font-weight: lighter;
+        &--right {
+          text-align: right;
+        }
+      }
+    }
+  }
+}

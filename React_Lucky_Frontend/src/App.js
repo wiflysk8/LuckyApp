@@ -7,14 +7,13 @@ import RoutesFile from "./core/Routes";
 import LandingPage from "./shared/components/LandingPage/LandingPage";
 
 function App() {
-  console.log(getCookieUtil("token"));
   const [isLogged, setIsLogged] = useState(!!getCookieUtil("token"));
   const [landing, setLanding] = useState(true);
 
   const landingOut = () => {
     setTimeout(() => {
       setLanding(false);
-    }, 2000);
+    }, 600);
   };
 
   useEffect(() => {
