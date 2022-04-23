@@ -3,9 +3,8 @@ import { useForm } from "react-hook-form";
 import { IsLoggedContext } from "../../shared/contexts/IsLoggedContext";
 import { API } from "../../shared/services/api";
 import { Link } from "react-router-dom";
-import logo from "../../assets/lucky_logo.png";
-import title from "../../assets/lucky_title.png";
-import eye from "../../assets/eye.png";
+import logo from "../../assets/Logotipo/tituloLucky2.png";
+import eye from "../../assets/Login/eye.png";
 import "./LoginPage.scss";
 import AuthButton from "../../shared/components/AuthButton/AuthButton";
 import { useHistory } from "react-router-dom";
@@ -29,7 +28,6 @@ export default function LoginPage() {
       <AuthButton />
       <div className="c-login-header">
         <img className="c-login-header__logo" src={logo} alt="logo" />
-        <img className="c-login-header__title" src={title} alt="title" />
       </div>
       <form className="c-login-form" onSubmit={handleSubmit(onSubmit)}>
         {/* register your input into the hook by invoking the "register" function */}

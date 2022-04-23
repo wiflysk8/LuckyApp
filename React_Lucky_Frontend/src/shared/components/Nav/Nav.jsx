@@ -1,14 +1,14 @@
 import React from "react";
 import { NavLink, useLocation } from "react-router-dom";
-import homePrimary from "../../../assets/home2.png";
-import homeSecondary from "../../../assets/home1.png";
-import mapPrimary from "../../../assets/map2.png";
-import mapSecondary from "../../../assets/map1.png";
-import petPrimary from "../../../assets/pet2.png";
-import petSecondary from "../../../assets/pet1.png";
-import profileImg from "../../../assets/profile.jpg";
-import moreSecondary from "../../../assets/mas1.png";
-import morePrimary from "../../../assets/mas2.png";
+import homePrimary from "../../../assets/Navegador/home2.png";
+import homeSecondary from "../../../assets/Navegador/home1.png";
+import mapPrimary from "../../../assets/Navegador/map2.png";
+import mapSecondary from "../../../assets/Navegador/map1.png";
+import petPrimary from "../../../assets/Navegador/pet2.png";
+import petSecondary from "../../../assets/Navegador/pet1.png";
+import profileImg from "../../../assets/Perfil/profile.jpg";
+import moreSecondary from "../../../assets/Navegador/mas1.png";
+import morePrimary from "../../../assets/Navegador/mas2.png";
 import "./Nav.scss";
 
 const Nav = () => {

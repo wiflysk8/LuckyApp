@@ -3,9 +3,8 @@ import { useForm } from "react-hook-form";
 import { API } from "../../shared/services/api";
 import { useHistory } from "react-router-dom";
 import "./RegisterPage.scss";
-import logo from "../../assets/lucky_logo.png";
-import title from "../../assets/lucky_title.png";
-import eye from "../../assets/eye.png";
+import logo from "../../assets/Logotipo/tituloLucky2.png";
+import eye from "../../assets/Login/eye.png";
 import AuthButton from "../../shared/components/AuthButton/AuthButton";
 import { Link } from "react-router-dom";
 
@@ -34,7 +33,6 @@ export default function RegisterPage() {
       <div className="c-register-header">
         <Link className="c-register-link" to="/welcome">
           <img className="c-register-header__logo" src={logo} alt="logo" />
-          <img className="c-register-header__title" src={title} alt="title" />
         </Link>
       </div>
       <form className="c-register-form" onSubmit={handleSubmit(onSubmit)}>

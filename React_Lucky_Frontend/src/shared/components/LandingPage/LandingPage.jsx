@@ -1,7 +1,7 @@
 import React from "react";
 import "./LandingPage.scss";
-import logo from "../../../assets/lucky_logo.png";
-import title from "../../../assets/lucky_title.png";
+import logo from "../../../assets/Logotipo/logotipo.png";
+import title from "../../../assets/Logotipo/tituloLucky.png";
 
 const LandingPage = ({ landingOut }) => {
   landingOut();

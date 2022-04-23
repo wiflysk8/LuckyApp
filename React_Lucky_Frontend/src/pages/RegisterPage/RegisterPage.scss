@@ -11,13 +11,8 @@
     position: absolute;
     top: 14%;
     &__logo {
-      width: 30%;
-      margin: 0 10px;
+      width: 60%;
       object-fit: cover;
-    }
-    &__title {
-      object-fit: cover;
-      width: 30%;
     }
   }
   &-link {

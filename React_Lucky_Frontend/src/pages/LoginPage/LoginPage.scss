@@ -12,14 +12,7 @@
     position: absolute;
     top: 14%;
     &__logo {
-      width: 50%;
-      margin: 10px;
-      object-fit: cover;
-    }
-    &__title {
-      object-fit: cover;
-      width: 50%;
-      //margin-top: 40px;
+      width: 100%;
     }
   }
   &-form {
