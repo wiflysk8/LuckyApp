@@ -56,8 +56,7 @@ typings/
 # Yarn Integrity file
 .yarn-integrity
 
-# dotenv environment variables file
-#.env
+
 
 # next.js build output
 .next
@@ -66,8 +65,8 @@ typings/
 !.gitkeep
 
 # ignore production configuration
-.env.production
+
 
 .history/
-.env
+
 
