@@ -38,7 +38,7 @@ export default function RegisterPage() {
       <form className="c-register-form" onSubmit={handleSubmit(onSubmit)}>
         {/* register your input into the hook by invoking the "register" function */}
         <label htmlFor="name"></label>
-        <input className="c-register-form__input" name="name" placeholder="Nombre" id="name" defaultValue="" ref={register({ required: true })} />
+        <input className="c-register-form__input" placeholder="Nombre" name="name" id="name" defaultValue="" ref={register({ required: true })} />
 
         {/*<input name="role" id="role" defaultValue="admin"*/}
         {/*       ref={register({ required: true })}/>*/}
@@ -56,6 +56,9 @@ export default function RegisterPage() {
         <img className="c-register-form__eye" src={eye} alt="eyeimage" />
         {/* errors will return when field validation fails  */}
         {/*{errors.exampleRequired && <span>This field is required</span>}*/}
+
+        {/* <label htmlFor="image"></label>
+        <input className="c-register-form__input" placeholder="Sube una imagen" name="image" id="image" defaultValue="" ref={register({ required: false })} /> */}
 
         <button className="c-register-form__btn" clastype="submit" value="Register">
           Registrarse
