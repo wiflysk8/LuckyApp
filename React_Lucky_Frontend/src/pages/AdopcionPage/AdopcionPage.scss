@@ -32,8 +32,18 @@
       height: 24px;
     }
   }
-  &__h3 {
-    color: var(--color-primary-quaternary);
-    font-weight: 500;
+  &-filter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 14px;
+    &__h3 {
+      color: var(--color-primary-quaternary);
+      font-weight: 500;
+    }
+    &__img {
+      width: 24px;
+      height: 24px;
+    }
   }
 }
