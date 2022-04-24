@@ -42,7 +42,7 @@ export default function RegisterPage() {
         {/*<input name="role" id="role" defaultValue="admin"*/}
         {/*       ref={register({ required: true })}/>*/}
 
-        <input className="c-register-form__input" placeholder="email" id="email" defaultValue="" {...register("email", { required: true, pattern: /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/ })} />
+        <input className="c-register-form__input" placeholder="Email" id="email" defaultValue="" {...register("email", { required: true, pattern: /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/ })} />
 
         {/*<label htmlFor="username">Username</label>*/}
         {/*<input name="username" id="username" defaultValue="abelcabezaroman"*/}

@@ -20,6 +20,11 @@
       object-position: center;
       border-radius: 50%;
       border: 5px solid var(--color-primary);
+      image-rendering: -moz-crisp-edges; /* Firefox */
+      image-rendering: -o-crisp-edges; /* Opera */
+      image-rendering: -webkit-optimize-contrast; /* Webkit (non-standard naming) */
+      image-rendering: crisp-edges;
+      -ms-interpolation-mode: nearest-neighbor; /* IE (non-standard property) */
     }
   }
   &-top {
@@ -43,6 +48,11 @@
           margin-right: 10px;
           width: 30px;
           height: 30px;
+          image-rendering: -moz-crisp-edges; /* Firefox */
+          image-rendering: -o-crisp-edges; /* Opera */
+          image-rendering: -webkit-optimize-contrast; /* Webkit (non-standard naming) */
+          image-rendering: crisp-edges;
+          -ms-interpolation-mode: nearest-neighbor; /* IE (non-standard property) */
         }
       }
       &__right {
@@ -52,6 +62,11 @@
         &__img {
           width: 14px;
           height: 18px;
+          image-rendering: -moz-crisp-edges; /* Firefox */
+          image-rendering: -o-crisp-edges; /* Opera */
+          image-rendering: -webkit-optimize-contrast; /* Webkit (non-standard naming) */
+          image-rendering: crisp-edges;
+          -ms-interpolation-mode: nearest-neighbor; /* IE (non-standard property) */
         }
       }
       &__p {

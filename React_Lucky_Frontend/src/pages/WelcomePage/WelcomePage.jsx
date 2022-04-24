@@ -11,8 +11,10 @@ const WelcomePage = () => {
       <h2 className="c-welcome__title">¿Cómo quieres entrar?</h2>
       <Link className="c-welcome-link" to="/login">
         {" "}
-        <button className="c-welcome__btn">Usuario</button>
-        <button className="c-welcome__btn">Asociación Protectora</button>
+        <div className="c-welcome-buttons">
+          <button className="c-welcome__btn">Usuario</button>
+          <button className="c-welcome__btn">Asociación Protectora</button>
+        </div>
       </Link>
       <Link className="c-welcome-link2" to="/register">
         <p className="c-welcome-p">Registrarse en otro momento</p>
