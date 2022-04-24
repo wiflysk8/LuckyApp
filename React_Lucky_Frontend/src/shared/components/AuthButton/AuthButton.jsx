@@ -1,25 +1,21 @@
 import React from "react";
 import { useContext } from "react";
-import { Link } from "react-router-dom";
-import { useHistory } from "react-router-dom";
-import { IsLoggedContext } from "../../contexts/IsLoggedContext";
-
-import { removeCookieUtil } from "../../utils/removeCookieUtil";
+import { useNavigate, Link } from "react-router-dom";
+import { JwtContext } from "../../contexts/JwtContext";
 import "./AuthButton.scss";
 
 export default function AuthButton() {
-  const { isLogged, setIsLogged } = useContext(IsLoggedContext);
-  let history = useHistory();
+  const { jwt, setJwt } = useContext(JwtContext);
+  let navigate = useNavigate();
 
   const signOut = () => {
-    removeCookieUtil("user");
-    removeCookieUtil("token");
-
-    setIsLogged(false);
-    history.push("/");
+    localStorage.removeItem("token");
+    localStorage.removeItem("user");
+    setJwt(null);
+    navigate("/");
   };
 
-  return isLogged ? (
+  return jwt ? (
     <div className="c-auth">
       <Link to="/login">
         <button className="c-auth__btn" onClick={signOut}></button>

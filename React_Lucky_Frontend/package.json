@@ -1,28 +1,32 @@
 {
-  "name": "react-register-login",
+  "name": "react-router-v6",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.5.0",
-    "@testing-library/user-event": "^7.2.1",
-    "axios": "^0.21.1",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "react-hook-form": "^6.3.0",
-    "react-router-dom": "^5.3.1",
-    "react-scripts": "3.4.1",
+    "@testing-library/jest-dom": "^5.16.1",
+    "@testing-library/react": "^12.1.2",
+    "@testing-library/user-event": "^13.5.0",
+    "axios": "^0.25.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "react-hook-form": "^7.25.3",
+    "react-router-dom": "^6.2.1",
+    "react-scripts": "5.0.0",
     "sass": "^1.50.1",
-    "swiper": "^8.0.7"
+    "swiper": "^8.1.4",
+    "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start --env.API_URL=http://localhost:8000",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
-    "extends": "react-app"
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
   },
   "browserslist": {
     "production": [

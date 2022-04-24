@@ -24,19 +24,19 @@ const Nav = () => {
           </NavLink>
         )}
 
-        {location.pathname === "/adopcion" ? (
-          <img className="c-navbar__icon" src={petSecondary} alt="home" />
-        ) : (
-          <NavLink to="/adopcion">
-            <img className="c-navbar__icon" src={petPrimary} alt="home" />
-          </NavLink>
-        )}
-
         {location.pathname === "/map" ? (
           <img className="c-navbar__icon" src={mapSecondary} alt="home" />
         ) : (
           <NavLink to="/map">
             <img className="c-navbar__icon" src={mapPrimary} alt="home" />
+          </NavLink>
+        )}
+
+        {location.pathname === "/adopcion" ? (
+          <img className="c-navbar__icon" src={petSecondary} alt="home" />
+        ) : (
+          <NavLink to="/adopcion">
+            <img className="c-navbar__icon" src={petPrimary} alt="home" />
           </NavLink>
         )}
 

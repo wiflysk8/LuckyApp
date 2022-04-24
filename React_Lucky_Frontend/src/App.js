@@ -1,19 +1,18 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
 import { BrowserRouter as Router } from "react-router-dom";
-import { IsLoggedContext } from "./shared/contexts/IsLoggedContext";
-import { getCookieUtil } from "./shared/utils/getCookieUtil";
-import RoutesFile from "./core/Routes";
+import { JwtContext } from "./shared/contexts/JwtContext";
+import RoutesFile from "./Core/Routes";
 import LandingPage from "./shared/components/LandingPage/LandingPage";
 
 function App() {
-  const [isLogged, setIsLogged] = useState(!!getCookieUtil("token"));
+  const [jwt, setJwt] = useState(localStorage.getItem("token") || null);
   const [landing, setLanding] = useState(true);
 
   const landingOut = () => {
     setTimeout(() => {
       setLanding(false);
-    }, 600);
+    }, 2000);
   };
 
   useEffect(() => {
@@ -24,7 +23,7 @@ function App() {
     <section className=".App">
       {landing && <LandingPage landingOut={landingOut} />}
       {!landing && (
-        <IsLoggedContext.Provider value={{ isLogged, setIsLogged }}>
+        <JwtContext.Provider value={{ jwt, setJwt }}>
           <div className="App">
             <div className="App-header">
               <Router>
@@ -32,7 +31,7 @@ function App() {
               </Router>
             </div>
           </div>
-        </IsLoggedContext.Provider>
+        </JwtContext.Provider>
       )}
     </section>
   );

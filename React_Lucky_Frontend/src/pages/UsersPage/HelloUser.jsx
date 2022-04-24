@@ -1,20 +1,20 @@
-import React, { useEffect, useState } from "react";
-import { API } from "../../shared/services/api";
+import React, { useEffect, useState } from 'react'
+import { API } from '../../shared/services/api';
 
-export default function UsersPage() {
-  const [users, setUsers] = useState([]);
+export default function UsersPage () {
 
-  useEffect(() => {
-    API.get("users").then((res) => {
-      setUsers(res.data.docs);
-    });
-  }, []);
+    const [users, setUsers] = useState([]);
 
-  return (
-    <ul>
-      {users.map((user, index) => (
-        <li key={index}>{user.name}</li>
-      ))}
-    </ul>
-  );
+    useEffect(() => {
+        API.get('users').then(res => {
+            console.log('##ABEL## >> default >>  res', res);
+            setUsers(res.data.docs);
+        })
+    }, [])
+
+    return (
+        <ul>
+            {users.map((user, index) => <li key={index}>{user.name}</li>)}
+        </ul>
+    );
 }
