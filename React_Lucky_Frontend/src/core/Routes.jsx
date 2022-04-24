@@ -1,14 +1,12 @@
 import React from "react";
-import { Redirect } from "react-router-dom";
-import { Switch } from "react-router-dom";
-import { Route } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 import LoginPage from "../pages/LoginPage/LoginPage";
 import RegisterPage from "../pages/RegisterPage/RegisterPage";
 import UsersPage from "../pages/UsersPage/HelloUser";
 import WelcomePage from "../pages/WelcomePage/WelcomePage";
 import ProfilePage from "../pages/ProfilePage/ProfilePage";
 import HomePage from "../pages/HomePage/HomePage";
-import PrivateRoute from "../shared/components/PrivateRoute/PrivateRoute";
+import RequireAuth from "../shared/components/RequireAuth/RequireAuth";
 import AdopcionPage from "../pages/AdopcionPage/AdopcionPage";
 import MapPage from "../pages/MapPage/MapPage";
 import MorePage from "../pages/MorePage/MorePage";
@@ -16,41 +14,61 @@ import Slider from "../shared/components/Slider/Slider";
 
 const RoutesFile = () => {
   return (
-    <div>
-      <Switch>
-        <Route path="/slider">
-          <Slider />
-        </Route>
-        <Route path="/welcome">
-          <WelcomePage />
-        </Route>
-        <Route path="/register">
-          <RegisterPage />
-        </Route>
-        <PrivateRoute path="/home">
-          <HomePage />
-        </PrivateRoute>
-        <PrivateRoute path="/adopcion">
-          <AdopcionPage />
-        </PrivateRoute>
-        <PrivateRoute path="/profile">
-          <ProfilePage />
-        </PrivateRoute>
-        <PrivateRoute path="/users">
-          <UsersPage />
-        </PrivateRoute>
-        <PrivateRoute path="/map">
-          <MapPage />
-        </PrivateRoute>
-        <PrivateRoute path="/mas">
-          <MorePage />
-        </PrivateRoute>
-        <Route path="/login">
-          <LoginPage />
-        </Route>
-        <Redirect from="/" to="slider" />
-      </Switch>
-    </div>
+    <Routes>
+      <Route path="/slider" element={<Slider />} />
+      <Route path="/welcome" element={<WelcomePage />} />
+      <Route path="/login" element={<LoginPage />} />
+      <Route path="/register" element={<RegisterPage />} />
+      <Route
+        path="/users"
+        element={
+          <RequireAuth>
+            <UsersPage />
+          </RequireAuth>
+        }
+      />
+      <Route
+        path="/home"
+        element={
+          <RequireAuth>
+            <HomePage />
+          </RequireAuth>
+        }
+      />
+      <Route
+        path="/adopcion"
+        element={
+          <RequireAuth>
+            <AdopcionPage />
+          </RequireAuth>
+        }
+      />
+      <Route
+        path="/profile"
+        element={
+          <RequireAuth>
+            <ProfilePage />
+          </RequireAuth>
+        }
+      />
+      <Route
+        path="/map"
+        element={
+          <RequireAuth>
+            <MapPage />
+          </RequireAuth>
+        }
+      />
+      <Route
+        path="/mas"
+        element={
+          <RequireAuth>
+            <MorePage />
+          </RequireAuth>
+        }
+      />
+      <Route path="/" element={<Navigate to="/slider" />} />
+    </Routes>
   );
 };
 

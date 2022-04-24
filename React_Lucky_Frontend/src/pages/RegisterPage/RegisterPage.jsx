@@ -1,7 +1,7 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import { API } from "../../shared/services/api";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "./RegisterPage.scss";
 import logo from "../../assets/Logotipo/tituloLucky2.png";
 import eye from "../../assets/Login/eye.png";
@@ -10,8 +10,7 @@ import { Link } from "react-router-dom";
 
 export default function RegisterPage() {
   const { register, handleSubmit } = useForm();
-
-  const history = useHistory();
+  const navigate = useNavigate();
 
   // const user = {
   //     name: 'Abel',
@@ -23,7 +22,7 @@ export default function RegisterPage() {
   const onSubmit = (formData) => {
     API.post("register", formData).then((res) => {
       console.log("Register user");
-      history.push("/login");
+      navigate("/login");
     });
   };
 
@@ -37,28 +36,35 @@ export default function RegisterPage() {
       </div>
       <form className="c-register-form" onSubmit={handleSubmit(onSubmit)}>
         {/* register your input into the hook by invoking the "register" function */}
-        <label htmlFor="name"></label>
-        <input className="c-register-form__input" placeholder="Nombre" name="name" id="name" defaultValue="" ref={register({ required: true })} />
+
+        <input className="c-register-form__input" placeholder="Name" id="name" defaultValue="" {...register("name", { required: true })} />
 
         {/*<input name="role" id="role" defaultValue="admin"*/}
         {/*       ref={register({ required: true })}/>*/}
 
-        <label htmlFor="email"></label>
-        <input className="c-register-form__input" placeholder="Email" name="email" id="email" defaultValue="" ref={register({ required: true, pattern: /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/ })} />
+        <input className="c-register-form__input" placeholder="email" id="email" defaultValue="" {...register("email", { required: true, pattern: /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/ })} />
 
         {/*<label htmlFor="username">Username</label>*/}
         {/*<input name="username" id="username" defaultValue="abelcabezaroman"*/}
         {/*       ref={register({ required: true, minLength: 4 })}/>*/}
 
         {/* include validation with required or other standard HTML validation rules */}
-        <label htmlFor="password"></label>
-        <input className="c-register-form__input" placeholder="Password" name="password" id="password" type="password" defaultValue="" ref={register({ required: true, pattern: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/ })} />
+
+        <input
+          className="c-register-form__input"
+          placeholder="Password"
+          name="password"
+          id="password"
+          type="password"
+          defaultValue=""
+          {...register("password", {
+            required: true,
+            pattern: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/,
+          })}
+        />
         <img className="c-register-form__eye" src={eye} alt="eyeimage" />
         {/* errors will return when field validation fails  */}
         {/*{errors.exampleRequired && <span>This field is required</span>}*/}
-
-        {/* <label htmlFor="image"></label>
-        <input className="c-register-form__input" placeholder="Sube una imagen" name="image" id="image" defaultValue="" ref={register({ required: false })} /> */}
 
         <button className="c-register-form__btn" clastype="submit" value="Register">
           Registrarse

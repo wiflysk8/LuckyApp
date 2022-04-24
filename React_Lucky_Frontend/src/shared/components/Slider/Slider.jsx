@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import Swiper, { Pagination } from "swiper";
-import "swiper/modules/pagination/pagination.min.css";
-import "swiper/swiper.min.css";
+import "swiper/css";
+import "swiper/css/pagination";
 import Slide1 from "../../../assets/Sliders/onboarding1.png";
 import Slide2 from "../../../assets/Sliders/onboarding2.png";
 import Slide3 from "../../../assets/Sliders/onboarding3.png";
