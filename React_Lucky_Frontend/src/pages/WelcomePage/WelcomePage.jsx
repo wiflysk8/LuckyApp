@@ -18,7 +18,6 @@ const WelcomePage = () => {
       <Link className="c-welcome-link2" to="/register">
         <p className="c-welcome-p">Registrarse en otro momento</p>
       </Link>
-      <Nav />
     </section>
   );
 };

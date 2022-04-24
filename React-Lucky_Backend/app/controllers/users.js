@@ -17,6 +17,7 @@ const createItem = async (req) => {
   return new Promise((resolve, reject) => {
     const user = new model({
       name: req.name,
+      image: req.image,
       email: req.email,
       password: req.password,
       role: req.role,
