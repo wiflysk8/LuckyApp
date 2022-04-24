@@ -10,20 +10,36 @@ import Filter from "../../assets/Buscador/filtro.png";
 
 const AdopcionPage = () => {
   const [mascotas, setMascotas] = useState([]);
+  const [filteredMascotas, setFilteredMascotas] = useState([]);
 
   useEffect(() => {
     const getMascotas = async () => {
       const res = await axios.get("http://localhost:5000/mascotas");
       setMascotas(res.data);
+      setFilteredMascotas(res.data);
     };
 
     getMascotas();
   }, []);
 
+  const onSearch = (event) => {
+    onFilter(event.target.value);
+  };
+
+  const onFilter = (inputValue) => {
+    let filteredMascota = filteredMascotas.filter((mascota) => {
+      if (mascota.especie.toLowerCase().includes(inputValue.toLowerCase())) {
+        return mascota;
+      }
+      return false;
+    });
+    setMascotas(filteredMascota);
+  };
+
   return (
     <section className="c-adopcion">
       <div className="c-adopcion-search">
-        <input type="text" className="c-adopcion-search__input" placeholder="¿Qué estás buscando?" />
+        <input type="text" className="c-adopcion-search__input" placeholder="Buscar" onChange={onSearch} />
         <img className="c-adopcion-search__logo" src={SearchLogo} alt="lupa" />
       </div>
       <img src={TemporalImg} alt="temp img" />

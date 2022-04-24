@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import welcome from "../../assets/Login/loginImage.png";
-import Nav from "../../shared/components/Nav/Nav";
 
 import "./WelcomePage.scss";
 
