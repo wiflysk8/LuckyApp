@@ -6,6 +6,7 @@ import Gallery from "../../shared/components/Gallery/Gallery";
 import SearchLogo from "../../assets/Buscador/lupa.png";
 import Arrow from "../../assets/Perfil/arrow.png";
 import TemporalImg from "../../assets/Estados/temp.png";
+import Filter from "../../assets/Buscador/filtro.png";
 
 const AdopcionPage = () => {
   const [mascotas, setMascotas] = useState([]);
@@ -34,7 +35,10 @@ const AdopcionPage = () => {
           <img className="c-profile-top__button__right__img" src={Arrow} alt="icon" />
         </div>
       </div>
-      <h3 className="c-adopcion__h3">Animales en adopción</h3>
+      <div className="c-adopcion-filter">
+        <h3 className="c-adopcion-filter__h3">Animales en adopción</h3>
+        <img className="c-adopcion-filter__img" src={Filter} alt="filter" />
+      </div>
       <Gallery mascotas={mascotas} />
 
       <Nav />
