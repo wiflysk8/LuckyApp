@@ -3,6 +3,7 @@ import "./MapPage.scss";
 import SearchLogo from "../../assets/Buscador/lupa.png";
 import Filter from "../../assets/Buscador/filtro.png";
 import { GoogleMap, LoadScript } from "@react-google-maps/api";
+import React from "react";
 
 const containerStyle = {
   width: "415px",
@@ -33,4 +34,4 @@ const MapPage = () => {
   );
 };
 
-export default MapPage;
+export default React.memo(MapPage);
