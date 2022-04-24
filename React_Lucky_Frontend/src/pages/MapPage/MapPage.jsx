@@ -7,7 +7,7 @@ import React from "react";
 
 const containerStyle = {
   width: "415px",
-  height: "700px",
+  height: "600px",
 };
 
 const center = {
@@ -22,12 +22,14 @@ const MapPage = () => {
         <input type="text" className="c-map__input" placeholder="¿Qué estás buscando?" />
         <img className="c-map__logo" src={SearchLogo} alt="lupa" />
         <img className="c-map__logo c-map__logo--filter" src={Filter} alt="lupa" />
-        <LoadScript googleMapsApiKey="AIzaSyDv2W4zkf-OMEH7-arAoe55APu-U0JX-ZU">
-          <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={13}>
-            {/* Child components, such as markers, info windows, etc. */}
-            <></>
-          </GoogleMap>
-        </LoadScript>
+        <div className="c-map__googleMaps">
+          <LoadScript googleMapsApiKey="AIzaSyDv2W4zkf-OMEH7-arAoe55APu-U0JX-ZU">
+            <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={13}>
+              {/* Child components, such as markers, info windows, etc. */}
+              <></>
+            </GoogleMap>
+          </LoadScript>
+        </div>
         <Nav />
       </div>
     </section>
