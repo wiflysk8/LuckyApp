@@ -31,7 +31,7 @@
     font-size: 10px;
     padding-left: 6%;
     &:focus {
-      outline: none !important;
+      outline: none;
       border-color: var(--color-secondary);
     }
   }

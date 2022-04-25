@@ -23,7 +23,7 @@ const MapPage = () => {
         <img className="c-map__logo" src={SearchLogo} alt="lupa" />
         <img className="c-map__logo c-map__logo--filter" src={Filter} alt="lupa" />
         <div className="c-map__googleMaps">
-          <LoadScript googleMapsApiKey="AIzaSyDv2W4zkf-OMEH7-arAoe55APu-U0JX-ZU">
+          <LoadScript googleMapsApiKey={process.env.REACT_APP_GOOGLE_MAPS_API_KEY}>
             <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={13}>
               {/* Child components, such as markers, info windows, etc. */}
               <></>
