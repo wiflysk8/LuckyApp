@@ -28,7 +28,7 @@ const AdopcionPage = () => {
 
   const onFilter = (inputValue) => {
     let filteredMascota = filteredMascotas.filter((mascota) => {
-      if (mascota.especie.toLowerCase().includes(inputValue.toLowerCase())) {
+      if (mascota.especie.toLowerCase().includes(inputValue.toLowerCase()) || mascota.nombre.toLowerCase().includes(inputValue.toLowerCase())) {
         return mascota;
       }
       return false;
