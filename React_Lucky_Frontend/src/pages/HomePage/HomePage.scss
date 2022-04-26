@@ -1,6 +1,12 @@
+.c-home::-webkit-scrollbar {
+  display: none;
+}
+
 .c-home {
   margin: 20px;
   margin-top: 15%;
+  height: 83vh;
+  overflow-x: hidden;
   .swiper-pagination-bullet-active {
     background-color: var(--color-secondary);
   }
@@ -9,12 +15,16 @@
 .c-home-box{
   margin-top: 5%;
   border: 2px solid var(--color-primary-transparent);
-  height: 50px;
+  height: 10px;
   margin-bottom: 10%;
-  background-color: rgb(189, 210, 214);
+  background-color: var(--color-primary-shadow);
   border-radius: 8px;
+  box-shadow: 10px 5px 5px var(--color-primary-transparent);
+  background-image: url(../../assets/PerfilAnimales/huella.png);
+  background-repeat: repeat;
+  background-size: small;
   &__donar{
-    width: 12%;
+    width: 13%;
     display: flex;
     justify-content: start;
     position: absolute;
@@ -27,7 +37,8 @@
     flex-direction: column;
     align-items: center;
     margin-left: 0;
-    padding: 8px;
+    padding: 6px;
+    margin-top: 2px;
   }
   &__titulo{
     margin-left: 20px;
@@ -48,8 +59,11 @@
   border: 2px solid var(--color-primary-transparent);
   height: 50px;
   margin-bottom: 10%;
-  background-color: rgb(189, 210, 214);
+  background-color: var(--color-primary-shadow);
   border-radius: 8px;
+  box-shadow: 10px 5px 5px var(--color-primary-transparent);
+  background-image: url(../../assets/PerfilAnimales/huella.png);
+  background-repeat: repeat;
   &__pet2{
     width: 15%;
     display: flex;
@@ -85,8 +99,11 @@
   border: 2px solid var(--color-primary-transparent);
   height: 50px;
   margin-bottom: 10%;
-  background-color: rgb(189, 210, 214);
+  background-color: var(--color-primary-shadow);
   border-radius: 8px;
+  box-shadow: 10px 5px 5px var(--color-primary-transparent);
+  background-image: url(../../assets/PerfilAnimales/huella.png);
+  background-repeat: repeat;
   &__apadrinar{
     width: 12%;
     display: flex;
