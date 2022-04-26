@@ -1,7 +1,3 @@
-.c-home::-webkit-scrollbar {
-  display: none;
-}
-
 .c-home {
   margin: 20px;
   margin-top: 15%;
@@ -10,9 +6,12 @@
   .swiper-pagination-bullet-active {
     background-color: var(--color-secondary);
   }
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
 
-.c-home-box{
+.c-home-box {
   margin-top: 5%;
   border: 2px solid var(--color-primary-transparent);
   height: 10px;
@@ -23,7 +22,7 @@
   background-image: url(../../assets/PerfilAnimales/huella.png);
   background-repeat: repeat;
   background-size: small;
-  &__donar{
+  &__donar {
     width: 13%;
     display: flex;
     justify-content: start;
@@ -31,7 +30,7 @@
     margin-left: 7%;
     margin-top: 8%;
   }
-  &__paragraph{
+  &__paragraph {
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -40,13 +39,13 @@
     padding: 6px;
     margin-top: 2px;
   }
-  &__titulo{
+  &__titulo {
     margin-left: 20px;
     margin-top: 0;
     margin-bottom: 10px;
     font-size: 20px;
   }
-  &__texto{
+  &__texto {
     margin-top: 0;
     color: black;
     margin-left: 25%;
@@ -54,7 +53,7 @@
   }
 }
 
-.c-home-box2{
+.c-home-box2 {
   margin-top: 5%;
   border: 2px solid var(--color-primary-transparent);
   height: 50px;
@@ -64,7 +63,7 @@
   box-shadow: 10px 5px 5px var(--color-primary-transparent);
   background-image: url(../../assets/PerfilAnimales/huella.png);
   background-repeat: repeat;
-  &__pet2{
+  &__pet2 {
     width: 15%;
     display: flex;
     justify-content: start;
@@ -72,7 +71,7 @@
     margin-left: 6%;
     margin-top: 6%;
   }
-  &__paragraph{
+  &__paragraph {
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -80,13 +79,13 @@
     margin-left: 0;
     padding: 8px;
   }
-  &__titulo{
+  &__titulo {
     margin-left: 20px;
     margin-top: 0;
     margin-bottom: 10px;
     font-size: 20px;
   }
-  &__texto{
+  &__texto {
     margin-top: 0;
     color: black;
     margin-left: 25%;
@@ -94,7 +93,7 @@
   }
 }
 
-.c-home-box3{
+.c-home-box3 {
   margin-top: 5%;
   border: 2px solid var(--color-primary-transparent);
   height: 50px;
@@ -104,7 +103,7 @@
   box-shadow: 10px 5px 5px var(--color-primary-transparent);
   background-image: url(../../assets/PerfilAnimales/huella.png);
   background-repeat: repeat;
-  &__apadrinar{
+  &__apadrinar {
     width: 12%;
     display: flex;
     justify-content: start;
@@ -112,7 +111,7 @@
     margin-left: 7%;
     margin-top: 8%;
   }
-  &__paragraph{
+  &__paragraph {
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -120,13 +119,13 @@
     margin-left: 0;
     padding: 8px;
   }
-  &__titulo{
+  &__titulo {
     margin-left: 20px;
     margin-top: 0;
     margin-bottom: 10px;
     font-size: 20px;
   }
-  &__texto{
+  &__texto {
     margin-top: 0;
     color: black;
     margin-left: 25%;
@@ -134,101 +133,100 @@
   }
 }
 
-.c-home__gallery{
+.c-home__gallery {
   border-top: 2px solid var(--color-secondary);
   border-right: 2px solid var(--color-secondary);
   border-left: 2px solid var(--color-secondary);
   border-radius: 6px;
-  &__hamster{
+  &__hamster {
     width: 100%;
   }
-  &__title{
-  display: flex;
-  justify-content: center;
-  color: white;
-  background-color: var(--color-secondary);
-  margin-top: -4px;
-  border-radius: 2px;
-  padding: 3%;
+  &__title {
+    display: flex;
+    justify-content: center;
+    color: white;
+    background-color: var(--color-secondary);
+    margin-top: -4px;
+    border-radius: 2px;
+    padding: 3%;
   }
 }
 
-.c-home__gallery2{
+.c-home__gallery2 {
   border-top: 2px solid var(--color-secondary);
   border-right: 2px solid var(--color-secondary);
   border-left: 2px solid var(--color-secondary);
   border-radius: 6px;
-  &__iguana{
+  &__iguana {
     width: 100%;
   }
-  &__title{
-  display: flex;
-  justify-content: center;
-  color: white;
-  background-color: var(--color-secondary);
-  margin-top: -4px;
-  border-radius: 2px;
-  padding: 3%;
+  &__title {
+    display: flex;
+    justify-content: center;
+    color: white;
+    background-color: var(--color-secondary);
+    margin-top: -4px;
+    border-radius: 2px;
+    padding: 3%;
   }
 }
 
-.c-home__gallery3{
+.c-home__gallery3 {
   border-top: 2px solid var(--color-secondary);
   border-right: 2px solid var(--color-secondary);
   border-left: 2px solid var(--color-secondary);
   border-radius: 6px;
-  &__motero{
+  &__motero {
     width: 100%;
   }
-  &__title{
-  display: flex;
-  justify-content: center;
-  color: white;
-  background-color: var(--color-secondary);
-  margin-top: -4px;
-  border-radius: 2px;
-  padding: 3%;
-  font-size: 16px;
+  &__title {
+    display: flex;
+    justify-content: center;
+    color: white;
+    background-color: var(--color-secondary);
+    margin-top: -4px;
+    border-radius: 2px;
+    padding: 3%;
+    font-size: 16px;
   }
 }
 
-.c-home__gallery4{
+.c-home__gallery4 {
   border-top: 2px solid var(--color-secondary);
   border-right: 2px solid var(--color-secondary);
   border-left: 2px solid var(--color-secondary);
   border-radius: 6px;
-  &__conejo{
+  &__conejo {
     width: 100%;
   }
-  &__title{
-  display: flex;
-  justify-content: center;
-  color: white;
-  background-color: var(--color-secondary);
-  margin-top: -4px;
-  border-radius: 2px;
-  padding: 3%;
-  font-size: 18px;
+  &__title {
+    display: flex;
+    justify-content: center;
+    color: white;
+    background-color: var(--color-secondary);
+    margin-top: -4px;
+    border-radius: 2px;
+    padding: 3%;
+    font-size: 18px;
   }
 }
 
-.c-home__gallery5{
+.c-home__gallery5 {
   border-top: 2px solid var(--color-secondary);
   border-right: 2px solid var(--color-secondary);
   border-left: 2px solid var(--color-secondary);
   border-radius: 6px;
-  &__gato{
+  &__gato {
     width: 100%;
   }
-  &__title{
-  display: flex;
-  justify-content: center;
-  color: white;
-  background-color: var(--color-secondary);
-  margin-top: -4px;
-  border-radius: 2px;
-  padding: 3%;
-  font-size: 16px;
+  &__title {
+    display: flex;
+    justify-content: center;
+    color: white;
+    background-color: var(--color-secondary);
+    margin-top: -4px;
+    border-radius: 2px;
+    padding: 3%;
+    font-size: 16px;
   }
 }
-
