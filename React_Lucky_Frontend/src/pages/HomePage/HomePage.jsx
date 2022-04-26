@@ -27,7 +27,7 @@ const user = JSON.parse(localStorage.getItem("user"));
 
   return (
     <section className="c-home">
-      <h2>¡Hola Celia!</h2>
+      <h2>¡Hola {user.name}!</h2>
       <div className="c-home-div swiper">
       <div className="c-home-div-div swiper-wrapper">
       <div className="c-home-box swiper-slide">
