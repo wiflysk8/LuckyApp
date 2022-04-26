@@ -4,6 +4,7 @@
   overflow-x: hidden;
   &__title {
     margin: 20px;
+    font-weight: 600;
   }
 
   .swiper-pagination {
@@ -45,6 +46,11 @@
       position: absolute;
       margin-left: 7%;
       margin-top: 8%;
+      image-rendering: -moz-crisp-edges; /* Firefox */
+      image-rendering: -o-crisp-edges; /* Opera */
+      image-rendering: -webkit-optimize-contrast; /* Webkit (non-standard naming) */
+      image-rendering: crisp-edges;
+      -ms-interpolation-mode: nearest-neighbor; /* IE (non-standard property) */
     }
     &__paragraph {
       display: flex;
