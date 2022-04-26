@@ -1,3 +1,215 @@
 .c-home {
   margin: 20px;
+  margin-top: 15%;
+  .swiper-pagination-bullet-active {
+    background-color: var(--color-secondary);
+  }
 }
+
+.c-home-box{
+  margin-top: 5%;
+  border: 2px solid var(--color-primary-transparent);
+  height: 50px;
+  margin-bottom: 10%;
+  background-color: rgb(189, 210, 214);
+  border-radius: 8px;
+  &__donar{
+    width: 12%;
+    display: flex;
+    justify-content: start;
+    position: absolute;
+    margin-left: 7%;
+    margin-top: 8%;
+  }
+  &__paragraph{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 0;
+    padding: 8px;
+  }
+  &__titulo{
+    margin-left: 20px;
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 20px;
+  }
+  &__texto{
+    margin-top: 0;
+    color: black;
+    margin-left: 25%;
+    font-size: 15px;
+  }
+}
+
+.c-home-box2{
+  border: 2px solid var(--color-primary-transparent);
+  height: 50px;
+  margin-bottom: 10%;
+  background-color: rgb(189, 210, 214);
+  border-radius: 8px;
+  &__pet2{
+    width: 15%;
+    display: flex;
+    justify-content: start;
+    position: absolute;
+    margin-left: 6%;
+    margin-top: 6%;
+  }
+  &__paragraph{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 0;
+    padding: 8px;
+  }
+  &__titulo{
+    margin-left: 20px;
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 20px;
+  }
+  &__texto{
+    margin-top: 0;
+    color: black;
+    margin-left: 25%;
+    font-size: 15px;
+  }
+}
+
+.c-home-box3{
+  border: 2px solid var(--color-primary-transparent);
+  height: 50px;
+  margin-bottom: 10%;
+  background-color: rgb(189, 210, 214);
+  border-radius: 8px;
+  &__apadrinar{
+    width: 12%;
+    display: flex;
+    justify-content: start;
+    position: absolute;
+    margin-left: 7%;
+    margin-top: 8%;
+  }
+  &__paragraph{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 0;
+    padding: 8px;
+  }
+  &__titulo{
+    margin-left: 20px;
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 20px;
+  }
+  &__texto{
+    margin-top: 0;
+    color: black;
+    margin-left: 25%;
+    font-size: 15px;
+  }
+}
+
+.c-home__gallery{
+  border-top: 2px solid var(--color-secondary);
+  border-right: 2px solid var(--color-secondary);
+  border-left: 2px solid var(--color-secondary);
+  border-radius: 6px;
+  &__hamster{
+    width: 100%;
+  }
+  &__title{
+  display: flex;
+  justify-content: center;
+  color: white;
+  background-color: var(--color-secondary);
+  margin-top: -4px;
+  border-radius: 2px;
+  padding: 3%;
+  }
+}
+
+.c-home__gallery2{
+  border-top: 2px solid var(--color-secondary);
+  border-right: 2px solid var(--color-secondary);
+  border-left: 2px solid var(--color-secondary);
+  border-radius: 6px;
+  &__iguana{
+    width: 100%;
+  }
+  &__title{
+  display: flex;
+  justify-content: center;
+  color: white;
+  background-color: var(--color-secondary);
+  margin-top: -4px;
+  border-radius: 2px;
+  padding: 3%;
+  }
+}
+
+.c-home__gallery3{
+  border-top: 2px solid var(--color-secondary);
+  border-right: 2px solid var(--color-secondary);
+  border-left: 2px solid var(--color-secondary);
+  border-radius: 6px;
+  &__motero{
+    width: 100%;
+  }
+  &__title{
+  display: flex;
+  justify-content: center;
+  color: white;
+  background-color: var(--color-secondary);
+  margin-top: -4px;
+  border-radius: 2px;
+  padding: 3%;
+  font-size: 16px;
+  }
+}
+
+.c-home__gallery4{
+  border-top: 2px solid var(--color-secondary);
+  border-right: 2px solid var(--color-secondary);
+  border-left: 2px solid var(--color-secondary);
+  border-radius: 6px;
+  &__conejo{
+    width: 100%;
+  }
+  &__title{
+  display: flex;
+  justify-content: center;
+  color: white;
+  background-color: var(--color-secondary);
+  margin-top: -4px;
+  border-radius: 2px;
+  padding: 3%;
+  font-size: 18px;
+  }
+}
+
+.c-home__gallery5{
+  border-top: 2px solid var(--color-secondary);
+  border-right: 2px solid var(--color-secondary);
+  border-left: 2px solid var(--color-secondary);
+  border-radius: 6px;
+  &__gato{
+    width: 100%;
+  }
+  &__title{
+  display: flex;
+  justify-content: center;
+  color: white;
+  background-color: var(--color-secondary);
+  margin-top: -4px;
+  border-radius: 2px;
+  padding: 3%;
+  font-size: 16px;
+  }
+}
+

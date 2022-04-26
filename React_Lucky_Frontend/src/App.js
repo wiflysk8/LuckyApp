@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react";
 import "./App.css";
 import { BrowserRouter as Router } from "react-router-dom";
 import { JwtContext } from "./shared/contexts/JwtContext";
-import RoutesFile from "./Core/Routes";
 import LandingPage from "./shared/components/LandingPage/LandingPage";
+import RoutesFile from "./core/Routes";
 
 function App() {
   const [jwt, setJwt] = useState(localStorage.getItem("token") || null);
