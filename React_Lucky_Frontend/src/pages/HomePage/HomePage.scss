@@ -1,8 +1,12 @@
+.c-home::-webkit-scrollbar {
+  display: none;
+}
+
 .c-home {
   margin: 20px;
-  overflow-x: hidden;
-  height: 80vh;
   margin-top: 15%;
+  height: 83vh;
+  overflow-x: hidden;
   .swiper-pagination-bullet-active {
     background-color: var(--color-secondary);
   }
