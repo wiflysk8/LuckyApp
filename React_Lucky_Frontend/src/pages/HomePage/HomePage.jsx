@@ -15,7 +15,9 @@ import gato from "../../assets/FotosAnimales/gato.png";
 const HomePage = () => {
   useEffect(() => {
     const swiper = new Swiper(".swiper", {
-      slidesPerView: 1.2,
+      slidesPerView: 1.3,
+      loop: true,
+      centerInsufficientSlides: true,
       modules: [Pagination],
       pagination: {
         el: ".swiper-pagination",
@@ -28,7 +30,7 @@ const HomePage = () => {
 
   return (
     <section className="c-home">
-      <h2>¡Hola {user.name}!</h2>
+      <h2 className="c-home__title">¡Hola {user.name}!</h2>
       <div className="c-home-div swiper">
         <div className="c-home-div-div swiper-wrapper">
           <div className="c-home-box swiper-slide">
