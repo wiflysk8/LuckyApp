@@ -57,7 +57,7 @@ post de relaciones router.post('/create', async (req, res, next) => {
   }
 });
 
-//Hacemos un put para relacionar los spots con los skaters
+//Hacemos un put para relacionar los spots con los skaters o mascotas
 
 router.put('/add-skater', async (req, res, next) => {
   try {
