@@ -11,6 +11,7 @@ import AdopcionPage from "../pages/AdopcionPage/AdopcionPage";
 import MapPage from "../pages/MapPage/MapPage";
 import MorePage from "../pages/MorePage/MorePage";
 import Slider from "../shared/components/Slider/Slider";
+import MascotasDetailPage from "../pages/MascotasDetailPage/MascotasDetailPage";
 
 const RoutesFile = () => {
   return (
@@ -40,6 +41,14 @@ const RoutesFile = () => {
         element={
           <RequireAuth>
             <AdopcionPage />
+          </RequireAuth>
+        }
+      />
+      <Route
+        path="/mascotas/:name"
+        element={
+          <RequireAuth>
+            <MascotasDetailPage />
           </RequireAuth>
         }
       />
