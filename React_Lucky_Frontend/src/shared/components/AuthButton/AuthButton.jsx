@@ -22,6 +22,8 @@ export default function AuthButton() {
       </Link>
     </div>
   ) : (
-    <p className="c-auth__p">¡Hola! para continuar, inicia sesión o crea una cuenta</p>
+    <div className="c-auth">
+      <p className="c-auth__p">¡Hola! para continuar, inicia sesión o crea una cuenta</p>
+    </div>
   );
 }
