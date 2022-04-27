@@ -6,7 +6,7 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 
 export default function MascotasDetailPage() {
-  const url = "http://localhost:3030/mascotas";
+  const url = "https://luismrtinez.com/mascotas";
   const [mascotaDetail, setMascotaDetail] = useState();
   let { name } = useParams("name");
 
