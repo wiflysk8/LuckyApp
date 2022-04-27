@@ -1,12 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Card.scss";
 import Fav from "../../../assets/PerfilAnimales/favoritos.png";
+import Fav2 from "../../../assets/PerfilAnimales/favoritos2.png";
 
 const Card = ({ mascota }) => {
+  const [favorito, setFavorito] = useState(false);
+  const [arrayFav, setArrayFav] = useState([]);
+
+  const handleFav = () => {
+    setFavorito(!favorito);
+    if (favorito) {
+      const newFav = mascota;
+      setArrayFav([...arrayFav], newFav);
+      console.log("Favorito", mascota);
+    }
+  };
+  console.log(arrayFav);
   return (
     <>
-      {" "}
-      <img className="c-card__fav" src={Fav} alt="hearth" />
+      {favorito ? <img className="c-card__fav" src={Fav} alt="hearth" onClick={handleFav} /> : <img className="c-card__fav" src={Fav2} alt="hearth" onClick={handleFav} />}
       <div className="c-card">
         <img className="c-card__img" src={mascota.imagen} alt={mascota.nombre} />
         <div className="c-card__footer">
