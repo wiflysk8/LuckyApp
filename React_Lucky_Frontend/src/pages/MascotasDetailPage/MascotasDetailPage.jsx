@@ -77,7 +77,7 @@ export default function MascotasDetailPage() {
             )}
           </div>
         </div>
-       
+       <p>HOLAHOLA</p>
         <Nav />
       </div>
     )
