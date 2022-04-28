@@ -67,7 +67,11 @@ export default function Datos({ mascotaDetail }) {
       </div>
       <div className="c-adopcion-datos__top">
         <h4 className="c-adopcion-datos__bottom__h4">Personalidad</h4>
-        <p className="c-adopcion-datos__top__bocadillos">{mascotaDetail[0].personalidad}</p>
+        <div className="c-adopcion-datos__top-personalidad">
+          {mascotaDetail[0].personality.map((personalidad) => (
+            <p className="c-adopcion-datos__top__bocadillos">{personalidad}</p>
+          ))}
+        </div>
       </div>
 
       <div className="c-adopcion-datos__bottom">

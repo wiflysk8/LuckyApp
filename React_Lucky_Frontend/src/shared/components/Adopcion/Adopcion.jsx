@@ -23,7 +23,7 @@ export default function Adopcion({ mascotaDetail }) {
             <h4 className="c-adopcion__bottom__h4">Tasa de adopción</h4>
             <img className="c-adopcion__bottom__img" src={Info} alt="icon" />
           </div>
-          <p className="c-adopcion__p">{mascotaDetail[0].tasa} </p>
+          <p className="c-adopcion__p">{mascotaDetail[0].tasa}€ </p>
         </div>
         <div className="c-adopcion__bottom">
           <h4 className="c-adopcion__bottom__h4">¿Se envía a otra ciudad?</h4>
