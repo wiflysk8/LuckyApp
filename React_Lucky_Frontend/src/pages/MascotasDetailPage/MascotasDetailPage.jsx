@@ -21,9 +21,9 @@ export default function MascotasDetailPage() {
   let { name } = useParams("name");
 
   const [showDetails, setShowDetails] = useState("datos", "salud", "adopcion");
-  const [active, setActive] = useState(false);
-  const [active2, setActive2] = useState(true);
-  const [active3, setActive3] = useState(true);
+  const [active, setActive] = useState(true);
+  const [active2, setActive2] = useState(false);
+  const [active3, setActive3] = useState(false);
 
   useEffect(() => {
     const getMascota = async () => {
@@ -60,34 +60,34 @@ export default function MascotasDetailPage() {
         <div>
           <div className="c-detail__tag">
             <h4
-              className={active ? "c-detail__tag__h4" : "c-detail__tag__h4-active"}
+              className={active ? "c-detail__tag__h4-active" : "c-detail__tag__h4"}
               onClick={() => {
                 setShowDetails("datos");
-                setActive(false);
-                setActive2(true);
-                setActive3(true);
+                setActive(true);
+                setActive2(false);
+                setActive3(false);
               }}
             >
               Datos
             </h4>
             <h4
-              className={active2 ? "c-detail__tag__h4" : "c-detail__tag__h4-active"}
+              className={active2 ? "c-detail__tag__h4-active" : "c-detail__tag__h4"}
               onClick={() => {
                 setShowDetails("salud");
-                setActive(true);
-                setActive2(false);
-                setActive3(true);
+                setActive(false);
+                setActive2(true);
+                setActive3(false);
               }}
             >
               Salud
             </h4>
             <h4
-              className={active3 ? "c-detail__tag__h4" : "c-detail__tag__h4-active"}
+              className={active3 ? "c-detail__tag__h4-active" : "c-detail__tag__h4"}
               onClick={() => {
                 setShowDetails("adopcion");
-                setActive(true);
-                setActive2(true);
-                setActive3(false);
+                setActive(false);
+                setActive2(false);
+                setActive3(true);
               }}
             >
               Adopcion
