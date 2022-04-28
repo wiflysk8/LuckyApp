@@ -15,68 +15,71 @@ import gato from "../../assets/FotosAnimales/gato.png";
 const HomePage = () => {
   useEffect(() => {
     const swiper = new Swiper(".swiper", {
+      slidesPerView: 1.3,
+      loop: true,
+      centerInsufficientSlides: true,
       modules: [Pagination],
       pagination: {
         el: ".swiper-pagination",
       },
     });
     console.log(swiper);
-}, []);
+  }, []);
 
-const user = JSON.parse(localStorage.getItem("user"));
+  const user = JSON.parse(localStorage.getItem("user"));
 
   return (
     <section className="c-home">
-      <h2>¡Hola {user.name}!</h2>
+      <h2 className="c-home__title">¡Hola {user.name}!</h2>
       <div className="c-home-div swiper">
-      <div className="c-home-div-div swiper-wrapper">
-      <div className="c-home-box swiper-slide">
-        <img className="c-home-box__donar" src={donar} alt="donar"/>
-        <div className="c-home-box__paragraph">
-        <h3 className="c-home-box__titulo">Estado de la donación</h3>
-        <p className="c-home-box__texto">Revisa el proceso de tus donaciones en curso</p>
+        <div className="c-home-div-div swiper-wrapper">
+          <div className="c-home-box swiper-slide">
+            <img className="c-home-box__img" src={donar} alt="donar" />
+            <div className="c-home-box__paragraph">
+              <h3 className="c-home-box__titulo">Estado de la donación</h3>
+              <p className="c-home-box__texto">Revisa el proceso de tus donaciones en curso</p>
+            </div>
+          </div>
+          <div className="c-home-box swiper-slide">
+            <img className="c-home-box__img" src={pet2} alt="pet2" />
+            <div className="c-home-box__paragraph">
+              <h3 className="c-home-box__titulo">Estado de la adopción</h3>
+              <p className="c-home-box__texto">Revisa el proceso de tus adopciones en curso</p>
+            </div>
+          </div>
+          <div className="c-home-box swiper-slide">
+            <img className="c-home-box__img" src={apadrinar} alt="apadrinar" />
+            <div className="c-home-box__paragraph">
+              <h3 className="c-home-box__titulo">Estado de apadrinar</h3>
+              <p className="c-home-box__texto">Revisa el proceso de tus apadrinaciones</p>
+            </div>
+          </div>
         </div>
+        <div className="swiper-pagination"></div>
       </div>
-      <div className="c-home-box2 swiper-slide">
-        <img className="c-home-box2__pet2" src={pet2} alt="pet2"/>
-        <div className="c-home-box2__paragraph">
-        <h3 className="c-home-box2__titulo">Estado de la adopción</h3>
-        <p className="c-home-box2__texto">Revisa el proceso de tus adopciones en curso</p>
+
+      <div className="c-home__bottom">
+        <h3 className="c-home__h3">Novedades</h3>
+        <div className="c-home__gallery">
+          <img className="c-home__gallery__img" src={hamster} alt="hamster" />
+          <h3 className="c-home__gallery__title">10 Curiosidades sobre las chinchillas</h3>
         </div>
-      </div>
-      <div className="c-home-box3 swiper-slide">
-        <img className="c-home-box3__apadrinar" src={apadrinar} alt="apadrinar"/>
-        <div className="c-home-box3__paragraph">
-        <h3 className="c-home-box3__titulo">Estado de apadrinar</h3>
-        <p className="c-home-box3__texto">Revisa el proceso de tus apadrinaciones</p>
+        <div className="c-home__gallery">
+          <img className="c-home__gallery__img" src={iguana} alt="iguana" />
+          <h3 className="c-home__gallery__title">¿Sabes qué comen las iguanas?</h3>
         </div>
-      </div>
-      </div>
-      <div className="swiper-pagination"></div>
-      </div>
-      <hr/>
-      <div>
-      <h3>Novedades</h3>
-      <div className="c-home__gallery">
-      <img className="c-home__gallery__hamster" src={hamster} alt="hamster" />
-      <h3 className="c-home__gallery__title">10 Curiosidades sobre las chinchillas</h3>
-      </div>
-      <div className="c-home__gallery2">
-      <img className="c-home__gallery2__iguana" src={iguana} alt="iguana" />
-      <h3 className="c-home__gallery2__title">¿Sabes qué comen las iguanas?</h3>
-      </div>
-      <div className="c-home__gallery3">
-      <img className="c-home__gallery3__motero" src={motero} alt="motero" />
-      <h3 className="c-home__gallery3__title">10 lugares para visitar con tu perro en Madrid</h3>
-      </div>
-      <div className="c-home__gallery4">
-      <img className="c-home__gallery4__conejo" src={conejo} alt="conejo" />
-      <h3 className="c-home__gallery4__title">5 alimentos tóxicos para los conejos</h3>
-      </div>
-      <div className="c-home__gallery5">
-      <img className="c-home__gallery5__gato" src={gato} alt="gato" />
-      <h3 className="c-home__gallery5__title">Trastadas de los gatos en imágenes</h3>
-      </div>
+        <div className="c-home__gallery">
+          <img className="c-home__gallery__img" src={motero} alt="motero" />
+          <h3 className="c-home__gallery__title">10 lugares para visitar con tu perro en Madrid</h3>
+        </div>
+        <div className="c-home__gallery">
+          <img className="c-home__gallery__img" src={conejo} alt="conejo" />
+          <h3 className="c-home__gallery__title">5 alimentos tóxicos para los conejos</h3>
+        </div>
+        <div className="c-home__gallery">
+          <img className="c-home__gallery__img" src={gato} alt="gato" />
+          <h3 className="c-home__gallery__title">Trastadas de los gatos en imágenes</h3>
+        </div>
       </div>
       <Nav />
     </section>

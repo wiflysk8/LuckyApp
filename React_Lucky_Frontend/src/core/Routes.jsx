@@ -11,6 +11,8 @@ import AdopcionPage from "../pages/AdopcionPage/AdopcionPage";
 import MapPage from "../pages/MapPage/MapPage";
 import MorePage from "../pages/MorePage/MorePage";
 import Slider from "../shared/components/Slider/Slider";
+import Advertencia from "../shared/components/Advertencia/Advertencia";
+import Enviado from "../shared/components/Enviado/Enviado";
 
 const RoutesFile = () => {
   return (
@@ -64,6 +66,22 @@ const RoutesFile = () => {
         element={
           <RequireAuth>
             <MorePage />
+          </RequireAuth>
+        }
+      />
+        <Route
+        path="/advertencia"
+        element={
+          <RequireAuth>
+            <Advertencia />
+          </RequireAuth>
+        }
+      />
+        <Route
+        path="/enviado"
+        element={
+          <RequireAuth>
+            <Enviado />
           </RequireAuth>
         }
       />

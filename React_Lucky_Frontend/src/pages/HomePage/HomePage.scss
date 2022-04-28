@@ -1,234 +1,110 @@
-.c-home::-webkit-scrollbar {
-  display: none;
-}
-
 .c-home {
-  margin: 20px;
-  margin-top: 15%;
-  height: 83vh;
+  width: 100%;
+  height: 91vh;
   overflow-x: hidden;
+  margin: inherit;
+  &__title {
+    margin: 20px;
+    font-weight: 600;
+  }
+
+  .swiper-pagination {
+    position: sticky;
+    margin-top: 10px;
+  }
   .swiper-pagination-bullet-active {
     background-color: var(--color-secondary);
   }
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  &__bottom {
+    border-top: 1px solid rgba(82, 82, 82, 0.39);
+    margin: 20px;
+  }
+  &__h3 {
+    font-weight: 600;
+    margin: inherit;
+  }
+
+  &-box {
+    border: 2px solid var(--color-primary-transparent);
+    height: 10px;
+    margin-bottom: 10%;
+    background-color: var(--color-primary-shadow);
+    border-radius: 8px;
+    box-shadow: 0px 5px 5px var(--color-primary-transparent);
+    background-image: url(../../assets/PerfilAnimales/huella.png);
+    background-repeat: repeat;
+    background-size: small;
+    & .swiper-slide .swiper-slide-prev {
+      width: 485px;
+      margin: 20px;
+    }
+    &__img {
+      width: 13%;
+      display: flex;
+      justify-content: start;
+      position: absolute;
+      margin-left: 7%;
+      margin-top: 8%;
+      image-rendering: -moz-crisp-edges; /* Firefox */
+      image-rendering: -o-crisp-edges; /* Opera */
+      image-rendering: -webkit-optimize-contrast; /* Webkit (non-standard naming) */
+      image-rendering: crisp-edges;
+      -ms-interpolation-mode: nearest-neighbor; /* IE (non-standard property) */
+    }
+    &__paragraph {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      margin-left: 0;
+      padding: 6px;
+      margin-top: 2px;
+    }
+    &__titulo {
+      margin-left: 20px;
+      margin-top: 0;
+      margin-bottom: 10px;
+      font-size: 20px;
+    }
+    &__texto {
+      margin-top: 0;
+      color: black;
+      margin-left: 25%;
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--color-terciary);
+    }
+  }
 }
 
-.c-home-box{
-  margin-top: 5%;
-  border: 2px solid var(--color-primary-transparent);
-  height: 10px;
-  margin-bottom: 10%;
-  background-color: var(--color-primary-shadow);
-  border-radius: 8px;
-  box-shadow: 10px 5px 5px var(--color-primary-transparent);
-  background-image: url(../../assets/PerfilAnimales/huella.png);
-  background-repeat: repeat;
-  background-size: small;
-  &__donar{
-    width: 13%;
-    display: flex;
-    justify-content: start;
-    position: absolute;
-    margin-left: 7%;
-    margin-top: 8%;
+.c-home__gallery {
+  border-top: 2px solid var(--color-secondary);
+  border-right: 2px solid var(--color-secondary);
+  border-left: 2px solid var(--color-secondary);
+  border-radius: 6px;
+  margin: inherit;
+  &__img {
+    width: 100%;
   }
-  &__paragraph{
+  &__title {
     display: flex;
     justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    margin-left: 0;
-    padding: 6px;
-    margin-top: 2px;
-  }
-  &__titulo{
-    margin-left: 20px;
-    margin-top: 0;
-    margin-bottom: 10px;
-    font-size: 20px;
-  }
-  &__texto{
-    margin-top: 0;
-    color: black;
-    margin-left: 25%;
-    font-size: 15px;
+    color: white;
+    background-color: var(--color-secondary);
+    margin-top: -4px;
+    border-radius: 2px;
+    padding: 3%;
   }
 }
 
-.c-home-box2{
-  margin-top: 5%;
-  border: 2px solid var(--color-primary-transparent);
-  height: 50px;
-  margin-bottom: 10%;
-  background-color: var(--color-primary-shadow);
-  border-radius: 8px;
-  box-shadow: 10px 5px 5px var(--color-primary-transparent);
-  background-image: url(../../assets/PerfilAnimales/huella.png);
-  background-repeat: repeat;
-  &__pet2{
-    width: 15%;
-    display: flex;
-    justify-content: start;
-    position: absolute;
-    margin-left: 6%;
-    margin-top: 6%;
-  }
-  &__paragraph{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    margin-left: 0;
-    padding: 8px;
-  }
-  &__titulo{
-    margin-left: 20px;
-    margin-top: 0;
-    margin-bottom: 10px;
-    font-size: 20px;
-  }
-  &__texto{
-    margin-top: 0;
-    color: black;
-    margin-left: 25%;
-    font-size: 15px;
-  }
+.swiper-slide {
+  flex-shrink: 0;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transition-property: transform;
+  margin: 6px;
 }
-
-.c-home-box3{
-  margin-top: 5%;
-  border: 2px solid var(--color-primary-transparent);
-  height: 50px;
-  margin-bottom: 10%;
-  background-color: var(--color-primary-shadow);
-  border-radius: 8px;
-  box-shadow: 10px 5px 5px var(--color-primary-transparent);
-  background-image: url(../../assets/PerfilAnimales/huella.png);
-  background-repeat: repeat;
-  &__apadrinar{
-    width: 12%;
-    display: flex;
-    justify-content: start;
-    position: absolute;
-    margin-left: 7%;
-    margin-top: 8%;
-  }
-  &__paragraph{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    margin-left: 0;
-    padding: 8px;
-  }
-  &__titulo{
-    margin-left: 20px;
-    margin-top: 0;
-    margin-bottom: 10px;
-    font-size: 20px;
-  }
-  &__texto{
-    margin-top: 0;
-    color: black;
-    margin-left: 25%;
-    font-size: 15px;
-  }
-}
-
-.c-home__gallery{
-  border-top: 2px solid var(--color-secondary);
-  border-right: 2px solid var(--color-secondary);
-  border-left: 2px solid var(--color-secondary);
-  border-radius: 6px;
-  &__hamster{
-    width: 100%;
-  }
-  &__title{
-  display: flex;
-  justify-content: center;
-  color: white;
-  background-color: var(--color-secondary);
-  margin-top: -4px;
-  border-radius: 2px;
-  padding: 3%;
-  }
-}
-
-.c-home__gallery2{
-  border-top: 2px solid var(--color-secondary);
-  border-right: 2px solid var(--color-secondary);
-  border-left: 2px solid var(--color-secondary);
-  border-radius: 6px;
-  &__iguana{
-    width: 100%;
-  }
-  &__title{
-  display: flex;
-  justify-content: center;
-  color: white;
-  background-color: var(--color-secondary);
-  margin-top: -4px;
-  border-radius: 2px;
-  padding: 3%;
-  }
-}
-
-.c-home__gallery3{
-  border-top: 2px solid var(--color-secondary);
-  border-right: 2px solid var(--color-secondary);
-  border-left: 2px solid var(--color-secondary);
-  border-radius: 6px;
-  &__motero{
-    width: 100%;
-  }
-  &__title{
-  display: flex;
-  justify-content: center;
-  color: white;
-  background-color: var(--color-secondary);
-  margin-top: -4px;
-  border-radius: 2px;
-  padding: 3%;
-  font-size: 16px;
-  }
-}
-
-.c-home__gallery4{
-  border-top: 2px solid var(--color-secondary);
-  border-right: 2px solid var(--color-secondary);
-  border-left: 2px solid var(--color-secondary);
-  border-radius: 6px;
-  &__conejo{
-    width: 100%;
-  }
-  &__title{
-  display: flex;
-  justify-content: center;
-  color: white;
-  background-color: var(--color-secondary);
-  margin-top: -4px;
-  border-radius: 2px;
-  padding: 3%;
-  font-size: 18px;
-  }
-}
-
-.c-home__gallery5{
-  border-top: 2px solid var(--color-secondary);
-  border-right: 2px solid var(--color-secondary);
-  border-left: 2px solid var(--color-secondary);
-  border-radius: 6px;
-  &__gato{
-    width: 100%;
-  }
-  &__title{
-  display: flex;
-  justify-content: center;
-  color: white;
-  background-color: var(--color-secondary);
-  margin-top: -4px;
-  border-radius: 2px;
-  padding: 3%;
-  font-size: 16px;
-  }
-}
-

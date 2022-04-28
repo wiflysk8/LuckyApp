@@ -1,0 +1,26 @@
+.c-enviado{
+    width: 70%;
+    padding: 30px;
+    margin-left: 8%;
+    margin-top: 10%;
+    border: 2px solid black;
+    border-radius: 10px;
+    &__title{
+        display: flex;
+        justify-content: center;
+        font-weight: bold;
+        font-size: 28px;
+    }
+    &__texto{
+        color: black;
+        text-align: center;
+        margin-bottom: 10%;
+        font-weight: normal;
+        font-size: 18px;
+    }
+    &__img{
+    width: 80%;
+    display: flex;
+    align-items: center;
+    }
+}
