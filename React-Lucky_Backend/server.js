@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 require('dotenv-safe').config()
 const express = require('express')
 const bodyParser = require('body-parser')
@@ -10,6 +11,13 @@ const app = express()
 const i18n = require('i18n')
 const initMongo = require('./config/mongo')
 const path = require('path')
+const cloudinary = require('cloudinary').v2
+
+cloudinary.config({
+  cloud_name: 'deza4wcxi',
+  api_key: '399756248791617',
+  api_secret: 'HIUKd-5fINwJU5mNKjH6sHsOHD0'
+})
 
 // Setup express server port from ENV, default: 3000
 app.set('port', process.env.PORT || 3000)

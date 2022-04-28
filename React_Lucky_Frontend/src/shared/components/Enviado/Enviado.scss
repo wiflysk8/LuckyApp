@@ -19,8 +19,15 @@
         font-size: 18px;
     }
     &__img{
-    width: 80%;
-    display: flex;
-    align-items: center;
+    width: 70%;
+    margin-left: 15%;
+    }
+    &__x{
+        width: 10px;
+        height: 10px;
+        position: relative;
+        right: 8px;
+        top: -15px;
+        z-index: 99;
     }
 }

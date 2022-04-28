@@ -4,8 +4,8 @@
   margin-bottom: 20px;
   &__fav {
     position: relative;
-    top: 50px;
-    left: 88%;
+    top: 60px;
+    left: 85%;
     width: 24px;
   }
 
@@ -21,6 +21,8 @@
     margin: 0 0 2px 0;
     font-size: 24px;
     padding: 10px;
+    text-decoration: none;
+    color: var(--color-primary);
   }
   &__footer {
     display: flex;

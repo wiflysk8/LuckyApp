@@ -14,7 +14,7 @@ const AdopcionPage = () => {
 
   useEffect(() => {
     const getMascotas = async () => {
-      const res = await axios.get("http://localhost:5000/mascotas");
+      const res = await axios.get("https://luismrtinez.com/mascotas");
       setMascotas(res.data);
       setFilteredMascotas(res.data);
     };
@@ -28,7 +28,7 @@ const AdopcionPage = () => {
 
   const onFilter = (inputValue) => {
     let filteredMascota = filteredMascotas.filter((mascota) => {
-      if (mascota.especie.toLowerCase().includes(inputValue.toLowerCase())) {
+      if (mascota.especie.toLowerCase().includes(inputValue.toLowerCase()) || mascota.nombre.toLowerCase().includes(inputValue.toLowerCase())) {
         return mascota;
       }
       return false;
