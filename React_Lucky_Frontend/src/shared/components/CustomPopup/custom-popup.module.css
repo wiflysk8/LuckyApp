@@ -9,7 +9,7 @@
   transition: opacity 500ms;
 }
 .popup {
-  background: rgba(255, 255, 255, 0.904);
+  background: rgba(255, 255, 255, 0.24);
   border-radius: 5px;
   position: relative;
   transition: all 5s ease-in-out;
