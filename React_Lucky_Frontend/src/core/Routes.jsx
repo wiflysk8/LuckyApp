@@ -13,6 +13,8 @@ import MorePage from "../pages/MorePage/MorePage";
 import Slider from "../shared/components/Slider/Slider";
 import Advertencia from "../shared/components/Advertencia/Advertencia";
 import Enviado from "../shared/components/Enviado/Enviado";
+import MascotasDetailPage from "../pages/MascotasDetailPage/MascotasDetailPage";
+
 
 const RoutesFile = () => {
   return (
@@ -42,6 +44,14 @@ const RoutesFile = () => {
         element={
           <RequireAuth>
             <AdopcionPage />
+          </RequireAuth>
+        }
+      />
+      <Route
+        path="/mascotas/:name"
+        element={
+          <RequireAuth>
+            <MascotasDetailPage />
           </RequireAuth>
         }
       />
