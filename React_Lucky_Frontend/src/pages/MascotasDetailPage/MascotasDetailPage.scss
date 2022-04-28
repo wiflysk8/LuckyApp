@@ -1,0 +1,38 @@
+.c-detailImageBox {
+  
+}
+
+.c-profileImage {
+    width: 100%;
+    
+}
+
+.btn {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    border-radius: 20px;
+    
+
+    &__1{
+        color: var(--color-secondary);
+        border-color: var(--color-secondary);
+        background-color: transparent;
+        border-radius: 5px;
+        padding: 7px;
+        width: 100px;
+        box-shadow: none;
+    }
+    &__2{
+        color: white;
+        border-color: var(--color-secondary);
+        background-color: var(--color-secondary);
+        border-radius: 5px;
+        padding: 7px;
+        width: 100px;
+        box-shadow: none;
+        
+    }
+}
