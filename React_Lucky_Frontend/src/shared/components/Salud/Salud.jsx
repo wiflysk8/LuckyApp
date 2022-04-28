@@ -1,20 +1,22 @@
-import React from 'react'
-import HuellaImg from '../../../assets/PerfilAnimales/pawprint.png'
-import './Salud.scss'
+import React from "react";
+import HuellaImg from "../../../assets/PerfilAnimales/pawprint.png";
+import "./Salud.scss";
+import { useState } from "react";
+import CustomPopup from "../CustomPopup/CustomPopup";
+import Advertencia from "../Advertencia/Advertencia";
 
+export default function Salud({ mascotaDetail }) {
+  const [visibility, setVisibility] = useState(false);
 
-export default function Salud({mascotaDetail}) {
+  const popupCloseHandler = (e) => {
+    setVisibility(e);
+  };
   return (
-   
     <div className="c-salud">
       <div className="c-salud__box">
         <div className="c-salud__row">
           <div className="c-salud__row-left">
-            <img
-              src={HuellaImg}
-              alt="pet"
-              className="c-salud__row-left"
-            />
+            <img src={HuellaImg} alt="pet" className="c-salud__row-left" />
             <p className="c-salud__p">Vacunado</p>
           </div>
           <div className="c-salud__row-right">
@@ -24,11 +26,7 @@ export default function Salud({mascotaDetail}) {
 
         <div className="c-salud__row">
           <div className="c-salud__row-left">
-            <img
-              src={HuellaImg}
-              alt="pet"
-              className="c-salud__row-left"
-            />
+            <img src={HuellaImg} alt="pet" className="c-salud__row-left" />
             <p className="c-salud__p">Desparasitado</p>
           </div>
           <div className="c-salud__row-right">
@@ -38,11 +36,7 @@ export default function Salud({mascotaDetail}) {
 
         <div className="c-salud__row">
           <div className="c-salud__row-left">
-            <img
-              src={HuellaImg}
-              alt="pet"
-              className="c-salud__row-left"
-            />
+            <img src={HuellaImg} alt="pet" className="c-salud__row-left" />
             <p className="c-salud__p">Sano</p>
           </div>
           <div className="c-salud__row-right">
@@ -52,11 +46,7 @@ export default function Salud({mascotaDetail}) {
 
         <div className="c-salud__row">
           <div className="c-salud__row-left">
-            <img
-              src={HuellaImg}
-              alt="pet"
-              className="c-salud__row-left"
-            />
+            <img src={HuellaImg} alt="pet" className="c-salud__row-left" />
             <p className="c-salud__p">Esterilizado</p>
           </div>
           <div className="c-salud__row-right">
@@ -66,11 +56,7 @@ export default function Salud({mascotaDetail}) {
 
         <div className="c-salud__row">
           <div className="c-salud__row-left">
-            <img
-              src={HuellaImg}
-              alt="pet"
-              className="c-salud__row-left"
-            />
+            <img src={HuellaImg} alt="pet" className="c-salud__row-left" />
             <p className="c-salud__p">Identificado</p>
           </div>
           <div className="c-salud__row-right">
@@ -79,11 +65,7 @@ export default function Salud({mascotaDetail}) {
         </div>
         <div className="c-salud__row">
           <div className="c-salud__row-left">
-            <img
-              src={HuellaImg}
-              alt="pet"
-              className="c-salud__row-left"
-            />
+            <img src={HuellaImg} alt="pet" className="c-salud__row-left" />
             <p className="c-salud__p">Microchip</p>
           </div>
           <div className="c-salud__row-right">
@@ -91,14 +73,19 @@ export default function Salud({mascotaDetail}) {
           </div>
         </div>
         <div className="c-salud__bottom">
-      <h4 className="c-salud__bottom__h4">Tienes que saber que</h4>
-        <p className="c-salud__p">Lorem ipsum dolor natoascepellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo,{mascotaDetail[0].historia} </p>
-      </div>
+          <h4 className="c-salud__bottom__h4">Tienes que saber que</h4>
+          <p className="c-salud__p">Lorem ipsum dolor natoascepellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo,{mascotaDetail[0].historia} </p>
+        </div>
       </div>
       <div className="btn">
-            <button className="btn__1">Apadrinar</button>
-            <button className="btn__2">Adoptar</button>
-          </div>
+        <button className="btn__2">Apadrinar</button>
+        <button className="btn__1" onClick={(e) => setVisibility(!visibility)}>
+          Adoptar
+        </button>
+        <CustomPopup onClose={popupCloseHandler} show={visibility} title="">
+          <Advertencia />
+        </CustomPopup>
       </div>
-      );
+    </div>
+  );
 }
