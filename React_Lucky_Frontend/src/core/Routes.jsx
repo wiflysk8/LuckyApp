@@ -15,7 +15,6 @@ import MascotasDetailPage from "../pages/MascotasDetailPage/MascotasDetailPage";
 import Advertencia from "../shared/components/Advertencia/Advertencia";
 import Enviado from "../shared/components/Enviado/Enviado";
 import FormPage from "../pages/FormPage/FormPage";
-import EditProfile from "../shared/components/EditProfile/EditProfile";
 
 const RoutesFile = () => {
   return (
@@ -64,14 +63,7 @@ const RoutesFile = () => {
           </RequireAuth>
         }
       />
-      <Route
-        path="/edit"
-        element={
-          <RequireAuth>
-            <EditProfile />
-          </RequireAuth>
-        }
-      />
+
       <Route
         path="/map"
         element={
