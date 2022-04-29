@@ -15,9 +15,9 @@ export default function LoginPage() {
   const navigate = useNavigate();
 
   const onSubmit = (formData) => {
-    API.post("login", formData).then((res) => {
-      localStorage.setItem("token", res.data.token);
-      localStorage.setItem("user", JSON.stringify(res.data.user));
+    API.post("users/login", formData).then((res) => {
+      localStorage.setItem("token", res.data.data.token);
+      localStorage.setItem("user", JSON.stringify(res.data.data.user));
       setJwt(true);
       navigate("/home");
     });

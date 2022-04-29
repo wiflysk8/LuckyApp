@@ -1,0 +1,63 @@
+.c-card {
+  border: 3px solid var(--color-primary-transparent);
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.c-card__fav {
+  position: relative;
+  top: 60px;
+  left: 85%;
+  width: 24px;
+}
+
+.c-card__img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: top;
+     object-position: top;
+  border-radius: 5px 5px 0 0;
+  width: 100%;
+  height: 240px;
+  border-bottom: 2px solid var(--color-primary-transparent);
+}
+
+.c-card__name {
+  margin: 0 0 2px 0;
+  font-size: 24px;
+  padding: 10px;
+  text-decoration: none;
+  color: var(--color-primary);
+}
+
+.c-card__footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.c-card__footer-right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.c-card__footer-right__p {
+  margin: 4px 8px 0 0;
+  padding: 0px;
+  color: black;
+  font-size: 16px;
+  font-weight: lighter;
+}
+
+.c-card__footer-right__p--right {
+  text-align: right;
+}
+/*# sourceMappingURL=Card.css.map */

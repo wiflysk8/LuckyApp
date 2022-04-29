@@ -1,0 +1,40 @@
+.c-progress {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 20px 0px;
+}
+
+.container {
+  margin: 0px;
+  width: 90%;
+  text-align: center;
+}
+
+.progress2 {
+  padding: 2px;
+  border-radius: 30px;
+  background: var(--color-secondary-transparent);
+}
+
+.progress-bar2 {
+  height: 8px;
+  border-radius: transparent;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.3)), to(rgba(255, 255, 255, 0.05)));
+  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.05));
+  -webkit-transition: 0.4s linear;
+  transition: 0.4s linear;
+  -webkit-transition-property: width, background-color;
+  transition-property: width, background-color;
+}
+
+.progress-moved .progress-bar2 {
+  width: 33%;
+  background-color: #f8897f;
+  -webkit-animation: progressAnimation 6s;
+          animation: progressAnimation 6s;
+}
+/*# sourceMappingURL=Progress.css.map */
