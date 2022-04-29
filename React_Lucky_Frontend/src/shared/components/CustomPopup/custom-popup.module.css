@@ -1,10 +1,8 @@
 .overlay {
-  height: 100vh;
-  width: 100vw;
   visibility: hidden;
   opacity: 0;
   position: fixed;
-  bottom: 0;
+  bottom: 8%;
   left: 0;
   right: 0;
   background: rgba(0, 0, 0, 0.7);
@@ -24,7 +22,7 @@
 }
 .popup .close {
   position: absolute;
-  top: 54px;
+  top: 68px;
   left: 48px;
   transition: all 200ms;
   font-size: 26px;
@@ -37,7 +35,7 @@
   color: #000;
 }
 .popup .content {
-  height: 720px;
+  height: 710px;
   overflow: auto;
 }
 
