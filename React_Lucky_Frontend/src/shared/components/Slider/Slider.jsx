@@ -18,7 +18,7 @@ const Slider = () => {
         el: ".swiper-pagination",
       },
     });
-    console.log(swiper);
+    /* console.log(swiper); */
   }, []);
 
   return (
