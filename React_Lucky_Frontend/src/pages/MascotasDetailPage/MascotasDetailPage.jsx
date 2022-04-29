@@ -99,7 +99,6 @@ export default function MascotasDetailPage() {
             {showDetails === "adopcion" && <Adopcion mascotaDetail={mascotaDetail} />}
           </div>
         </div>
-        <Nav />
       </div>
     )
   );

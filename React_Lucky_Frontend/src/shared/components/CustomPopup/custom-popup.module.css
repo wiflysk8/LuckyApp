@@ -2,7 +2,7 @@
   visibility: hidden;
   opacity: 0;
   position: fixed;
-  bottom: 8%;
+  bottom: 0;
   left: 0;
   right: 0;
   background: rgba(0, 0, 0, 0.7);
@@ -22,7 +22,7 @@
 }
 .popup .close {
   position: absolute;
-  top: 68px;
+  top: 54px;
   left: 48px;
   transition: all 200ms;
   font-size: 26px;
@@ -35,7 +35,7 @@
   color: #000;
 }
 .popup .content {
-  height: 710px;
+  height: 720px;
   overflow: auto;
 }
 
