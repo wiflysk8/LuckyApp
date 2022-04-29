@@ -63,6 +63,7 @@ const RoutesFile = () => {
           </RequireAuth>
         }
       />
+
       <Route
         path="/map"
         element={

@@ -1,6 +1,6 @@
 import React from "react";
 import Nav from "../../shared/components/Nav/Nav";
-import profileImg from "../../assets/Perfil/profile.jpg";
+
 import miPerfil from "../../assets/Perfil/miPerfil.png";
 import Direcciones from "../../assets/Perfil/direcciones.png";
 import Favoritos from "../../assets/Perfil/favoritos.png";
@@ -12,10 +12,12 @@ import Arrow from "../../assets/Perfil/arrow.png";
 import "./ProfilePage.scss";
 
 export default function ProfilePage() {
+  const user = JSON.parse(localStorage.getItem("user"));
+  console.log(user.name);
   return (
     <section className="c-profile">
       <div className="c-profile-header">
-        <img className="c-profile-header__img" src={profileImg} alt="avatar" />
+        <img className="c-profile-header__img" src={user.image} alt="avatar" />
       </div>
       <div className="c-profile-top">
         <div className="c-profile-top__button">
@@ -27,6 +29,7 @@ export default function ProfilePage() {
             <img className="c-profile-top__button__right__img" src={Arrow} alt="icon" />
           </div>
         </div>
+
         <div className="c-profile-top__button">
           <div className="c-profile-top__button__left">
             <img className="c-profile-top__button__left__img" src={Direcciones} alt="icon" />
