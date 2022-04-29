@@ -14,6 +14,7 @@ import Slider from "../shared/components/Slider/Slider";
 import MascotasDetailPage from "../pages/MascotasDetailPage/MascotasDetailPage";
 import Advertencia from "../shared/components/Advertencia/Advertencia";
 import Enviado from "../shared/components/Enviado/Enviado";
+import FormPage from "../pages/FormPage/FormPage";
 
 const RoutesFile = () => {
   return (
@@ -83,6 +84,14 @@ const RoutesFile = () => {
         element={
           <RequireAuth>
             <Advertencia />
+          </RequireAuth>
+        }
+      />
+      <Route
+        path="/formulario"
+        element={
+          <RequireAuth>
+            <FormPage />
           </RequireAuth>
         }
       />
