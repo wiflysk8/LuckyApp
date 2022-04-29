@@ -13,7 +13,7 @@ import "./ProfilePage.scss";
 
 export default function ProfilePage() {
   const user = JSON.parse(localStorage.getItem("user"));
-  console.log(user.name);
+
   return (
     <section className="c-profile">
       <div className="c-profile-header">

@@ -11,7 +11,7 @@ export default function Datos({ mascotaDetail }) {
   const popupCloseHandler = (e) => {
     setVisibility(e);
   };
-  console.log(mascotaDetail);
+
   return (
     <div className="c-adopcion-datos">
       <div className="c-adopcion-datos__box">
@@ -68,8 +68,10 @@ export default function Datos({ mascotaDetail }) {
       <div className="c-adopcion-datos__top">
         <h4 className="c-adopcion-datos__bottom__h4">Personalidad</h4>
         <div className="c-adopcion-datos__top-personalidad">
-          {mascotaDetail[0].personality.map((personalidad) => (
-            <p className="c-adopcion-datos__top__bocadillos">{personalidad}</p>
+          {mascotaDetail[0].personality.map((personalidad, index) => (
+            <p key={index} className="c-adopcion-datos__top__bocadillos">
+              {personalidad}
+            </p>
           ))}
         </div>
       </div>
