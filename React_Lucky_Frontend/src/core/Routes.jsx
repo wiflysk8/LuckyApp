@@ -15,6 +15,7 @@ import MascotasDetailPage from "../pages/MascotasDetailPage/MascotasDetailPage";
 import Advertencia from "../shared/components/Advertencia/Advertencia";
 import Enviado from "../shared/components/Enviado/Enviado";
 import FormPage from "../pages/FormPage/FormPage";
+import Fav from "../shared/components/Fav/Fav";
 
 const RoutesFile = () => {
   return (
@@ -93,6 +94,15 @@ const RoutesFile = () => {
         element={
           <RequireAuth>
             <FormPage />
+          </RequireAuth>
+        }
+      />
+
+      <Route
+        path="/favoritos"
+        element={
+          <RequireAuth>
+            <Fav />
           </RequireAuth>
         }
       />
