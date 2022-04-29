@@ -1,0 +1,33 @@
+.c-progress{
+    display: flex;
+    justify-content: center;
+    margin: 20px 0px;
+}
+
+.container {
+    margin: 0px;
+    width: 90%;
+    text-align: center;
+  }
+
+  .progress2 {
+    padding: 2px;
+    border-radius: 30px;
+    background: var(--color-secondary-transparent)
+  }
+
+  .progress-bar2 {
+    height: 8px;
+    border-radius: transparent;
+    background-image: 
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.05));
+    transition: 0.4s linear;  
+    transition-property: width, background-color;    
+    
+  }
+
+  .progress-moved .progress-bar2 {
+    width: 33%; 
+    background-color: #f8897f;  
+    animation: progressAnimation 6s;
+  }

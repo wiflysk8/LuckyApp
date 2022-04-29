@@ -22,11 +22,11 @@
 }
 .popup .close {
   position: absolute;
-  top: 36px;
-  right: 36px;
+  top: 68px;
+  left: 48px;
   transition: all 200ms;
-  font-size: 30px;
-  font-weight: bold;
+  font-size: 26px;
+  font-weight: lighter;
   text-decoration: none;
   color: #333;
 }

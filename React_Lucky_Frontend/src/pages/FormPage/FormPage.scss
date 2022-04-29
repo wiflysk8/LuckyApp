@@ -1,0 +1,205 @@
+.c-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+
+    
+    &-section {
+        display: flex;
+        flex-direction: column;
+        width: 95%;
+        margin-top: 32px;
+
+        &__mainTitle{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: lighter;
+            color: black;
+            font-size: 16px;
+        }
+      
+        &__title {
+           
+            font-weight: 500;
+            margin: 0 0 0 16px;
+        }
+
+        &__block {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            align-items: center;
+            justify-content: center;
+
+            &__label{
+                color: black;
+                font-weight: 400;
+                width: 100%;
+            
+                &--mod{
+                    display: flex;
+                    justify-content: space-between;
+                    padding-top: 10px;
+                    
+                   
+                }
+                &__p{
+                    margin-left: 8px;
+                    margin-bottom: 0px;
+                    
+                }
+            }
+        }
+
+        &__option {
+            font-size: 12px;
+        }
+
+        &__input{
+           
+                width: 90%;
+                margin: 14px;
+                height: 20px;
+                font-size: 12px;
+                color: gray;
+                border: none;
+                border-bottom: 1px solid var(--color-primary-transparent);
+                
+
+                &:focus {
+                  outline: none;
+                  border: 1px solid #ccc;
+                }
+                
+                &__condiciones{
+                   margin: 16px;
+                  display: flex;
+                align-items: center;
+                
+
+                }
+
+                &--mod{
+                    accent-color: var(--color-primary);
+                    
+                }
+
+               
+
+
+            }
+
+        &__p{
+            font-size: 12px;
+            font-weight: lighter;
+            color: black;
+        }
+
+        &__boxBtn{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        &__btn{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            border-radius: 20px;
+            margin-top: 20px;
+            color: white;
+            background-color: var(--color-secondary);
+            border-radius: 5px;
+            padding: 4px;
+            width: 90%;
+            height: 40px;
+            box-shadow: none;
+            border: solid 1px var(--color-secondary);
+            font-size: 16px;
+            margin-bottom: 30px;
+
+            &--mod{
+                padding: 25px;
+            }
+        }
+
+        &__arrow{
+            width: 32px;
+        }
+
+        &__top{
+            display: flex;
+           align-items: center;
+           justify-content: space-between;
+           width: 72%;
+        }
+    }
+
+ 
+    .c-radius-right{
+        display: flex;
+        margin-right: 10%;
+        
+        
+        &__1{
+            display: flex;
+            flex-direction: column-reverse;
+            justify-content: center;
+            align-items: center;
+            
+        }
+
+        &__2{
+            display: flex;
+            flex-direction: column-reverse;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+
+}
+
+.c-progress{
+    display: flex;
+    justify-content: center;
+    margin: 20px 0px;
+}
+
+.container {
+    margin: 0px;
+    width: 90%;
+    text-align: center;
+  }
+
+  .progress2 {
+    padding: 2px;
+    border-radius: 30px;
+    background: var(--color-secondary-transparent)
+  }
+
+  .progress-bar2 {
+    height: 8px;
+    border-radius: transparent;
+    background-image: 
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.05));
+    transition: 0.4s linear;  
+    transition-property: width, background-color;    
+    
+  }
+
+  .progress-moved .progress-bar2 {
+    width: 33%; 
+    background-color: #f8897f;  
+    animation: progressAnimation 6s;
+
+    &--2 {
+        width: 66%;
+    }
+
+    &--3 {
+        width: 99%;
+    }
+  }

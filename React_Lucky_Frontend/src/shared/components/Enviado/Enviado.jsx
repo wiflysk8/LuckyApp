@@ -7,9 +7,6 @@ const Enviado = () => {
     return (
         <div className="c-enviado">
             <alert>
-                <Link to="/welcome">
-                <img className="c-enviado__x" src={Cross} alt="cross" />
-                </Link>
                 <h1 className="c-enviado__title">¡Enviado!</h1>
                 <p className="c-enviado__texto">Hemos enviado tu formulario a la protectora. Si quieres ponerte en contacto con ellos puedes hacerlo vía email o whatsapp</p>
                 <p className="c-enviado__texto">Recuerda que la protectora se pondrá en contacto contigo para poder hacer la entrevista personal</p>

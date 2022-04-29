@@ -15,7 +15,7 @@ const Advertencia = () => {
         <Link to="/adopcion">
           <button className="c-advertencia__boton">Cancelar</button>
         </Link>
-        <Link to="/profile">
+        <Link to="/formulario">
           <button className="c-advertencia__boton2">Continuar</button>
         </Link>
       </alert>
