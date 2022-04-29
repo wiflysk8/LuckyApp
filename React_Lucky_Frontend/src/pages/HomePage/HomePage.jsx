@@ -23,7 +23,7 @@ const HomePage = () => {
         el: ".swiper-pagination",
       },
     });
-    console.log(swiper);
+    /* console.log(swiper); */
   }, []);
 
   const user = JSON.parse(localStorage.getItem("user"));

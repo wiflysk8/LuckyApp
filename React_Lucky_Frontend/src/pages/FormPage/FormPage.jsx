@@ -14,7 +14,7 @@ export default function FormPage() {
   const { register, handleSubmit, watch } = useForm();
 
   const submit = (data) => {
-    console.log(data);
+    /* console.log(data); */
   };
 
   return (
