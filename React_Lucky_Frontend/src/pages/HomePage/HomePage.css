@@ -1,0 +1,150 @@
+.c-home {
+  width: 100%;
+  height: 91vh;
+  overflow-x: hidden;
+  margin: inherit;
+}
+
+.c-home__title {
+  margin: 20px;
+  font-weight: 600;
+}
+
+.c-home .swiper-pagination {
+  position: -webkit-sticky;
+  position: sticky;
+  margin-top: 10px;
+}
+
+.c-home .swiper-pagination-bullet-active {
+  background-color: var(--color-secondary);
+}
+
+.c-home::-webkit-scrollbar {
+  display: none;
+}
+
+.c-home__bottom {
+  border-top: 1px solid rgba(82, 82, 82, 0.39);
+  margin: 20px;
+}
+
+.c-home__h3 {
+  font-weight: 600;
+  margin: inherit;
+}
+
+.c-home-box {
+  border: 2px solid var(--color-primary-transparent);
+  height: 10px;
+  margin-bottom: 10%;
+  background-color: var(--color-primary-shadow);
+  border-radius: 8px;
+  -webkit-box-shadow: 0px 5px 5px var(--color-primary-transparent);
+          box-shadow: 0px 5px 5px var(--color-primary-transparent);
+  background-image: url(../../assets/PerfilAnimales/huella.png);
+  background-repeat: repeat;
+  background-size: small;
+}
+
+.c-home-box .swiper-slide .swiper-slide-prev {
+  width: 485px;
+  margin: 20px;
+}
+
+.c-home-box__img {
+  width: 13%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  position: absolute;
+  margin-left: 7%;
+  margin-top: 8%;
+  image-rendering: -moz-crisp-edges;
+  /* Firefox */
+  image-rendering: -o-crisp-edges;
+  /* Opera */
+  image-rendering: -webkit-optimize-contrast;
+  /* Webkit (non-standard naming) */
+  image-rendering: crisp-edges;
+  -ms-interpolation-mode: nearest-neighbor;
+  /* IE (non-standard property) */
+}
+
+.c-home-box__paragraph {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-left: 0;
+  padding: 6px;
+  margin-top: 2px;
+}
+
+.c-home-box__titulo {
+  margin-left: 20px;
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+.c-home-box__texto {
+  margin-top: 0;
+  color: black;
+  margin-left: 25%;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--color-terciary);
+}
+
+.c-home__gallery {
+  border-top: 2px solid var(--color-secondary);
+  border-right: 2px solid var(--color-secondary);
+  border-left: 2px solid var(--color-secondary);
+  border-radius: 6px;
+  margin: inherit;
+}
+
+.c-home__gallery__img {
+  width: 100%;
+}
+
+.c-home__gallery__title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: white;
+  background-color: var(--color-secondary);
+  margin-top: -4px;
+  border-radius: 2px;
+  padding: 3%;
+}
+
+.swiper-slide {
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  -webkit-transition-property: -webkit-transform;
+  transition-property: -webkit-transform;
+  transition-property: transform;
+  transition-property: transform, -webkit-transform;
+  margin: 6px;
+}
+/*# sourceMappingURL=HomePage.css.map */

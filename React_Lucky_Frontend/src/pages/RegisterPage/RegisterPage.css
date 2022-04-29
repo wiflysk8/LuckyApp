@@ -1,0 +1,107 @@
+.c-register {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.c-register-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  position: absolute;
+  top: 14%;
+}
+
+.c-register-header__logo {
+  width: 60%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.c-register-link {
+  width: 40%;
+}
+
+.c-register-form {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: absolute;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  top: 40%;
+  height: 60vh;
+}
+
+.c-register-form__input {
+  width: 80%;
+  margin: 2px;
+  height: 40px;
+  font-size: 12px;
+  color: gray;
+  border: none;
+  border-bottom: 1px solid #ccc;
+}
+
+.c-register-form__input:focus {
+  outline: none;
+}
+
+.c-register-form__btn {
+  position: absolute;
+  top: 36%;
+  cursor: pointer;
+  margin: 30px;
+  width: 50%;
+  height: 40px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  color: #e2dede;
+  background-color: var(--color-primary);
+}
+
+.c-register-form__btn--white {
+  background-color: white;
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+  text-align: center;
+}
+
+.c-register-form__eye {
+  position: relative;
+  bottom: 7%;
+  left: 34%;
+  width: 24px;
+  height: 24px;
+}
+
+.c-register-link {
+  position: absolute;
+  top: 52%;
+  width: 100%;
+  text-align: center;
+}
+/*# sourceMappingURL=RegisterPage.css.map */

@@ -277,7 +277,13 @@ export default function FormPage() {
 </label> */}
         </div>
         <div className="c-form-section__boxBtn">
-          <button onClick={(e) => setVisibility(!visibility)} className="c-form-section__btn c-form-section__btn--mod">
+          <button
+            onClick={(e) => {
+              setVisibility(!visibility);
+              e.preventDefault();
+            }}
+            className="c-form-section__btn c-form-section__btn--mod"
+          >
             Enviar
           </button>
           <CustomPopup onClose={popupCloseHandler} show={visibility} title="">
