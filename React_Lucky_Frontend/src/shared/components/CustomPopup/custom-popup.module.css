@@ -1,4 +1,6 @@
 .overlay {
+  height: 100vh;
+  width: 100vw;
   visibility: hidden;
   opacity: 0;
   position: fixed;
