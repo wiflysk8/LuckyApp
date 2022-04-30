@@ -1,5 +1,4 @@
 import React from "react";
-import Nav from "../../shared/components/Nav/Nav";
 import "./MascotasDetailPage.scss";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
@@ -12,7 +11,6 @@ import { Link } from "react-router-dom";
 import MachoImg from "../../assets/PerfilAnimales/male.png";
 import HembraImg from "../../assets/PerfilAnimales/female.png";
 import FavImg from "../../assets/PerfilAnimales/favoritos.png";
-//import FavImg2 from "../../assets/PerfilAnimales/favoritos2.png";
 import Compartir from "../../assets/PerfilAnimales/compartir.png";
 
 export default function MascotasDetailPage() {
@@ -99,7 +97,6 @@ export default function MascotasDetailPage() {
             {showDetails === "adopcion" && <Adopcion mascotaDetail={mascotaDetail} />}
           </div>
         </div>
-        <Nav />
       </div>
     )
   );

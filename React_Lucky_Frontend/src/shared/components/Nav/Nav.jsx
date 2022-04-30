@@ -6,13 +6,14 @@ import mapPrimary from "../../../assets/Navegador/map2.png";
 import mapSecondary from "../../../assets/Navegador/map1.png";
 import petPrimary from "../../../assets/Navegador/pet2.png";
 import petSecondary from "../../../assets/Navegador/pet1.png";
-import profileImg from "../../../assets/Perfil/profile.jpg";
+
 import moreSecondary from "../../../assets/Navegador/mas1.png";
 import morePrimary from "../../../assets/Navegador/mas2.png";
 import "./Nav.scss";
 
 const Nav = () => {
   const location = useLocation();
+  const user = JSON.parse(localStorage.getItem("user"));
   return (
     <div>
       <nav className="c-navbar">
@@ -41,10 +42,10 @@ const Nav = () => {
         )}
 
         {location.pathname === "/profile" ? (
-          <img className="c-navbar__img c-navbar__img--active" src={profileImg} alt="home" />
+          <img className="c-navbar__img c-navbar__img--active" src={user.image} alt="home" />
         ) : (
           <NavLink to="/profile">
-            <img className="c-navbar__img" src={profileImg} alt="home" />
+            <img className="c-navbar__img" src={user.image} alt="home" />
           </NavLink>
         )}
 

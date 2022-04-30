@@ -20,7 +20,7 @@ export default function RegisterPage() {
   // }
 
   const onSubmit = (formData) => {
-    API.post("register", formData).then((res) => {
+    API.post("users/register", formData).then((res) => {
       console.log("Register user");
       navigate("/login");
     });
