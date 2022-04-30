@@ -40,7 +40,10 @@ const AnimalsFilter = () =>{
         e.preventDefault();
         /*let url = await axios.get("https://luismrtinez.com/mascotas");*/
     }
-
+/* la idea es ir metiendo uno a uno los cambios en valoresFiltro para después poder usar los strings y ponerlos en el filtro como tal. cada tipo de boton tiene una
+funcion a seguir, de esta manera hacemos que cada uno pueda devolver un valor de su tipo.
+faltaria que dependiendo de donde hagas click devuelva un valor (vaya, la gracia del filtro). he ido trasteando solo con uno, el de animales.
+me pongo con ello por la noche, al final he tenido mas lio del esperado. cualquier sugerencia la aceptaré positivamente :)*/
     const filteredAnimal = () =>{
         if (selected === false | valoresFiltro[0] === "sinAnimal") {
             setSelected(true);
