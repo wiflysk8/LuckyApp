@@ -11,11 +11,11 @@ export default function FormPage() {
   const popupCloseHandler = (e) => {
     setVisibility(e);
   };
-  const { register, handleSubmit, watch } = useForm();
+  const { register /* , handleSubmit, watch */ } = useForm();
 
-  const submit = (data) => {
-    /* console.log(data); */
-  };
+  /*  const submit = (data) => {
+    console.log(data);
+  }; */
 
   return (
     <form className="c-form">
@@ -23,9 +23,9 @@ export default function FormPage() {
         <div>
           <h3 className="c-form-section__mainTitle">Formulario de adopción</h3>
           <section className="c-progress">
-            <div class="container">
-              <div class="progress2 progress-moved">
-                <div class="progress-bar2"></div>
+            <div className="container">
+              <div className="progress2 progress-moved">
+                <div className="progress-bar2"></div>
               </div>
             </div>
           </section>
@@ -74,9 +74,9 @@ export default function FormPage() {
             <h3 className="c-form-section__mainTitle">Formulario de adopción</h3>
           </div>
           <section className="c-progress">
-            <div class="container">
-              <div class="progress2 progress-moved">
-                <div class="progress-bar2 progress-bar2--2"></div>
+            <div className="container">
+              <div className="progress2 progress-moved">
+                <div className="progress-bar2 progress-bar2--2"></div>
               </div>
             </div>
           </section>
@@ -92,13 +92,13 @@ export default function FormPage() {
             <div className="c-radius-right">
               <div className="c-radius-right__1">
                 <input className="c-form-section__input c-form-section__input--mod" type="radio" name="alright" {...register("otros", { required: true })} />
-                <label className="c-form-section__option" for="si">
+                <label className="c-form-section__option" htmlFor="si">
                   Si
                 </label>
               </div>
               <div className="c-radius-right__2">
                 <input className="c-form-section__input c-form-section__input--mod" type="radio" name="alright" {...register("otros", { required: true })} />
-                <label className="c-form-section__option" for="no">
+                <label className="c-form-section__option" htmlFor="no">
                   No
                 </label>
               </div>
@@ -141,9 +141,9 @@ export default function FormPage() {
             <h3 className="c-form-section__mainTitle">Formulario de adopción</h3>
           </div>
           <section className="c-progress">
-            <div class="container">
-              <div class="progress2 progress-moved">
-                <div class="progress-bar2 progress-bar2--3"></div>
+            <div className="container">
+              <div className="progress2 progress-moved">
+                <div className="progress-bar2 progress-bar2--3"></div>
               </div>
             </div>
           </section>
@@ -193,13 +193,13 @@ export default function FormPage() {
             <div className="c-radius-right">
               <div className="c-radius-right__1">
                 <input className="c-form-section__input c-form-section__input--mod" type="radio" name="mudar" {...register("mudar", { required: true })} />
-                <label className="c-form-section__option" for="si">
+                <label className="c-form-section__option" htmlFor="si">
                   Si
                 </label>
               </div>
               <div className="c-radius-right__2">
                 <input className="c-form-section__input c-form-section__input--mod" type="radio" name="mudar" {...register("mudar", { required: true })} />
-                <label className="c-form-section__option" for="no">
+                <label className="c-form-section__option" htmlFor="no">
                   No
                 </label>
               </div>
@@ -212,13 +212,13 @@ export default function FormPage() {
             <div className="c-radius-right">
               <div className="c-radius-right__1">
                 <input className="c-form-section__input c-form-section__input--mod" type="radio" name="jardin" {...register("jardin", { required: true })} />
-                <label className="c-form-section__option" for="si">
+                <label className="c-form-section__option" htmlFor="si">
                   Si
                 </label>
               </div>
               <div className="c-radius-right__2">
                 <input className="c-form-section__input c-form-section__input--mod" type="radio" name="jardin" {...register("jardin", { required: true })} />
-                <label className="c-form-section__option" for="no">
+                <label className="c-form-section__option" htmlFor="no">
                   No
                 </label>
               </div>
@@ -231,13 +231,13 @@ export default function FormPage() {
             <div className="c-radius-right">
               <div className="c-radius-right__1">
                 <input className="c-form-section__input c-form-section__input--mod" type="radio" name="compis" {...register("compis", { required: true })} />
-                <label className="c-form-section__option" for="si">
+                <label className="c-form-section__option" htmlFor="si">
                   Si
                 </label>
               </div>
               <div className="c-radius-right__2">
                 <input className="c-form-section__input c-form-section__input--mod" type="radio" name="compis" {...register("compis", { required: true })} />
-                <label className="c-form-section__option" for="no">
+                <label className="c-form-section__option" htmlFor="no">
                   No
                 </label>
               </div>
@@ -250,13 +250,13 @@ export default function FormPage() {
             <div className="c-radius-right">
               <div className="c-radius-right__1">
                 <input className="c-form-section__input c-form-section__input--mod" type="radio" name="alright" {...register("alright", { required: true })} />
-                <label className="c-form-section__option" for="si">
+                <label className="c-form-section__option" htmlFor="si">
                   Si
                 </label>
               </div>
               <div className="c-radius-right__2">
                 <input className="c-form-section__input c-form-section__input--mod" type="radio" name="alright" {...register("alright", { required: true })} />
-                <label className="c-form-section__option" for="no">
+                <label className="c-form-section__option" htmlFor="no">
                   No
                 </label>
               </div>
@@ -268,10 +268,10 @@ export default function FormPage() {
         <div className='c-radius-right'>
         <div className='c-radius-right__1'>
         <input className="c-form-section__input c-form-section__input--mod" type="radio" name="acuerdo" {...register("acuerdo", {required:true})}/>
-        <label className='c-form-section__option' for="si">Si</label></div>
+        <label className='c-form-section__option' htmlFor="si">Si</label></div>
         <div className='c-radius-right__2'>
         <input className="c-form-section__input c-form-section__input--mod" type="radio" name="acuerdo" {...register("acuerdo", {required:true})}/>
-        <label className='c-form-section__option' for="no">No</label>
+        <label className='c-form-section__option' htmlFor="no">No</label>
         </div>
         </div>
 </label> */}
@@ -293,23 +293,4 @@ export default function FormPage() {
       </section>
     </form>
   );
-}
-
-{
-  /* <form onSubmit={handleSubmit(submit)}>
-<div>
-    <label>
-        Name
-        <input type="text" {...register("name", {required:true})}/>
-    </label>
-    <FormError error={errors.name}/> 
-</div>
-
-<div>
-    <label>
-        Surname
-        <input type="text" {...register("surname", {required:true})}/>
-    </label>
-    <FormError error={errors.surname}/>
-</div> */
 }

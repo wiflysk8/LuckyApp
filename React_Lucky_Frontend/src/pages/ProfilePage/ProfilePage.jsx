@@ -1,4 +1,5 @@
-import React from "react";
+/* eslint-disable react-hooks/exhaustive-deps */
+import React, { useEffect, useState } from "react";
 import Nav from "../../shared/components/Nav/Nav";
 
 import miPerfil from "../../assets/Perfil/miPerfil.png";
@@ -10,15 +11,26 @@ import Apadrinar from "../../assets/Perfil/apadrinar.png";
 import Donar from "../../assets/Perfil/donar.png";
 import Arrow from "../../assets/Perfil/arrow.png";
 import "./ProfilePage.scss";
+import axios from "axios";
 
 export default function ProfilePage() {
-  const user = JSON.parse(localStorage.getItem("user"));
+  const [user, setUser] = useState();
+
+  const localUser = JSON.parse(localStorage.getItem("user"));
+  console.log(localUser._id);
+
+  useEffect(() => {
+    const getUser = async () => {
+      const res = await axios.get(`http://localhost:5000/users/${localUser._id}`);
+      setUser(res.data);
+    };
+
+    getUser();
+  }, []);
 
   return (
     <section className="c-profile">
-      <div className="c-profile-header">
-        <img className="c-profile-header__img" src={user.image} alt="avatar" />
-      </div>
+      <div className="c-profile-header">{user && <img className="c-profile-header__img" src={user[0].image} alt="imagen" />}</div>
       <div className="c-profile-top">
         <div className="c-profile-top__button">
           <div className="c-profile-top__button__left">
