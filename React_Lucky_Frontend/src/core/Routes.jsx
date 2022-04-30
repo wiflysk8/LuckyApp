@@ -12,6 +12,10 @@ import MapPage from "../pages/MapPage/MapPage";
 import MorePage from "../pages/MorePage/MorePage";
 import Slider from "../shared/components/Slider/Slider";
 import MascotasDetailPage from "../pages/MascotasDetailPage/MascotasDetailPage";
+import Advertencia from "../shared/components/Advertencia/Advertencia";
+import Enviado from "../shared/components/Enviado/Enviado";
+import FormPage from "../pages/FormPage/FormPage";
+import AnimalsFilter from "../pages/AnimalsFilter/AnimalsFilter";
 
 const RoutesFile = () => {
   return (
@@ -73,6 +77,38 @@ const RoutesFile = () => {
         element={
           <RequireAuth>
             <MorePage />
+          </RequireAuth>
+        }
+      />
+      <Route
+        path="/advertencia"
+        element={
+          <RequireAuth>
+            <Advertencia />
+          </RequireAuth>
+        }
+      />
+      <Route
+        path="/formulario"
+        element={
+          <RequireAuth>
+            <FormPage />
+          </RequireAuth>
+        }
+      />
+      <Route
+        path="/enviado"
+        element={
+          <RequireAuth>
+            <Enviado />
+          </RequireAuth>
+        }
+      />
+      <Route
+        path="/filtro"
+        element={
+          <RequireAuth>
+            <AnimalsFilter />
           </RequireAuth>
         }
       />
