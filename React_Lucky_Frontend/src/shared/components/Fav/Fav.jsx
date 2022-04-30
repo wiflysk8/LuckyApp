@@ -1,5 +1,5 @@
 import { useState } from "react";
-import FavImg from "../../../assets/PerfilAnimales/favoritos.png";
+import FavImg from "../../../assets/PerfilAnimales/hearth.png";
 import FavImg2 from "../../../assets/PerfilAnimales/favoritos2.png";
 
 import "./Fav.scss";

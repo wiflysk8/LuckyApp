@@ -19,7 +19,7 @@ const AdopcionPage = () => {
         <input type="text" className="c-adopcionPage-search__input" placeholder="Buscar" onChange={onSearch} />
         <img className="c-adopcionPage-search__logo" src={SearchLogo} alt="lupa" />
       </div>
-      <img src={TemporalImg} alt="temp img" />
+      <img className="c-adopcionPage__tmp"src={TemporalImg} alt="temp img" />
       <Link className="c-Link" to="/estado"><div className="c-adopcionPage__button">
         <div className="c-profile-top__button__left">
           <p className="c-profile-top__button__p">Estado de la adopción</p>
