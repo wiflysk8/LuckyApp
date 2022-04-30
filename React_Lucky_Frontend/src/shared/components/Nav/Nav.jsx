@@ -15,9 +15,11 @@ import { UserContext } from "../../contexts/UserContext";
 const Nav = () => {
   const location = useLocation();
   const {user} = useContext(UserContext);
+  console.log(user[0])
 
   return (
     <div>
+
       <nav className="c-navbar">
         {location.pathname === "/home" ? (
           <img className="c-navbar__icon" src={homeSecondary} alt="home" />
@@ -42,7 +44,7 @@ const Nav = () => {
             <img className="c-navbar__icon" src={petPrimary} alt="home" />
           </NavLink>
         )}
-
+         
         {location.pathname === "/profile" ? (
           <img className="c-navbar__img c-navbar__img--active" src={user[0].image} alt="home" />
         ) : (
@@ -59,6 +61,7 @@ const Nav = () => {
           </NavLink>
         )}
       </nav>
+
     </div>
   );
 };

@@ -5,6 +5,8 @@ import "./EstadoAdopcion.scss";
 import enProcesoImg from "../../../assets/Estados/proceso.png";
 import SearchLogo from "../../../assets/Buscador/lupa.png";
 import Filter from "../../../assets/Buscador/filtro.png";
+import { Link } from "react-router-dom";
+import arrow from "../../../assets/Buscador/flechaatras.png"
 
 const EstadoAdopcion = () => {
   const [filteredMascotas, setFilteredMascotas] = useState([]);
@@ -42,9 +44,12 @@ const EstadoAdopcion = () => {
 
   return (
     <div className="c-estado">
-      <input type="text" className="c-map__input" placeholder="Buscar" onChange={onSearch}/>
+    
+    <Link to= "/adopcion"><img className="c-estado__arrow" src={arrow} alt="flecha"/></Link>
+      <input type="text" className="c-estado__input" placeholder="Buscar" onChange={onSearch}/>
       <img className="c-map__logo" src={SearchLogo} alt="lupa" />
       <img className="c-map__logo c-map__logo--filter" src={Filter} alt="lupa" />
+     
       {user &&  <>
      {mascotas.map((mascota, index) => (
         <div key={index} className="c-estado-adopcion">
@@ -64,10 +69,7 @@ const EstadoAdopcion = () => {
               <p className="c-estado-adopcion__bottom__right__p">Sexo: {mascota.sexo}</p>
             </div>
           </div>
-        </div>
-        
-        
-       
+        </div>          
       ))}</>}
       
     </div>

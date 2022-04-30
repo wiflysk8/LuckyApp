@@ -20,12 +20,13 @@ export default function FormPage({mascotaDetail}) {
   /*  const submit = (data) => {
     console.log(data);
   }; */
-  console.log("formascota", mascotaDetail[0].nombre, mascotaDetail[0]._id)
-  console.log("formuser", user[0].name, user[0]._id)
+  console.log("MASCOTA ID",  mascotaDetail[0]._id)
+  console.log("USER ID",  user[0]._id)
+
   const onSubmit = () => {
-    API.put("users/add-mascotas", user._id, mascotaDetail[0].id).then((res) => {
+    API.put("users/add-mascotas",{userId: user[0]._id, mascotaId:mascotaDetail[0]._id}).then((res) => {
       console.log("Add mascota work");
-      /* navigate("/login"); */
+      
     });
   };
 
