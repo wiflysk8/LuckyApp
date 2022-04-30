@@ -1,21 +1,33 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import "./FormPage.scss";
 import { useForm } from "react-hook-form";
 import flechaatras from "../../assets/Buscador/flechaatras.png";
 import Enviado from "../../shared/components/Enviado/Enviado";
 import CustomPopup from "../../shared/components/CustomPopup/CustomPopup";
+import { API } from "../../shared/services/api";
+import { UserContext } from "../../shared/contexts/UserContext";
 
-export default function FormPage() {
+export default function FormPage({mascotaDetail}) {
   const [visibility, setVisibility] = useState(false);
+  const {user} = useContext(UserContext);
+
+
 
   const popupCloseHandler = (e) => {
     setVisibility(e);
   };
   const { register /* , handleSubmit, watch */ } = useForm();
-
   /*  const submit = (data) => {
     console.log(data);
   }; */
+  console.log("formascota", mascotaDetail[0].nombre, mascotaDetail[0]._id)
+  console.log("formuser", user[0].name, user[0]._id)
+  const onSubmit = () => {
+    API.put("users/add-mascotas", user._id, mascotaDetail[0].id).then((res) => {
+      console.log("Add mascota work");
+      /* navigate("/login"); */
+    });
+  };
 
   return (
     <form className="c-form">
@@ -278,10 +290,7 @@ export default function FormPage() {
         </div>
         <div className="c-form-section__boxBtn">
           <button
-            onClick={(e) => {
-              setVisibility(!visibility);
-              e.preventDefault();
-            }}
+            onClick={(e) => { setVisibility(!visibility); e.preventDefault();onSubmit(); }}
             className="c-form-section__btn c-form-section__btn--mod"
           >
             Enviar

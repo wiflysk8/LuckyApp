@@ -1,7 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, { useEffect, useState } from "react";
+import React, { useContext } from "react";
 import Nav from "../../shared/components/Nav/Nav";
-
 import miPerfil from "../../assets/Perfil/miPerfil.png";
 import Direcciones from "../../assets/Perfil/direcciones.png";
 import Favoritos from "../../assets/Perfil/favoritos.png";
@@ -11,22 +10,11 @@ import Apadrinar from "../../assets/Perfil/apadrinar.png";
 import Donar from "../../assets/Perfil/donar.png";
 import Arrow from "../../assets/Perfil/arrow.png";
 import "./ProfilePage.scss";
-import axios from "axios";
+import { Link } from "react-router-dom";
+import { UserContext } from "../../shared/contexts/UserContext";
 
 export default function ProfilePage() {
-  const [user, setUser] = useState();
-
-  const localUser = JSON.parse(localStorage.getItem("user"));
-  console.log(localUser._id);
-
-  useEffect(() => {
-    const getUser = async () => {
-      const res = await axios.get(`http://localhost:5000/users/${localUser._id}`);
-      setUser(res.data);
-    };
-
-    getUser();
-  }, []);
+  const {user} = useContext(UserContext);
 
   return (
     <section className="c-profile">
@@ -71,7 +59,7 @@ export default function ProfilePage() {
         </div>
       </div>
       <div className="c-profile-bottom">
-        <div className="c-profile-top__button">
+       <Link to="/estado" className="c-Link"> <div className="c-profile-top__button">
           <div className="c-profile-top__button__left">
             <img className="c-profile-top__button__left__img" src={EstadoAdopcion} alt="icon" />
             <p className="c-profile-top__button__p">Estado de la adopción</p>
@@ -80,6 +68,7 @@ export default function ProfilePage() {
             <img className="c-profile-top__button__right__img" src={Arrow} alt="icon" />
           </div>
         </div>
+        </Link>
         <div className="c-profile-top__button">
           <div className="c-profile-top__button__left">
             <img className="c-profile-top__button__left__img" src={Apadrinar} alt="icon" />
