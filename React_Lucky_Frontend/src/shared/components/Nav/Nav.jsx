@@ -14,8 +14,7 @@ import { UserContext } from "../../contexts/UserContext";
 
 const Nav = () => {
   const location = useLocation();
-  const {user} = useContext(UserContext);
-  console.log(user[0])
+  const user = JSON.parse(localStorage.getItem("user"));
 
   return (
     <div>
@@ -46,10 +45,10 @@ const Nav = () => {
         )}
          
         {location.pathname === "/profile" ? (
-          <img className="c-navbar__img c-navbar__img--active" src={user[0].image} alt="home" />
+          <img className="c-navbar__img c-navbar__img--active" src={user.image} alt="home" />
         ) : (
           <NavLink to="/profile">
-            <img className="c-navbar__img" src={user[0].image} alt="home" />
+            <img className="c-navbar__img" src={user.image} alt="home" />
           </NavLink>
         )}
 

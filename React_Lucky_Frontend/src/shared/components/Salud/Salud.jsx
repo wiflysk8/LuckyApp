@@ -83,7 +83,7 @@ export default function Salud({ mascotaDetail }) {
           Adoptar
         </button>
         <CustomPopup onClose={popupCloseHandler} show={visibility} title="">
-          <Advertencia />
+          <Advertencia mascotaDetail={mascotaDetail}/>
         </CustomPopup>
       </div>
     </div>

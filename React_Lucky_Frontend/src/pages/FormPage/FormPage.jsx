@@ -6,6 +6,7 @@ import Enviado from "../../shared/components/Enviado/Enviado";
 import CustomPopup from "../../shared/components/CustomPopup/CustomPopup";
 import { API } from "../../shared/services/api";
 import { UserContext } from "../../shared/contexts/UserContext";
+import { Link } from "react-router-dom";
 
 export default function FormPage({mascotaDetail}) {
   const [visibility, setVisibility] = useState(false);
@@ -20,12 +21,11 @@ export default function FormPage({mascotaDetail}) {
   /*  const submit = (data) => {
     console.log(data);
   }; */
-  console.log("MASCOTA ID",  mascotaDetail[0]._id)
-  console.log("USER ID",  user[0]._id)
+ /*  console.log("MASCOTA ID",  mascotaDetail[0]._id)
+  console.log("USER ID",  user[0]._id) */
 
   const onSubmit = () => {
     API.put("users/add-mascotas",{userId: user[0]._id, mascotaId:mascotaDetail[0]._id}).then((res) => {
-      console.log("Add mascota work");
       
     });
   };
@@ -34,6 +34,9 @@ export default function FormPage({mascotaDetail}) {
     <form className="c-form">
       <section className="c-form-section" id="firstForm">
         <div>
+        <Link to ="/adopcion">
+              <img className="c-form-section__arrow" src={flechaatras} alt="icon" href="#firstForm" />
+            </Link>
           <h3 className="c-form-section__mainTitle">Formulario de adopción</h3>
           <section className="c-progress">
             <div className="container">
