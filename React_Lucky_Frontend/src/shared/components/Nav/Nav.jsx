@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+
 import { NavLink, useLocation } from "react-router-dom";
 import homePrimary from "../../../assets/Navegador/home2.png";
 import homeSecondary from "../../../assets/Navegador/home1.png";
@@ -6,11 +6,10 @@ import mapPrimary from "../../../assets/Navegador/map2.png";
 import mapSecondary from "../../../assets/Navegador/map1.png";
 import petPrimary from "../../../assets/Navegador/pet2.png";
 import petSecondary from "../../../assets/Navegador/pet1.png";
-
 import moreSecondary from "../../../assets/Navegador/mas1.png";
 import morePrimary from "../../../assets/Navegador/mas2.png";
 import "./Nav.scss";
-import { UserContext } from "../../contexts/UserContext";
+
 
 const Nav = () => {
   const location = useLocation();
