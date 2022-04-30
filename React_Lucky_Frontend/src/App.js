@@ -4,6 +4,7 @@ import { BrowserRouter as Router } from "react-router-dom";
 import { JwtContext } from "./shared/contexts/JwtContext";
 import LandingPage from "./shared/components/LandingPage/LandingPage";
 import RoutesFile from "./core/Routes";
+import UserContextProvider from "./shared/contexts/UserContext";
 
 function App() {
   const [jwt, setJwt] = useState(localStorage.getItem("token") || null);
@@ -25,10 +26,13 @@ function App() {
       {!landing && (
         <JwtContext.Provider value={{ jwt, setJwt }}>
           <div className="App">
-            <div className="App-header">
+            <div className="App-header">          
               <Router>
+              <UserContextProvider>
                 <RoutesFile />
+                </UserContextProvider>
               </Router>
+              
             </div>
           </div>
         </JwtContext.Provider>
