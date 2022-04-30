@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
+import React, {  useContext } from "react";
 import Nav from "../../shared/components/Nav/Nav";
 import "./AdopcionPage.scss";
 import Gallery from "../../shared/components/Gallery/Gallery";
@@ -7,34 +6,12 @@ import SearchLogo from "../../assets/Buscador/lupa.png";
 import Arrow from "../../assets/Perfil/arrow.png";
 import TemporalImg from "../../assets/Estados/temp.png";
 import Filter from "../../assets/Buscador/filtro.png";
+import { Link } from "react-router-dom";
+import { UserContext } from "../../shared/contexts/UserContext";
 
 const AdopcionPage = () => {
-  const [mascotas, setMascotas] = useState([]);
-  const [filteredMascotas, setFilteredMascotas] = useState([]);
+  const {mascotas, onSearch,} = useContext(UserContext);
 
-  useEffect(() => {
-    const getMascotas = async () => {
-      const res = await axios.get("https://luismrtinez.com/mascotas");
-      setMascotas(res.data);
-      setFilteredMascotas(res.data);
-    };
-
-    getMascotas();
-  }, []);
-
-  const onSearch = (event) => {
-    onFilter(event.target.value);
-  };
-
-  const onFilter = (inputValue) => {
-    let filteredMascota = filteredMascotas.filter((mascota) => {
-      if (mascota.especie.toLowerCase().includes(inputValue.toLowerCase()) || mascota.nombre.toLowerCase().includes(inputValue.toLowerCase())) {
-        return mascota;
-      }
-      return false;
-    });
-    setMascotas(filteredMascota);
-  };
 
   return (
     <section className="c-adopcionPage">
@@ -43,7 +20,7 @@ const AdopcionPage = () => {
         <img className="c-adopcionPage-search__logo" src={SearchLogo} alt="lupa" />
       </div>
       <img src={TemporalImg} alt="temp img" />
-      <div className="c-adopcionPage__button">
+      <Link className="c-Link" to="/estado"><div className="c-adopcionPage__button">
         <div className="c-profile-top__button__left">
           <p className="c-profile-top__button__p">Estado de la adopción</p>
         </div>
@@ -51,6 +28,7 @@ const AdopcionPage = () => {
           <img className="c-profile-top__button__right__img" src={Arrow} alt="icon" />
         </div>
       </div>
+      </Link>
       <div className="c-adopcionPage-filter">
         <h3 className="c-adopcionPage-filter__h3">Animales en adopción</h3>
         <img className="c-adopcionPage-filter__img" src={Filter} alt="filter" />
