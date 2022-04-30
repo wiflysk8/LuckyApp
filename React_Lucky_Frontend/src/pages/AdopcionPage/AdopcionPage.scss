@@ -8,6 +8,10 @@
   &::-webkit-scrollbar {
     display: none;
   }
+  &__tmp{
+    position:relative;
+    bottom: 2%;
+  }
   &__button {
     display: flex;
     justify-content: space-between;
@@ -15,7 +19,6 @@
     width: 99%;
     height: 6vh;
     border-radius: 6px;
-    margin-top: 14px;
     padding-top: 4px;
   }
 
@@ -47,6 +50,7 @@
     align-items: center;
     margin-top: 14px;
     &__h3 {
+      margin: 0px;
       color: var(--color-primary-quaternary);
       font-weight: 500;
     }
