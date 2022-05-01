@@ -5,7 +5,8 @@ export const UserContext = createContext();
 
 export default function UserContextProvider({ children }) {
   const [user, setUser] = useState();
-
+  const [mascotas, setMascotas] = useState([]);
+  const [filteredMascotas, setFilteredMascotas] = useState([]);
   const localUser = JSON.parse(localStorage.getItem("user"));
 
   useEffect(() => {
@@ -21,12 +22,9 @@ export default function UserContextProvider({ children }) {
     }
   }, []);
 
-  const [mascotas, setMascotas] = useState([]);
-  const [filteredMascotas, setFilteredMascotas] = useState([]);
-
   useEffect(() => {
     const getMascotas = async () => {
-      const res = await axios.get("https://luismrtinez.com/mascotas");
+      const res = await axios.get("http://localhost:5000/mascotas");
       setMascotas(res.data);
       setFilteredMascotas(res.data);
     };

@@ -20,6 +20,7 @@ export default function Datos({ mascotaDetail }) {
       }
     });
   };
+  console.log(adopted);
 
   const popupCloseHandler = (e) => {
     setVisibility(e);
@@ -91,9 +92,7 @@ export default function Datos({ mascotaDetail }) {
 
       <div className="c-adopcion-datos__bottom">
         <h4 className="c-adopcion-datos__bottom__h4">Historia</h4>
-        <p className="c-adopcion-datos__p">
-          Lorem ipsum dolor natoascepellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo,{mascotaDetail[0].historia}{" "}
-        </p>
+        <p className="c-adopcion-datos__p">Lorem ipsum dolor natoascepellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo,{mascotaDetail.historia} </p>
       </div>
 
       <div className="btn">

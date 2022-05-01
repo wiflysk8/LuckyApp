@@ -14,8 +14,8 @@ export default function Salud({ mascotaDetail }) {
   const { user } = useContext(UserContext);
 
   const handleAdopted = () => {
-    user[0].mascotas.map((mascota) => {
-      if (mascota.id === mascotaDetail.id) {
+    user.mascotas.map((mascota) => {
+      if (mascota.id === mascotaDetail[0].id) {
         setAdopted(true);
       }
     });
@@ -87,7 +87,7 @@ export default function Salud({ mascotaDetail }) {
         </div>
         <div className="c-salud__bottom">
           <h4 className="c-salud__bottom__h4">Tienes que saber que</h4>
-          <p className="c-salud__p">Lorem ipsum dolor natoascepellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo,{mascotaDetail[0].historia} </p>
+          <p className="c-salud__p">Lorem ipsum dolor natoascepellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo,{mascotaDetail.historia} </p>
         </div>
       </div>
       <div className="btn">

@@ -13,8 +13,8 @@ export default function Adopcion({ mascotaDetail }) {
   const { user } = useContext(UserContext);
 
   const handleAdopted = () => {
-    user[0].mascotas.map((mascota) => {
-      if (mascota.id === mascotaDetail.id) {
+    user.mascotas.map((mascota) => {
+      if (mascota.id === mascotaDetail[0].id) {
         setAdopted(true);
       }
     });

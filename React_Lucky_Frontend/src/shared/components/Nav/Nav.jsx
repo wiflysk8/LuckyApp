@@ -8,12 +8,10 @@ import petSecondary from "../../../assets/Navegador/pet1.png";
 import moreSecondary from "../../../assets/Navegador/mas1.png";
 import morePrimary from "../../../assets/Navegador/mas2.png";
 import "./Nav.scss";
-import { useContext } from "react";
-import { UserContext } from "../../contexts/UserContext";
 
 const Nav = () => {
   const location = useLocation();
-  const { user } = useContext(UserContext);
+  const localUser = JSON.parse(localStorage.getItem("user"));
 
   return (
     <div>
@@ -43,10 +41,10 @@ const Nav = () => {
         )}
 
         {location.pathname === "/profile" ? (
-          <img className="c-navbar__img c-navbar__img--active" src={user.image} alt="home" />
+          <img className="c-navbar__img c-navbar__img--active" src={localUser.image} alt="home" />
         ) : (
           <NavLink to="/profile">
-            <img className="c-navbar__img" src={user.image} alt="home" />
+            <img className="c-navbar__img" src={localUser.image} alt="home" />
           </NavLink>
         )}
 
