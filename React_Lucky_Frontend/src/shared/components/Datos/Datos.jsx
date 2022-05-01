@@ -14,7 +14,7 @@ export default function Datos({ mascotaDetail }) {
   const { user } = useContext(UserContext);
 
   const handleAdopted = () => {
-    user[0].mascotas.map((mascota) => {
+    user.mascotas.map((mascota) => {
       if (mascota._id === mascotaDetail[0]._id) {
         setAdopted(true);
       }

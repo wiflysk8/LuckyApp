@@ -14,11 +14,11 @@ import { Link } from "react-router-dom";
 import { UserContext } from "../../shared/contexts/UserContext";
 
 export default function ProfilePage() {
-  const {user} = useContext(UserContext);
+  const { user } = useContext(UserContext);
 
   return (
     <section className="c-profile">
-      <div className="c-profile-header">{user && <img className="c-profile-header__img" src={user[0].image} alt="imagen" />}</div>
+      <div className="c-profile-header">{user && <img className="c-profile-header__img" src={user.image} alt="imagen" />}</div>
       <div className="c-profile-top">
         <div className="c-profile-top__button">
           <div className="c-profile-top__button__left">
@@ -59,15 +59,17 @@ export default function ProfilePage() {
         </div>
       </div>
       <div className="c-profile-bottom">
-       <Link to="/estado" className="c-Link"> <div className="c-profile-top__button">
-          <div className="c-profile-top__button__left">
-            <img className="c-profile-top__button__left__img" src={EstadoAdopcion} alt="icon" />
-            <p className="c-profile-top__button__p">Estado de la adopción</p>
+        <Link to="/estado" className="c-Link">
+          {" "}
+          <div className="c-profile-top__button">
+            <div className="c-profile-top__button__left">
+              <img className="c-profile-top__button__left__img" src={EstadoAdopcion} alt="icon" />
+              <p className="c-profile-top__button__p">Estado de la adopción</p>
+            </div>
+            <div className="c-profile-top__button__right">
+              <img className="c-profile-top__button__right__img" src={Arrow} alt="icon" />
+            </div>
           </div>
-          <div className="c-profile-top__button__right">
-            <img className="c-profile-top__button__right__img" src={Arrow} alt="icon" />
-          </div>
-        </div>
         </Link>
         <div className="c-profile-top__button">
           <div className="c-profile-top__button__left">
