@@ -20,7 +20,6 @@ export default function Datos({ mascotaDetail }) {
       }
     });
   };
-  console.log(adopted);
 
   const popupCloseHandler = (e) => {
     setVisibility(e);
