@@ -7,10 +7,12 @@ import CustomPopup from "../../shared/components/CustomPopup/CustomPopup";
 import { API } from "../../shared/services/api";
 import { UserContext } from "../../shared/contexts/UserContext";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export default function FormPage({ mascotaDetail }) {
   const [visibility, setVisibility] = useState(false);
   const { user } = useContext(UserContext);
+  const navigate = useNavigate();
 
   const popupCloseHandler = (e) => {
     setVisibility(e);
@@ -294,6 +296,8 @@ export default function FormPage({ mascotaDetail }) {
               setVisibility(!visibility);
               e.preventDefault();
               onSubmit();
+              navigate("/estado");
+              window.location.reload();
             }}
             className="c-form-section__btn c-form-section__btn--mod"
           >

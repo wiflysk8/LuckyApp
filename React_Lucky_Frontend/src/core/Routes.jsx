@@ -17,10 +17,12 @@ import Enviado from "../shared/components/Enviado/Enviado";
 import FormPage from "../pages/FormPage/FormPage";
 import Fav from "../shared/components/Fav/Fav";
 import EstadoAdopcion from "../shared/components/EstadoAdopcion/EstadoAdopcion";
+import LandingPage from "../shared/components/LandingPage/LandingPage";
 
 const RoutesFile = () => {
   return (
     <Routes>
+      <Route path="/" element={<LandingPage />} />
       <Route path="/slider" element={<Slider />} />
       <Route path="/welcome" element={<WelcomePage />} />
       <Route path="/login" element={<LoginPage />} />
@@ -124,7 +126,7 @@ const RoutesFile = () => {
           </RequireAuth>
         }
       />
-      <Route path="/" element={<Navigate to="/slider" />} />
+      {/*   <Route path="/" element={<Navigate to="/slider" />} /> */}
     </Routes>
   );
 };
