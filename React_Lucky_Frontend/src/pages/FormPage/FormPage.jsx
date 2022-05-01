@@ -19,8 +19,6 @@ export default function FormPage({ mascotaDetail }) {
   /*  const submit = (data) => {
     console.log(data);
   }; */
-  /*  console.log("MASCOTA ID",  mascotaDetail[0]._id)
-  console.log("USER ID",  user[0]._id) */
 
   const onSubmit = () => {
     API.put("users/add-mascotas", { userId: user._id, mascotaId: mascotaDetail[0]._id }).then((res) => {});
