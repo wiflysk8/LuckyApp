@@ -1,4 +1,3 @@
-
 import { NavLink, useLocation } from "react-router-dom";
 import homePrimary from "../../../assets/Navegador/home2.png";
 import homeSecondary from "../../../assets/Navegador/home1.png";
@@ -9,15 +8,15 @@ import petSecondary from "../../../assets/Navegador/pet1.png";
 import moreSecondary from "../../../assets/Navegador/mas1.png";
 import morePrimary from "../../../assets/Navegador/mas2.png";
 import "./Nav.scss";
-
+import { useContext } from "react";
+import { UserContext } from "../../contexts/UserContext";
 
 const Nav = () => {
   const location = useLocation();
-  const user = JSON.parse(localStorage.getItem("user"));
+  const { user } = useContext(UserContext);
 
   return (
     <div>
-
       <nav className="c-navbar">
         {location.pathname === "/home" ? (
           <img className="c-navbar__icon" src={homeSecondary} alt="home" />
@@ -42,7 +41,7 @@ const Nav = () => {
             <img className="c-navbar__icon" src={petPrimary} alt="home" />
           </NavLink>
         )}
-         
+
         {location.pathname === "/profile" ? (
           <img className="c-navbar__img c-navbar__img--active" src={user.image} alt="home" />
         ) : (
@@ -59,7 +58,6 @@ const Nav = () => {
           </NavLink>
         )}
       </nav>
-
     </div>
   );
 };
