@@ -1,12 +1,25 @@
-import React from "react";
+/* eslint-disable array-callback-return */
+import React, { useContext } from "react";
 import HuellaImg from "../../../assets/PerfilAnimales/pawprint.png";
 import "./Salud.scss";
 import { useState } from "react";
 import CustomPopup from "../CustomPopup/CustomPopup";
 import Advertencia from "../Advertencia/Advertencia";
+import AlreadyAdopted from "../AlreadyAdopted/AlreadyAdopted";
+import { UserContext } from "../../contexts/UserContext";
 
 export default function Salud({ mascotaDetail }) {
   const [visibility, setVisibility] = useState(false);
+  const [adopted, setAdopted] = useState(false);
+  const { user } = useContext(UserContext);
+
+  const handleAdopted = () => {
+    user.mascotas.map((mascota) => {
+      if (mascota.id === mascotaDetail[0].id) {
+        setAdopted(true);
+      }
+    });
+  };
 
   const popupCloseHandler = (e) => {
     setVisibility(e);
@@ -74,16 +87,22 @@ export default function Salud({ mascotaDetail }) {
         </div>
         <div className="c-salud__bottom">
           <h4 className="c-salud__bottom__h4">Tienes que saber que</h4>
-          <p className="c-salud__p">Lorem ipsum dolor natoascepellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo,{mascotaDetail[0].historia} </p>
+          <p className="c-salud__p">Lorem ipsum dolor natoascepellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo,{mascotaDetail.historia} </p>
         </div>
       </div>
       <div className="btn">
         <button className="btn__2">Apadrinar</button>
-        <button className="btn__1" onClick={(e) => setVisibility(!visibility)}>
+        <button
+          className="btn__1"
+          onClick={(e) => {
+            setVisibility(!visibility);
+            handleAdopted();
+          }}
+        >
           Adoptar
         </button>
         <CustomPopup onClose={popupCloseHandler} show={visibility} title="">
-          <Advertencia />
+          {adopted ? <AlreadyAdopted /> : <Advertencia mascotaDetail={mascotaDetail} />}
         </CustomPopup>
       </div>
     </div>

@@ -1,16 +1,28 @@
+/* eslint-disable array-callback-return */
 import "./Adopcion.scss";
 import Info from "../../../assets/Perfil/ayudarosa.png";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import CustomPopup from "../CustomPopup/CustomPopup";
 import Advertencia from "../Advertencia/Advertencia";
+import AlreadyAdopted from "../AlreadyAdopted/AlreadyAdopted";
+import { UserContext } from "../../contexts/UserContext";
 
 export default function Adopcion({ mascotaDetail }) {
   const [visibility, setVisibility] = useState(false);
+  const [adopted, setAdopted] = useState(false);
+  const { user } = useContext(UserContext);
+
+  const handleAdopted = () => {
+    user.mascotas.map((mascota) => {
+      if (mascota.id === mascotaDetail[0].id) {
+        setAdopted(true);
+      }
+    });
+  };
 
   const popupCloseHandler = (e) => {
     setVisibility(e);
   };
-
   return (
     <div>
       <div className="c-adopcion-box">
@@ -31,11 +43,17 @@ export default function Adopcion({ mascotaDetail }) {
         </div>
         <div className="btn">
           <button className="btn__2">Apadrinar</button>
-          <button className="btn__1" onClick={(e) => setVisibility(!visibility)}>
+          <button
+            className="btn__1"
+            onClick={(e) => {
+              setVisibility(!visibility);
+              handleAdopted();
+            }}
+          >
             Adoptar
           </button>
           <CustomPopup onClose={popupCloseHandler} show={visibility} title="">
-            <Advertencia />
+            {adopted ? <AlreadyAdopted /> : <Advertencia mascotaDetail={mascotaDetail} />}
           </CustomPopup>
         </div>
       </div>

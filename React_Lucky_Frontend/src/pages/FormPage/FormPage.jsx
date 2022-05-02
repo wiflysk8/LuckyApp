@@ -6,12 +6,11 @@ import Enviado from "../../shared/components/Enviado/Enviado";
 import CustomPopup from "../../shared/components/CustomPopup/CustomPopup";
 import { API } from "../../shared/services/api";
 import { UserContext } from "../../shared/contexts/UserContext";
+import { Link } from "react-router-dom";
 
-export default function FormPage({mascotaDetail}) {
+export default function FormPage({ mascotaDetail }) {
   const [visibility, setVisibility] = useState(false);
-  const {user} = useContext(UserContext);
-
-
+  const { user } = useContext(UserContext);
 
   const popupCloseHandler = (e) => {
     setVisibility(e);
@@ -20,19 +19,18 @@ export default function FormPage({mascotaDetail}) {
   /*  const submit = (data) => {
     console.log(data);
   }; */
-  console.log("formascota", mascotaDetail[0].nombre, mascotaDetail[0]._id)
-  console.log("formuser", user[0].name, user[0]._id)
+
   const onSubmit = () => {
-    API.put("users/add-mascotas", user._id, mascotaDetail[0].id).then((res) => {
-      console.log("Add mascota work");
-      /* navigate("/login"); */
-    });
+    API.put("users/add-mascotas", { userId: user._id, mascotaId: mascotaDetail[0]._id }).then((res) => {});
   };
 
   return (
     <form className="c-form">
       <section className="c-form-section" id="firstForm">
         <div>
+          <Link to="/adopcion">
+            <img className="c-form-section__arrow" src={flechaatras} alt="icon" href="#firstForm" />
+          </Link>
           <h3 className="c-form-section__mainTitle">Formulario de adopción</h3>
           <section className="c-progress">
             <div className="container">
@@ -290,7 +288,13 @@ export default function FormPage({mascotaDetail}) {
         </div>
         <div className="c-form-section__boxBtn">
           <button
-            onClick={(e) => { setVisibility(!visibility); e.preventDefault();onSubmit(); }}
+            onClick={(e) => {
+              setVisibility(!visibility);
+              e.preventDefault();
+              onSubmit();
+              //navigate("/estado");
+              //window.location.reload();
+            }}
             className="c-form-section__btn c-form-section__btn--mod"
           >
             Enviar

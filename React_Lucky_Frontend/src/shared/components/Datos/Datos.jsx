@@ -1,12 +1,25 @@
-import React from "react";
+/* eslint-disable array-callback-return */
+import React, { useContext } from "react";
 import "./Datos.scss";
 import { useState } from "react";
 import CustomPopup from "../CustomPopup/CustomPopup";
 import Advertencia from "../Advertencia/Advertencia";
+import AlreadyAdopted from "../AlreadyAdopted/AlreadyAdopted";
 import HuellaImg from "../../../assets/PerfilAnimales/pawprint.png";
+import { UserContext } from "../../contexts/UserContext";
 
 export default function Datos({ mascotaDetail }) {
   const [visibility, setVisibility] = useState(false);
+  const [adopted, setAdopted] = useState(false);
+  const { user } = useContext(UserContext);
+
+  const handleAdopted = () => {
+    user.mascotas.map((mascota) => {
+      if (mascota._id === mascotaDetail[0]._id) {
+        setAdopted(true);
+      }
+    });
+  };
 
   const popupCloseHandler = (e) => {
     setVisibility(e);
@@ -78,18 +91,22 @@ export default function Datos({ mascotaDetail }) {
 
       <div className="c-adopcion-datos__bottom">
         <h4 className="c-adopcion-datos__bottom__h4">Historia</h4>
-        <p className="c-adopcion-datos__p">
-          Lorem ipsum dolor natoascepellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo,{mascotaDetail[0].historia}{" "}
-        </p>
+        <p className="c-adopcion-datos__p">Lorem ipsum dolor natoascepellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo,{mascotaDetail.historia} </p>
       </div>
 
       <div className="btn">
         <button className="btn__2">Apadrinar</button>
-        <button className="btn__1" onClick={(e) => setVisibility(!visibility)}>
+        <button
+          className="btn__1"
+          onClick={(e) => {
+            setVisibility(!visibility);
+            handleAdopted();
+          }}
+        >
           Adoptar
         </button>
         <CustomPopup onClose={popupCloseHandler} show={visibility} title="">
-          <Advertencia mascotaDetail={mascotaDetail} />
+          {adopted ? <AlreadyAdopted /> : <Advertencia mascotaDetail={mascotaDetail} />}
         </CustomPopup>
       </div>
     </div>

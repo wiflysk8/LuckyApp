@@ -1,5 +1,5 @@
 import React from "react";
-import { Navigate, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import LoginPage from "../pages/LoginPage/LoginPage";
 import RegisterPage from "../pages/RegisterPage/RegisterPage";
 import UsersPage from "../pages/UsersPage/HelloUser";
@@ -18,10 +18,13 @@ import FormPage from "../pages/FormPage/FormPage";
 import AnimalsFilter from "../pages/AnimalsFilter/AnimalsFilter";
 import Fav from "../shared/components/Fav/Fav";
 import EstadoAdopcion from "../shared/components/EstadoAdopcion/EstadoAdopcion";
+import LandingPage from "../shared/components/LandingPage/LandingPage";
+import PopAdopciones from "../shared/components/PopAdopciones/PopAdopciones";
 
 const RoutesFile = () => {
   return (
     <Routes>
+      <Route path="/" element={<LandingPage />} />
       <Route path="/slider" element={<Slider />} />
       <Route path="/welcome" element={<WelcomePage />} />
       <Route path="/login" element={<LoginPage />} />
@@ -126,6 +129,14 @@ const RoutesFile = () => {
         }
       />
       <Route
+        path="/popadopciones"
+        element={
+          <RequireAuth>
+            <PopAdopciones />
+          </RequireAuth>
+        }
+      />
+      <Route
         path="/filtro"
         element={
           <RequireAuth>
@@ -133,7 +144,7 @@ const RoutesFile = () => {
           </RequireAuth>
         }
       />
-      <Route path="/" element={<Navigate to="/slider" />} />
+      {/*   <Route path="/" element={<Navigate to="/slider" />} /> */}
     </Routes>
   );
 };
