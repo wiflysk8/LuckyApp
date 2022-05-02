@@ -68,7 +68,7 @@ const AdopcionDetail = () => {
                 setActive3(true);
               }}
             >
-              Adopcion
+              Adopción
             </h3>
           </div>
           {showDetails === "resumen" && <Resumen mascotaDetail={mascotaDetail} />}
