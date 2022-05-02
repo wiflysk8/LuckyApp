@@ -24,7 +24,7 @@ const EstadoAdopcion = () => {
 
   useEffect(() => {
     const getUser = async () => {
-      const res = await axios.get(`http://localhost:5000/users/${localUser._id}`);
+      const res = await axios.get(`https://luismrtinez.com/users/${localUser._id}`);
       setUser(res.data);
       setMascotas(res.data.mascotas);
       setFilteredMascotas(res.data.mascotas);

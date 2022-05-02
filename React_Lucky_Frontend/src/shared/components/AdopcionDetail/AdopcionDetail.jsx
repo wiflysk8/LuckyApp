@@ -19,7 +19,7 @@ const AdopcionDetail = () => {
   let { nombre } = useParams("nombre");
   useEffect(() => {
     const getMascota = async () => {
-      const res = await axios.get(`http://localhost:5000/mascotas/${nombre}`);
+      const res = await axios.get(`https://luismrtinez.com/mascotas/${nombre}`);
       setMascotaDetail(res.data);
     };
 
