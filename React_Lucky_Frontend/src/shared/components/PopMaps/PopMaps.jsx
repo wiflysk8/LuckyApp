@@ -15,7 +15,6 @@ import React, { useState } from "react";
 
 const PopMaps = () => {
 
-    const [estadoMaps, setEstadoMaps] = useState(false);
     const [veterinario, setVeterinario] = useState(true);
     const [peluqueria, setPeluqueria] = useState(true);
     const [petFriendly, setPetFriendly] = useState(true);
@@ -47,12 +46,6 @@ const PopMaps = () => {
         setTienda(!tienda);
     };
 
-    const handleChangeEstadoMaps = () => {
-        if (estadoMaps === false) {
-            setEstadoMaps(true);
-        }
-    };
-
 
     return (
         <div className="c-popmaps">
@@ -66,12 +59,11 @@ const PopMaps = () => {
                     <div className="c-popmaps__box__yellow" onClick={handleVeterinario} >
                         <img className="c-popmaps__box__img" src={Veterinario2} alt="veterinario2" />
                         <p className="c-popmaps__box__text__yellow">Veterinario</p>
-
                     </div>
                 }
                 {peluqueria ?
                     <div className="c-popmaps__box" onClick={handlePeluqueria}>
-                        <img className="c-popmaps__box__img" src={Peluqueria} alt="peluqueria"  />
+                        <img className="c-popmaps__box__img" src={Peluqueria} alt="peluqueria" />
                         <p className="c-popmaps__box__text">Peluquería</p>
                     </div> :
                     <div className="c-popmaps__box__purple" onClick={handlePeluqueria}>
@@ -102,7 +94,7 @@ const PopMaps = () => {
                 }
                 {guarderia ?
                     <div className="c-popmaps__box" onClick={handleGuarderia}>
-                        <img className="c-popmaps__box__img" src={Guarderia} alt="guarderia"  />
+                        <img className="c-popmaps__box__img" src={Guarderia} alt="guarderia" />
                         <p className="c-popmaps__box__text">Guardería</p>
                     </div> :
                     <div className="c-popmaps__box__pink" onClick={handleGuarderia}>
@@ -121,7 +113,13 @@ const PopMaps = () => {
                     </div>
                 }
             </div>
-            <button className="c-popmaps__btn" onClick={handleChangeEstadoMaps}>Aplicar</button>
+            {!veterinario || !peluqueria || !petFriendly || !guarderia || !educacion || !tienda ?
+            <>
+            <button className="c-popmaps__btn">Borrar filtro</button>
+            <button className="c-popmaps__btn">Aceptar</button>
+            </> :
+            <button className="c-popmaps__btn">Aplicar</button>
+            }
         </div>
     )
 }
