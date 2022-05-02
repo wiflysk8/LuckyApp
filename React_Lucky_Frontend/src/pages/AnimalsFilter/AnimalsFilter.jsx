@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./AnimalsFilter.scss";
+import FilteredAnimals from "../FilteredAnimals/FilteredAnimals";
+import { API } from "../../shared/services/api";
 
 import perro from "../../assets/Filtros/perro2.png";
 import gato from "../../assets/Filtros/gato.png";
@@ -13,56 +15,145 @@ import reptil from "../../assets/Filtros/reptil.png";
 import anfibio from "../../assets/Filtros/anfibio3.png";
 import araña from "../../assets/Filtros/araña.png";
 import ave from "../../assets/Filtros/ave.png";
-
-import perrosecundario from "../../assets/IconosAnimales/perroSecundario.png";
+import perroSecundario from "../../assets/IconosAnimales/perroSecundario.png";
+import gatoSecundario from "../../assets/IconosAnimales/catSecundario (2).png";
+/*import conejosecundario from "../../assets/IconosAnimales/conejo.png";*/
+/*import cobayasecundario from "../../assets/IconosAnimales/hamster.png";*/
+import mamiferoSecundario from "../../assets/IconosAnimales/pequeñoMamiferoSecundario (2).png";
+/*import huronsecundario from "../../assets/IconosAnimales/huron.png";*/
+/*import pezsecundario from "../../assets/IconosAnimales/pez.png";*/
+/*import reptilsecundario from "../../assets/IconosAnimales/reptil.png";*/
+/*import anfibiosecundario from "../../assets/IconosAnimales/anfibio3.png";*/
+/*import arañasecundario from "../../assets/IconosAnimales/araña.png";*/
+import aveSecundario from "../../assets/IconosAnimales/aveSecundario (3).png";
 
 import macho from "../../assets/Filtros/macho.png";
 import hembra from "../../assets/Filtros/hembra.png";
-import machosecundario from "../../assets/IconosAnimales/machoSecundario (3).png";
-import hembrasecundario from "../../assets/IconosAnimales/hembraSecundario.png";
-
+import machoSecundario from "../../assets/IconosAnimales/machoSecundario (3).png";
+import hembraSecundario from "../../assets/IconosAnimales/hembraSecundario.png";
 
 import pequeño from "../../assets/Filtros/perro-pequeño.png";
 import mediano from "../../assets/Filtros/perro-mediano.png";
 import grande from "../../assets/Filtros/perro-grande.png";
-
-
-
+import pequeñoSecundario from "../../assets/IconosAnimales/perritoPequeñoSecundario.png";
+import medianoSecundario from "../../assets/IconosAnimales/perritoMedianoSecundario.png";
 
 import cross from "../../assets/Filtros/X.png";
 
-const AnimalsFilter = () =>{
+function AnimalsFilter(props) {
 
-    const valoresFiltro = ["sinAnimal", "sinEdad", "sinSexo", "sinTamaño"];
-    const [selected, setSelected] = useState(false);
+    const [ciudad, setCiudad] = useState("noCity");
+    const [animal, setAnimal] = useState("noAnimal");
+    const [age, setAge] = useState("noAge");
+    const [sex, setSexo] = useState("noSex");
+    const [shape, setShape] = useState("noShape");
 
-    const submit= (e) => {
-        e.preventDefault();
-        /*let url = await axios.get("https://luismrtinez.com/mascotas");*/
+    const [filtroFinal, setFiltroFinal] = useState([]);
+
+    const submit= (filtro) => {
+        filtro.preventDefault();
+        let url = "https://luismrtinez.com/mascotas";
+        if (ciudad !== "noCity" || animal !=="noAnimal") {
+            url += '/filtro?';
+            let filtered = false;
+            if (ciudad !== "noCity") {
+                url += 'ciudad=' + ciudad;
+                filtered = true;
+            }
+            if (animal !== "noAnimal"){
+                url += 'animal=' + animal;
+                filtered = true;
+            }
+            if (age !== "noAge"){
+                url += 'edad=' + age;
+                filtered = true;
+            }
+            if (sex !== "noSex"){
+                url += 'sexo=' + sex;
+                filtered = true;
+            }
+            if (shape !== "noShape"){
+                url += 'tamaño=' + shape;
+                filtered = true;
+            }
+            
+            
+        };
+
+        API.get(url)
+        .then((filtrado) => {
+            console.log(filtrado.data);
+            setFiltroFinal(filtrado.data);
+            localStorage.setItem('mascotaFiltrada', JSON.stringify(filtrado.data));
+            setTimeout(() => {
+                window.location.href = "/resultfilter"
+            }, 100);
+        })
+        .catch((error) => {
+            console.log(error);
+        })
     }
-/* la idea es ir metiendo uno a uno los cambios en valoresFiltro para después poder usar los strings y ponerlos en el filtro como tal. cada tipo de boton tiene una
-funcion a seguir, de esta manera hacemos que cada uno pueda devolver un valor de su tipo.
-faltaria que dependiendo de donde hagas click devuelva un valor (vaya, la gracia del filtro). he ido trasteando solo con uno, el de animales.
-me pongo con ello por la noche, al final he tenido mas lio del esperado. cualquier sugerencia la aceptaré positivamente :)*/
-    const filteredAnimal = () =>{
-        if (selected === false | valoresFiltro[0] === "sinAnimal") {
-            setSelected(true);
-            valoresFiltro.splice(0,1,"perro");
-            return valoresFiltro;
-        } else{
-            setSelected(false);
-            valoresFiltro.splice(0,1,"sinAnimal")
-            return valoresFiltro;
-        }
-        console.log(selected);
-        return selected;
+
+
+    function filteredCity(selectedCity) {
+        setCiudad(selectedCity.target.options[selectedCity.target.selectedIndex].value)
     };
 
-    console.log(valoresFiltro);
+    const filteredAnimal = (selectedAnimal) =>{
+        if(selectedAnimal === animal ) {
+            setAnimal("noAnimal");
+            document.getElementById(selectedAnimal).classList.remove("c-filter-container__selected");
+            document.getElementById(selectedAnimal).classList.add("c-filter-container__noselected");
+        }else {
+            setAnimal(selectedAnimal);
+            document.getElementById(selectedAnimal).classList.remove("c-filter-container__noselceted");
+            document.getElementById(selectedAnimal).classList.add("c-filter-container__selected");
+        };
+    };
+
+    function filteredAge(selectedAge) {
+        setAge(selectedAge.target.options[selectedAge.target.selectedIndex].value)
+    };
+
+    function filteredSex (selectedSex) {
+        if (selectedSex === sex){
+            setSexo("noSex");
+            document.getElementById(selectedSex).classList.remove("c-filter-container__selected");
+            document.getElementById(selectedSex).classList.add("c-filter-container__noselected");
+        } else {
+            setSexo(selectedSex);
+            document.getElementById(selectedSex).classList.remove("c-filter-container__noselected");
+            document.getElementById(selectedSex).classList.add("c-filter-container__selected");
+        };
+    };
+
+    const filteredShape = (selectedShape) => {
+        if (selectedShape === shape){
+            setShape("noShape");
+            document.getElementById(selectedShape).classList.remove("c-filter-container__noselected");
+            document.getElementById(selectedShape).classList.add("c-filter-container__selected");
+        } else {
+            setShape(selectedShape);
+            document.getElementById(selectedShape).classList.remove("c-filter-container__selected");
+            document.getElementById(selectedShape).classList.add("c-filter-container__noselected");
+        };
+    }
+function deleteFilter(){
+    setCiudad("noCiudad");
+    setAnimal("noAnimal");
+    setAge("noAge");
+    setSexo("noSex");
+    setShape("noShape");
+    console.log(ciudad, animal, age, sex, shape);    
+};
+
+console.log(ciudad, animal, age, sex, shape);
+
+
+
+    /*console.log(valoresFiltro);*/
 
 return (
-    <>
-    <Link to="/filtro"></Link>
     <section className="c-filter">
         <form action="">
             <Link to="/adopcion">
@@ -71,29 +162,40 @@ return (
             <h1 className="c-filter__title">Filtros</h1>
             <div>
                 <h2 className="c-filter__category">Ciudad</h2>
-                <select className="c-filter__display" name="cities" id="cityList">
-                    <option value="madrid" /*falta dinamico?*/  >Madrid</option>
+                <select className="c-filter__display" onChange= {filteredCity} name="cities" id="cityList">
+                <option value="noCity">Selecciona...</option>
+                <option value="">Cualquiera</option>                
+                <option value="barcelona">Barcelona</option>
+                <option value="bilbao">Bilbao</option>
+                <option value="madrid">Madrid</option>
+                <option value="malaga">Málaga</option>
+                <option value="pontevedra">Pontevedra</option>
+                <option value="sevilla">Sevilla</option>
+                <option value="valencia">Valencia</option>
+                <option value="valladolid">Valladolid</option>
                 </select>
             </div>
             <div>
                 <h2 className="c-filter__category">Especie</h2>
                 <ul className="c-filter-container">
-                    <li className="c-filter-container__noselected"><img src={perro} alt="perro" onClick={filteredAnimal} /> <p>Perro</p></li>
-                    <li className="c-filter-container__noselected"><img src={gato} alt="gato" onClick={filteredAnimal} /> <p>Gato</p></li>
-                    <li className="c-filter-container__noselected"><img src={conejo} alt="conejo" onClick={filteredAnimal} /> <p>Conejo</p></li>
-                    <li className="c-filter-container__noselected"><img src={cobaya} alt="cobaya" onClick={filteredAnimal} /> <p>Cobaya</p></li>
-                    <li className="c-filter-container__noselected"><img src={mamifero} alt="pequeño mamifero" onClick={filteredAnimal} /> <p>Pequeño mamífero</p></li>
-                    <li className="c-filter-container__noselected"><img src={huron} alt="hurón" onClick={filteredAnimal} /> <p>Hurón</p></li>
-                    <li className="c-filter-container__noselected"><img src={pez} alt="pez" onClick={filteredAnimal} /> <p>Pez</p></li>
-                    <li className="c-filter-container__noselected"><img src={reptil} alt="reptil" onClick={filteredAnimal} /> <p>Reptil</p></li>
-                    <li className="c-filter-container__noselected"><img src={anfibio} alt="anfíbio" onClick={filteredAnimal} /> <p>Anfíbio</p></li>
-                    <li className="c-filter-container__noselected"><img src={araña} alt="arácnido" onClick={filteredAnimal} /> <p>Arácnido o insecto</p></li>
-                    <li className="c-filter-container__noselected"><img src={ave} alt="ave" onClick={filteredAnimal} /> <p>Ave</p></li>
+                    <li className="c-filter-container__noselected"><img src={ animal === 'perro' ? perroSecundario : perro } alt="perro" onClick={() => filteredAnimal("perro")} /> <p>Perro</p></li>
+                    <li className="c-filter-container__noselected"><img src={ animal === 'gato' ? gatoSecundario : gato } alt="gato" onClick={() => filteredAnimal("gato")} /> <p>Gato</p></li>
+                    <li className="c-filter-container__noselected"><img src={conejo} alt="conejo" onClick={() => filteredAnimal("conejo")} /> <p>Conejo</p></li>
+                    <li className="c-filter-container__noselected"><img src={cobaya} alt="cobaya" onClick={() => filteredAnimal("cobaya")} /> <p>Cobaya</p></li>
+                    <li className="c-filter-container__noselected"><img src={animal === 'mamifero' ? mamiferoSecundario : mamifero} alt="pequeño mamifero" onClick={() => filteredAnimal("mamifero")} /> <p>Pequeño mamífero</p></li>
+                    {/*en la api figura un 'pequeño mamífero', no hacen falta las dos palabras*/}
+                    <li className="c-filter-container__noselected"><img src={huron} alt="hurón" onClick={() => filteredAnimal("huron")} /> <p>Hurón</p></li>
+                    <li className="c-filter-container__noselected"><img src={pez} alt="pez" onClick={() => filteredAnimal("pez")} /> <p>Pez</p></li>
+                    <li className="c-filter-container__noselected"><img src={reptil} alt="reptil" onClick={() => filteredAnimal("reptil")} /> <p>Reptil</p></li>
+                    <li className="c-filter-container__noselected"><img src={anfibio} alt="anfíbio" onClick={() => filteredAnimal("anfibio")} /> <p>Anfíbio</p></li>
+                    <li className="c-filter-container__noselected"><img src={araña} alt="arácnido" onClick={() => filteredAnimal("aracnido")} /> <p>Arácnido o insecto</p></li>
+                    <li className="c-filter-container__noselected"><img src={ animal === 'ave' ? aveSecundario : ave} alt="ave" onClick={() => filteredAnimal("ave")} /> <p>Ave</p></li>
                 </ul>
             </div>
             <div>
                 <h2 className="c-filter__category">Edad</h2>
-                <select className="c-filter__display" name="age" id="ageList">
+                <select className="c-filter__display" onChange={filteredAge} name="age" id="ageList">
+                    <option value="noCity">Selecciona...</option>
                     <option value="puppy">Cachorro</option>
                     <option value="young">Joven</option>
                     <option value="adult">Adulto</option>
@@ -102,25 +204,26 @@ return (
             <div>
                 <h2 className="c-filter__category">Sexo</h2>
                 <ul className="c-filter-container">
-                    <li><img src={macho} alt="macho" /><p className="c-shape-filter">Macho</p></li>
-                    <li><img src={hembra} alt="hembra" /><p className="c-shape-filter">Hembra</p></li>
+                    <li><img src={ sex === 'macho' ? machoSecundario : macho } alt="macho" onClick={() => filteredSex("macho")} /><p className="c-shape-filter">Macho</p></li>
+                    <li><img src={ sex === 'hembra' ? hembraSecundario : hembra } alt="hembra" onClick={() => filteredSex("hembra")} /><p className="c-shape-filter">Hembra</p></li>
                 </ul>
             </div>
             <div>
                 <h2 className="c-filter__category">Tamaño</h2>
                 <ul className="c-filter-container">
-                    <li><img src={pequeño} alt="tamaño pequeño" /><p className="c-shape-filter">Pequeño</p></li>
-                    <li><img src={mediano} alt="tamaño mediano" /><p className="c-shape-filter">Mediano</p></li>
-                    <li><img src={grande} alt="tamaño grande" /><p className="c-shape-filter">Grande</p></li>
+                    <li><img src={shape === 'pequeño' ? pequeñoSecundario : pequeño } alt="tamaño pequeño" onClick={() => filteredShape("pequeño")} /><p className="c-shape-filter">Pequeño</p></li>
+                    <li><img src={shape === 'mediano' ? medianoSecundario : mediano } alt="tamaño mediano" onClick={() => filteredShape("mediano")} /><p className="c-shape-filter">Mediano</p></li>
+                    <li><img src={shape === 'grande' ? grande : grande } alt="tamaño grande" onClick={() => filteredShape("grande")} /><p className="c-shape-filter">Grande</p></li>
                 </ul>        
             </div>
             <div>
-                <button className="c-filter-button__delete">Borrar filtros</button>
+                <Link to="/adopcion">
+                    <button className="c-filter-button__delete" onClick={deleteFilter}>Borrar filtros</button>
+                </Link>
                 <button className="c-filter-button__submit">Aplicar</button>
             </div>
         </form>
     </section>
-    </>
 )};
 
 export default AnimalsFilter;
