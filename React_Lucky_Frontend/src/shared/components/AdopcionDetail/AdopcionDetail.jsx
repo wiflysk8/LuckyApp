@@ -4,10 +4,18 @@ import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
 
 import arrow from "../../../assets/Buscador/flechaatras.png";
+import AdopcionSection from "../AdopcionSection/AdopcionSection";
+import InfoAdiccional from "../InfoAdiccional/InfoAdiccional";
+import Resumen from "../Resumen/Resumen";
 import "./AdopcionDetail.scss";
 
 const AdopcionDetail = () => {
   const [mascotaDetail, setMascotaDetail] = useState();
+  const [active, setActive] = useState(true);
+  const [active2, setActive2] = useState(false);
+  const [active3, setActive3] = useState(false);
+  const [showDetails, setShowDetails] = useState("resumen", "infoAdiccional", "adopcion");
+
   let { nombre } = useParams("nombre");
   useEffect(() => {
     const getMascota = async () => {
@@ -29,26 +37,46 @@ const AdopcionDetail = () => {
               <p>Adopción de {mascotaDetail.nombre}</p>
             </Link>
           </div>
-
-          <div className="c-estado-adopcionDetail">
-            <div className="c-estado-adopcionDetail__top">
-              <p className="c-estado-adopcionDetail__top__p">Adopción de {mascotaDetail.nombre}</p>
-              <img className="c-estado-adopcionDetail__top__arrow" src={arrow} alt="" />
-            </div>
-            <div className="c-estado-adopcionDetail__bottom">
-              <div className="c-estado-adopcionDetail__bottom__left">
-                <img className="c-estado-adopcionDetail__bottom__left__img" src={mascotaDetail.imagen} alt="imagen del animalito" />
-              </div>
-              <div className="c-estado-adopcionDetail__bottom__right">
-                <p className="c-estado-adopcionDetail__bottom__right__p">Nombre: {mascotaDetail.nombre}</p>
-                <p className="c-estado-adopcionDetail__bottom__right__p">Ciudad: {mascotaDetail.ciudad}</p>
-                <p className="c-estado-adopcionDetail__bottom__right__p">Sexo: {mascotaDetail.sexo}</p>
-              </div>
-            </div>
+          <div className="c-estado-adopcionDetail__sections">
+            <h3
+              className={active ? "c-estado-adopcionDetail__sections__title c-estado-adopcionDetail__sections__title--active" : "c-estado-adopcionDetail__sections__title"}
+              onClick={() => {
+                setShowDetails("resumen");
+                setActive(true);
+                setActive2(false);
+                setActive3(false);
+              }}
+            >
+              Resumen
+            </h3>
+            <h3
+              className={active2 ? "c-estado-adopcionDetail__sections__title c-estado-adopcionDetail__sections__title--active" : "c-estado-adopcionDetail__sections__title"}
+              onClick={() => {
+                setShowDetails("infoAdiccional");
+                setActive(false);
+                setActive2(true);
+                setActive3(false);
+              }}
+            >
+              Info adiccional
+            </h3>
+            <h3
+              className={active3 ? "c-estado-adopcionDetail__sections__title c-estado-adopcionDetail__sections__title--active" : "c-estado-adopcionDetail__sections__title"}
+              onClick={() => {
+                setShowDetails("adopcion");
+                setActive(false);
+                setActive2(false);
+                setActive3(true);
+              }}
+            >
+              Adopcion
+            </h3>
           </div>
+          {showDetails === "resumen" && <Resumen mascotaDetail={mascotaDetail} />}
+          {showDetails === "infoAdiccional" && <InfoAdiccional mascotaDetail={mascotaDetail} />}
+          {showDetails === "adopcion" && <AdopcionSection mascotaDetail={mascotaDetail} />}
         </>
       )}
-      <div className="c-estado-adopcionDetail__section2"></div>
     </section>
   );
 };

@@ -11,6 +11,24 @@
     margin-top: 10%;
     border-radius: 6px;
     border: 2px solid var(--color-primary-transparent);
+    &__sections {
+      width: 100%;
+      margin: 0px;
+      align-items: center;
+      justify-content: space-between;
+      display: flex;
+      &__title {
+        font-weight: 400;
+        color: black;
+        &--active {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          color: var(--color-primary);
+          border-bottom: 2px solid orange;
+        }
+      }
+    }
     &__title {
       text-align: center;
       margin-top: 10%;

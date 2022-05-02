@@ -1,0 +1,46 @@
+.c-protectora {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin-top: 10%;
+  padding-top: 8%;
+  border-top: 1px solid var(--color-terciary-transparent);
+  &__info {
+    display: flex;
+
+    &__img {
+      width: 64px;
+      height: 64px;
+    }
+    &__map {
+      width: 32px;
+      height: 32px;
+    }
+    &__title {
+      margin: 4px;
+      &__h3 {
+        font-size: 16px;
+      }
+      &__bottom {
+        align-items: center;
+        display: flex;
+        font-weight: lighter;
+        &__p {
+          font-weight: 10px;
+          color: black;
+          font-size: 13px;
+        }
+      }
+    }
+  }
+}
+
+.c-googlemaps {
+  width: 90%;
+  position: absolute;
+  &__img {
+    width: 100%;
+    object-fit: cover;
+  }
+}
