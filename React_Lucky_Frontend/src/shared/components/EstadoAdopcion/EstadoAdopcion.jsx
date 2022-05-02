@@ -7,11 +7,18 @@ import SearchLogo from "../../../assets/Buscador/lupa.png";
 import Filter from "../../../assets/Buscador/filtro.png";
 import { Link } from "react-router-dom";
 import arrow from "../../../assets/Buscador/flechaatras.png";
-
+import CustomPopup from "../CustomPopup/CustomPopup";
+import PopAdopcion from "../../../shared/components/PopAdopciones/PopAdopciones";
 const EstadoAdopcion = () => {
   const [filteredMascotas, setFilteredMascotas] = useState([]);
   const [mascotas, setMascotas] = useState([]);
   const [user, setUser] = useState();
+  const [visibility, setVisibility] = useState(false);
+
+  const popupCloseHandler = (e) => {
+    setVisibility(e);
+  };
+
 
   const localUser = JSON.parse(localStorage.getItem("user"));
 
@@ -46,7 +53,12 @@ const EstadoAdopcion = () => {
       </Link>
       <input type="text" className="c-estado__input" placeholder="Buscar" onChange={onSearch} />
       <img className="c-map__logo" src={SearchLogo} alt="lupa" />
-      <img className="c-map__logo c-map__logo--filter" src={Filter} alt="lupa" />
+      <img className="c-map__logo c-map__logo--filter" src={Filter} alt="lupa" onClick={(e) => {
+              setVisibility(!visibility);
+              e.preventDefault();
+              //navigate("/estado");
+              //window.location.reload();
+            }} />
 
       {user && (
         <>
@@ -72,6 +84,9 @@ const EstadoAdopcion = () => {
           ))}
         </>
       )}
+      <CustomPopup onClose={popupCloseHandler} show={visibility} title="">
+            <PopAdopcion />
+        </CustomPopup>
     </div>
   );
 };
