@@ -8,7 +8,6 @@ import TemporalImg from "../../assets/Estados/temp.png";
 import Filter from "../../assets/Buscador/filtro.png";
 import { Link } from "react-router-dom";
 import { UserContext } from "../../shared/contexts/UserContext";
-import AnimalsFilter from "../AnimalsFilter/AnimalsFilter";
 
 const AdopcionPage = () => {
   const {mascotas, onSearch,} = useContext(UserContext);
@@ -32,7 +31,9 @@ const AdopcionPage = () => {
       </Link>
       <div className="c-adopcionPage-filter">
         <h3 className="c-adopcionPage-filter__h3">Animales en adopción</h3>
-        <img className="c-adopcionPage-filter__img" src={Filter} alt="filter" onClick={AnimalsFilter}/>
+        <Link className="c-link" to="/filtro">
+          <img className="c-adopcionPage-filter__img" src={Filter} alt="filter" />
+        </Link>
       </div>
       <Gallery mascotas={mascotas} />
 

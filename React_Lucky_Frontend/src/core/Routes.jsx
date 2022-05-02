@@ -20,6 +20,7 @@ import Fav from "../shared/components/Fav/Fav";
 import EstadoAdopcion from "../shared/components/EstadoAdopcion/EstadoAdopcion";
 import LandingPage from "../shared/components/LandingPage/LandingPage";
 import PopAdopciones from "../shared/components/PopAdopciones/PopAdopciones";
+import FilteredAnimals from "../pages/FilteredAnimals/FilteredAnimals";
 
 const RoutesFile = () => {
   return (
@@ -144,6 +145,14 @@ const RoutesFile = () => {
           </RequireAuth>
         }
       />
+      <Route
+      path="/resultado"
+      element={
+        <RequireAuth>
+          <FilteredAnimals />
+        </RequireAuth>
+      }
+    />
       {/*   <Route path="/" element={<Navigate to="/slider" />} /> */}
     </Routes>
   );

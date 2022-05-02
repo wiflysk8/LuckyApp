@@ -86,7 +86,7 @@ function AnimalsFilter(props) {
             setFiltroFinal(filtrado.data);
             localStorage.setItem('mascotaFiltrada', JSON.stringify(filtrado.data));
             setTimeout(() => {
-                window.location.href = "/resultfilter"
+                window.location.href = "/resultado"
             }, 100);
         })
         .catch((error) => {
@@ -155,7 +155,7 @@ console.log(ciudad, animal, age, sex, shape);
 
 return (
     <section className="c-filter">
-        <form action="">
+        <form onSubmit={submit}>
             <Link to="/adopcion">
                 <img src={cross} alt="cross" className="x" />
             </Link>
@@ -196,9 +196,9 @@ return (
                 <h2 className="c-filter__category">Edad</h2>
                 <select className="c-filter__display" onChange={filteredAge} name="age" id="ageList">
                     <option value="noCity">Selecciona...</option>
-                    <option value="puppy">Cachorro</option>
-                    <option value="young">Joven</option>
-                    <option value="adult">Adulto</option>
+                    <option value="cachorro">Cachorro</option>
+                    <option value="joven">Joven</option>
+                    <option value="adulto">Adulto</option>
                 </select>
             </div>
             <div>

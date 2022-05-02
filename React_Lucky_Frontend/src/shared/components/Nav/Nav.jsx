@@ -40,18 +40,13 @@ const Nav = () => {
           </NavLink>
         )}
 
-<<<<<<< HEAD
-{/*         {location.pathname === "/profile" ? (
-          <img className="c-navbar__img c-navbar__img--active" src={user[0].image} alt="home" />
-=======
         {location.pathname === "/profile" ? (
           <img className="c-navbar__img c-navbar__img--active" src={localUser.image} alt="home" />
->>>>>>> main
         ) : (
           <NavLink to="/profile">
             <img className="c-navbar__img" src={localUser.image} alt="home" />
           </NavLink>
-        )} */}
+        )}
 
         {location.pathname === "/mas" ? (
           <img className="c-navbar__icon" src={moreSecondary} alt="home" />

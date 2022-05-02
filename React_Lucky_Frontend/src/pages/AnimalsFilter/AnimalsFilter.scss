@@ -2,6 +2,8 @@ ul{
    list-style: none; 
 }
 
+
+
 .c-filter{
     display: flex;
     flex-direction: column;
@@ -9,22 +11,27 @@ ul{
     width: 100vw;
     
     .container{
-        display: flex;
+        display: inline-block;
         flex-direction: row;
         flex-wrap: wrap;
         margin-left: 27px;
+        justify-content: space-around;
+        width: 33.3%;
+        max-width: 414px;
 
         &__noselected{
             width: 67px;
             height: 73px;
             border-radius: 5px;
             background-color: white;
-            border: 2px solid;
+            border: 2px solid blue;
             margin-left: 12px;
             margin-bottom: 10px;
+            justify-content: space-around;
             & img{
                 margin-left: 16px;
                 margin-top: 4px;
+                width: 100%;
             }
             
             & p{
@@ -35,7 +42,7 @@ ul{
         }
 
         &__selected{
-            
+            margin:0px;
         }
     }
 
