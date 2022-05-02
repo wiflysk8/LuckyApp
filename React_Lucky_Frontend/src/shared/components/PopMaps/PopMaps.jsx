@@ -49,6 +49,15 @@ const PopMaps = ({ setVisibility }) => {
     setVisibility(false);
   };
 
+  const handleReset = () => {
+    setVeterinario(true);
+    setPeluqueria(true);
+    setPetFriendly(true);
+    setEducacion(true);
+    setGuarderia(true);
+    setTienda(true);
+  };
+
   return (
     <div className="c-popmaps">
       <h1 className="c-popmaps__title">Filtros</h1>
@@ -120,9 +129,26 @@ const PopMaps = ({ setVisibility }) => {
           </div>
         )}
       </div>
-      <button className="c-popmaps__btn" onClick={handleChangeEstadoMaps}>
-        Aplicar
-      </button>
+      {!veterinario || !peluqueria || !petFriendly || !educacion || !guarderia || !tienda ? (
+        <div className="c-popmaps__buttons">
+          <button
+            className="c-popmaps__buttons__btn c-popmaps__buttons__btn--inverted"
+            onClick={() => {
+              handleReset();
+            }}
+          >
+            Borrar filtros
+          </button>
+
+          <button className="c-popmaps__buttons__btn" onClick={handleChangeEstadoMaps}>
+            Aceptar
+          </button>
+        </div>
+      ) : (
+        <button className="c-popmaps__btn" onClick={handleChangeEstadoMaps}>
+          Aplicar
+        </button>
+      )}
     </div>
   );
 };

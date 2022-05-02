@@ -9,6 +9,7 @@ import { Link } from "react-router-dom";
 import arrow from "../../../assets/Buscador/flechaatras.png";
 import CustomPopup from "../CustomPopup/CustomPopup";
 import PopAdopcion from "../../../shared/components/PopAdopciones/PopAdopciones";
+import { generatePath } from "react-router-dom";
 const EstadoAdopcion = () => {
   const [filteredMascotas, setFilteredMascotas] = useState([]);
   const [mascotas, setMascotas] = useState([]);
@@ -68,22 +69,24 @@ const EstadoAdopcion = () => {
         <>
           {mascotas.map((mascota, index) => (
             <div key={index} className="c-estado-adopcion">
-              <div className="c-estado-adopcion__top">
-                <p className="c-estado-adopcion__top__p">Adopción de {mascota.nombre}</p>
-                <p className="c-estado-adopcion__top__estado">
-                  En proceso <img className="c-estado-adopcion__top__img" src={enProcesoImg} alt="proceso" />
-                </p>
-              </div>
-              <div className="c-estado-adopcion__bottom">
-                <div className="c-estado-adopcion__bottom__left">
-                  <img className="c-estado-adopcion__bottom__left__img" src={mascota.imagen} alt="imagen del animalito" />
+              <Link className="c-estado-adopcion__link" to={generatePath("/adopcionDetail/:nombre", { nombre: mascota.nombre })}>
+                <div className="c-estado-adopcion__top">
+                  <p className="c-estado-adopcion__top__p">Adopción de {mascota.nombre}</p>
+                  <p className="c-estado-adopcion__top__estado">
+                    En proceso <img className="c-estado-adopcion__top__img" src={enProcesoImg} alt="proceso" />
+                  </p>
                 </div>
-                <div className="c-estado-adopcion__bottom__right">
-                  <p className="c-estado-adopcion__bottom__right__p">Nombre: {mascota.nombre}</p>
-                  <p className="c-estado-adopcion__bottom__right__p">Ciudad: {mascota.ciudad}</p>
-                  <p className="c-estado-adopcion__bottom__right__p">Sexo: {mascota.sexo}</p>
+                <div className="c-estado-adopcion__bottom">
+                  <div className="c-estado-adopcion__bottom__left">
+                    <img className="c-estado-adopcion__bottom__left__img" src={mascota.imagen} alt="imagen del animalito" />
+                  </div>
+                  <div className="c-estado-adopcion__bottom__right">
+                    <p className="c-estado-adopcion__bottom__right__p">Nombre: {mascota.nombre}</p>
+                    <p className="c-estado-adopcion__bottom__right__p">Ciudad: {mascota.ciudad}</p>
+                    <p className="c-estado-adopcion__bottom__right__p">Sexo: {mascota.sexo}</p>
+                  </div>
                 </div>
-              </div>
+              </Link>
             </div>
           ))}
         </>
