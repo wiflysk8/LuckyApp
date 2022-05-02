@@ -3,7 +3,8 @@
   display: flex;
   flex-direction: column;
   gap: 24px;
-  &__arrow{
+  padding-bottom: 10%;
+  &__arrow {
     width: 28px;
     height: 28px;
     position: absolute;
@@ -11,7 +12,7 @@
     top: 5%;
   }
 
-  &__input{
+  &__input {
     position: absolute;
     top: 5%;
     left: 14%;
