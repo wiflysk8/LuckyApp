@@ -18,6 +18,7 @@ import FormPage from "../pages/FormPage/FormPage";
 import Fav from "../shared/components/Fav/Fav";
 import EstadoAdopcion from "../shared/components/EstadoAdopcion/EstadoAdopcion";
 import LandingPage from "../shared/components/LandingPage/LandingPage";
+import PopAdopciones from "../shared/components/PopAdopciones/PopAdopciones";
 
 const RoutesFile = () => {
   return (
@@ -123,6 +124,14 @@ const RoutesFile = () => {
         element={
           <RequireAuth>
             <Enviado />
+          </RequireAuth>
+        }
+      />
+      <Route
+        path="/popadopciones"
+        element={
+          <RequireAuth>
+            <PopAdopciones />
           </RequireAuth>
         }
       />
