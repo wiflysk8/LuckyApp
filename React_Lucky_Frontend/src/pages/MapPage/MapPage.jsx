@@ -19,25 +19,26 @@ const center = {
 };
 
 const MapPage = () => {
-
   const [visibility, setVisibility] = useState(false);
 
   const popupCloseHandler = (e) => {
     setVisibility(e);
   };
 
-
   return (
     <section className="c-map">
       <div className="c-map__div">
         <input type="text" className="c-map__input" placeholder="¿Qué estás buscando?" />
         <img className="c-map__logo" src={SearchLogo} alt="lupa" />
-        <img className="c-map__logo c-map__logo--filter" src={Filter} alt="lupa" onClick={(e) => {
-              setVisibility(!visibility);
-              e.preventDefault();
-              //navigate("/estado");
-              //window.location.reload();
-            }} />
+        <img
+          className="c-map__logo c-map__logo--filter"
+          src={Filter}
+          alt="lupa"
+          onClick={(e) => {
+            setVisibility(!visibility);
+            e.preventDefault();
+          }}
+        />
         <div className="c-map__googleMaps">
           <LoadScript googleMapsApiKey={process.env.REACT_APP_GOOGLE_MAPS_API_KEY}>
             <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={13}>
@@ -48,7 +49,7 @@ const MapPage = () => {
         </div>
         <Nav />
         <CustomPopup onClose={popupCloseHandler} show={visibility} title="">
-            <PopMaps />
+          <PopMaps setVisibility={setVisibility} />
         </CustomPopup>
       </div>
     </section>
