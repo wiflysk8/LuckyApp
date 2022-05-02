@@ -33,7 +33,7 @@ const AdopcionDetail = () => {
           <div className="c-estado-adopcionDetail__title">
             <Link className="c-estado-adopcionDetail__link" to="/estado">
               <img className="c-estado__arrow" src={arrow} alt="flecha" />
-              <p>Adopción de {mascotaDetail.nombre}</p>
+              <p className="c-estado-adopcionDetail__p">Adopción de {mascotaDetail.nombre}</p>
             </Link>
           </div>
           <div className="c-estado-adopcionDetail__sections">
