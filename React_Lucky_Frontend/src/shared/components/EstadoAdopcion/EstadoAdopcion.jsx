@@ -19,7 +19,6 @@ const EstadoAdopcion = () => {
     setVisibility(e);
   };
 
-
   const localUser = JSON.parse(localStorage.getItem("user"));
 
   useEffect(() => {
@@ -53,12 +52,17 @@ const EstadoAdopcion = () => {
       </Link>
       <input type="text" className="c-estado__input" placeholder="Buscar" onChange={onSearch} />
       <img className="c-map__logo" src={SearchLogo} alt="lupa" />
-      <img className="c-map__logo c-map__logo--filter" src={Filter} alt="lupa" onClick={(e) => {
-              setVisibility(!visibility);
-              e.preventDefault();
-              //navigate("/estado");
-              //window.location.reload();
-            }} />
+      <img
+        className="c-map__logo c-map__logo--filter"
+        src={Filter}
+        alt="lupa"
+        onClick={(e) => {
+          setVisibility(!visibility);
+          e.preventDefault();
+          //navigate("/estado");
+          //window.location.reload();
+        }}
+      />
 
       {user && (
         <>
@@ -85,8 +89,8 @@ const EstadoAdopcion = () => {
         </>
       )}
       <CustomPopup onClose={popupCloseHandler} show={visibility} title="">
-            <PopAdopcion />
-        </CustomPopup>
+        <PopAdopcion setVisibility={setVisibility} />
+      </CustomPopup>
     </div>
   );
 };
