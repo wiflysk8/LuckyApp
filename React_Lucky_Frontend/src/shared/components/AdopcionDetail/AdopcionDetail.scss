@@ -11,6 +11,11 @@
     margin-top: 10%;
     border-radius: 6px;
     border: 2px solid var(--color-primary-transparent);
+    &__p {
+      font-weight: 400;
+      font-size: 20px;
+      color: rgb(100, 98, 98);
+    }
     &__sections {
       width: 100%;
       margin: 0px;
