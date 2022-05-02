@@ -14,7 +14,7 @@ import FavImg from "../../assets/PerfilAnimales/favoritos.png";
 import Compartir from "../../assets/PerfilAnimales/compartir.png";
 
 export default function MascotasDetailPage() {
-  const url = "http://localhost:5000/mascotas";
+  const url = "https://luismrtinez.com/mascotas";
   const [mascotaDetail, setMascotaDetail] = useState();
   let { name } = useParams("name");
 

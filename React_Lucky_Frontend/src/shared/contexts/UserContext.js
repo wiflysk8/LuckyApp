@@ -13,7 +13,7 @@ export default function UserContextProvider({ children }) {
     if (localUser) {
       const getUser = async () => {
         if (localUser) {
-          const res = await axios.get(`http://localhost:5000/users/${localUser._id}`);
+          const res = await axios.get(`https://luismrtinez.com/users/${localUser._id}`);
           setUser(res.data);
         }
       };
@@ -24,7 +24,7 @@ export default function UserContextProvider({ children }) {
 
   useEffect(() => {
     const getMascotas = async () => {
-      const res = await axios.get("http://localhost:5000/mascotas");
+      const res = await axios.get("https://luismrtinez.com/mascotas");
       setMascotas(res.data);
       setFilteredMascotas(res.data);
     };
