@@ -1,9 +1,11 @@
 .c-popadopciones {
   width: 330px;
   height: 260px;
-  border: 2px solid black;
   border-radius: 12px;
   margin-top: 70%;
+  background-color: white;
+  padding: 10px;
+  margin: 60% auto;
   &__title {
     text-align: center;
     font-weight: 500;

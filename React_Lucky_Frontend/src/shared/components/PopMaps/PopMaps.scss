@@ -1,9 +1,10 @@
 .c-popmaps {
     width: 330px;
     height: 350px;
-    border: 2px solid black;
     border-radius: 12px;
-    margin-top: 50%;
+    margin: 40% auto;
+    background-color: white;
+    padding: 10px;
     &__title {
       text-align: center;
       font-weight: 500;
