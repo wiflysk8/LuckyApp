@@ -19,7 +19,7 @@ import Fav from "../shared/components/Fav/Fav";
 import EstadoAdopcion from "../shared/components/EstadoAdopcion/EstadoAdopcion";
 import LandingPage from "../shared/components/LandingPage/LandingPage";
 import PopAdopciones from "../shared/components/PopAdopciones/PopAdopciones";
-
+import AdopcionDetail from "../shared/components/AdopcionDetail/AdopcionDetail";
 
 const RoutesFile = () => {
   return (
@@ -50,6 +50,14 @@ const RoutesFile = () => {
         element={
           <RequireAuth>
             <AdopcionPage />
+          </RequireAuth>
+        }
+      />
+      <Route
+        path="/adopcionDetail/:nombre"
+        element={
+          <RequireAuth>
+            <AdopcionDetail />
           </RequireAuth>
         }
       />

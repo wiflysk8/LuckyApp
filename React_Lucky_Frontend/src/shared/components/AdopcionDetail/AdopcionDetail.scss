@@ -4,53 +4,41 @@
   flex-direction: column;
   gap: 24px;
   padding-bottom: 10%;
-  &__arrow {
-    width: 28px;
-    height: 28px;
-    position: absolute;
-    left: 10px;
-    top: 5%;
-  }
 
-  &__input {
-    position: absolute;
-    top: 5%;
-    left: 14%;
-    width: 64%;
-    height: 28px;
-    border: 1px solid var(--color-primary-transparent);
-    border-radius: 18px;
-    font-size: 14px;
-    padding-left: 6%;
-    &:focus {
-      outline: none;
-      border-color: var(--color-secondary);
-    }
-  }
-  &-adopcion {
+  &-adopcionDetail {
     width: 90vw;
-    height: 22vh;
-    border-radius: 8px;
-    border: 1px solid var(--color-primary-transparent);
+    height: 24vh;
+    margin-top: 10%;
+    border-radius: 6px;
+    border: 2px solid var(--color-primary-transparent);
+    &__title {
+      text-align: center;
+      margin-top: 10%;
+    }
+
     &__link {
       text-decoration: none;
-      color: var(--color-primary);
+      color: black;
+      font-weight: 400;
+      font-size: 18px;
     }
     &__top {
-      width: 100%;
+      width: 60%;
       height: 30%;
       display: flex;
       align-items: center;
-      justify-content: space-around;
+
+      &__arrow {
+        width: 20px;
+        height: 20px;
+        transform: rotate(270deg);
+      }
       &__p {
         font: 14px;
         font-weight: 600;
+        margin: 0 4px 0px 26px;
       }
-      &__estado {
-        font: 14px;
-        font-weight: lighter;
-        color: orange;
-      }
+
       &__img {
         width: 10px;
         height: 10px;
@@ -73,7 +61,7 @@
       }
       &__right {
         position: relative;
-        left: 3.5%;
+        right: 14%;
         top: 7px;
         &__p {
           font-size: 14px;
@@ -81,9 +69,14 @@
           justify-content: space-between;
           margin: 4px;
           color: black;
-          font-weight: 500;
+          font-weight: 400;
         }
       }
+    }
+    &__section2 {
+      width: 100%;
+      margin-top: 20%;
+      border-top: 1px solid var(--color-terciary-transparent);
     }
   }
 }

@@ -15,7 +15,7 @@ export default function Salud({ mascotaDetail }) {
 
   const handleAdopted = () => {
     user.mascotas.map((mascota) => {
-      if (mascota.id === mascotaDetail[0].id) {
+      if (mascota.id === mascotaDetail.id) {
         setAdopted(true);
       }
     });
@@ -33,7 +33,7 @@ export default function Salud({ mascotaDetail }) {
             <p className="c-salud__p">Vacunado</p>
           </div>
           <div className="c-salud__row-right">
-            <p className="c-salud__p">{mascotaDetail[0].vacunado}</p>
+            <p className="c-salud__p">{mascotaDetail.vacunado}</p>
           </div>
         </div>
 
@@ -43,7 +43,7 @@ export default function Salud({ mascotaDetail }) {
             <p className="c-salud__p">Desparasitado</p>
           </div>
           <div className="c-salud__row-right">
-            <p className="c-salud__p">{mascotaDetail[0].desparasitado}</p>
+            <p className="c-salud__p">{mascotaDetail.desparasitado}</p>
           </div>
         </div>
 
@@ -53,7 +53,7 @@ export default function Salud({ mascotaDetail }) {
             <p className="c-salud__p">Sano</p>
           </div>
           <div className="c-salud__row-right">
-            <p className="c-salud__p">{mascotaDetail[0].sano}</p>
+            <p className="c-salud__p">{mascotaDetail.sano}</p>
           </div>
         </div>
 
@@ -63,7 +63,7 @@ export default function Salud({ mascotaDetail }) {
             <p className="c-salud__p">Esterilizado</p>
           </div>
           <div className="c-salud__row-right">
-            <p className="c-salud__p">{mascotaDetail[0].esterilizado}</p>
+            <p className="c-salud__p">{mascotaDetail.esterilizado}</p>
           </div>
         </div>
 
@@ -73,7 +73,7 @@ export default function Salud({ mascotaDetail }) {
             <p className="c-salud__p">Identificado</p>
           </div>
           <div className="c-salud__row-right">
-            <p className="c-salud__p">{mascotaDetail[0].identificado}</p>
+            <p className="c-salud__p">{mascotaDetail.identificado}</p>
           </div>
         </div>
         <div className="c-salud__row">
@@ -82,7 +82,7 @@ export default function Salud({ mascotaDetail }) {
             <p className="c-salud__p">Microchip</p>
           </div>
           <div className="c-salud__row-right">
-            <p className="c-salud__p">{mascotaDetail[0].microchip}</p>
+            <p className="c-salud__p">{mascotaDetail.microchip}</p>
           </div>
         </div>
         <div className="c-salud__bottom">

@@ -28,6 +28,12 @@ const PopAdopciones = ({ setVisibility }) => {
     setVisibility(false);
   };
 
+  const handleReset = () => {
+    setCompletado(true);
+    setEnproceso(true);
+    setRechazado(true);
+  };
+
   return (
     <div className="c-popadopciones">
       <h1 className="c-popadopciones__title">Filtros</h1>
@@ -66,9 +72,26 @@ const PopAdopciones = ({ setVisibility }) => {
           </div>
         )}
       </div>
-      <button className="c-popadopciones__btn" onClick={handleChangeEstadoAdopcion}>
-        Aplicar
-      </button>
+      {!completado || !enproceso || !rechazado ? (
+        <div className="c-popmaps__buttons">
+          <button
+            className="c-popmaps__buttons__btn c-popmaps__buttons__btn--inverted"
+            onClick={() => {
+              handleReset();
+            }}
+          >
+            Borrar filtros
+          </button>
+
+          <button className="c-popmaps__buttons__btn" onClick={handleChangeEstadoAdopcion}>
+            Aceptar
+          </button>
+        </div>
+      ) : (
+        <button className="c-popmaps__btn" onClick={handleChangeEstadoAdopcion}>
+          Aplicar
+        </button>
+      )}
     </div>
   );
 };
