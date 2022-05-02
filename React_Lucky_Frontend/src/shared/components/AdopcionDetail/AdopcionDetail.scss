@@ -76,8 +76,8 @@
         &__img {
           object-fit: cover;
           object-position: top;
-          width: 90px;
-          height: 90px;
+          width: 110px;
+          height: 110px;
           border-radius: 50%;
           border: 3px solid var(--color-primary-transparent);
         }
@@ -85,7 +85,7 @@
       &__right {
         position: relative;
         right: 14%;
-        top: 7px;
+        top: 18px;
         &__p {
           font-size: 14px;
           display: flex;
