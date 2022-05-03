@@ -17,7 +17,7 @@ const AdopcionSection = ({ mascotaDetail }) => {
           <h2 className="c-adopcionSection__text">Día</h2>
         </div>
         <div>
-         <input type="date" className="c-adopcionSection__calendar" value="2022-05-04"/>
+         <input type="date" className="c-adopcionSection__calendar"/>
         </div>
       </div>
       <div>
