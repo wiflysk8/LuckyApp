@@ -43,7 +43,7 @@ import cross from "../../assets/Filtros/X.png";
 function AnimalsFilter(props) {
 
     const [ciudad, setCiudad] = useState("noCity");
-    const [animal, setAnimal] = useState("noAnimal");
+    const [especie, setEspecie] = useState("noEspecie");
     const [age, setAge] = useState("noAge");
     const [sex, setSexo] = useState("noSex");
     const [shape, setShape] = useState("noShape");
@@ -52,47 +52,39 @@ function AnimalsFilter(props) {
 
     const submit= (filtro) => {
         filtro.preventDefault();
-        let url = "https://luismrtinez.com/mascotas";
-        if (ciudad !== "noCity" || animal !=="noAnimal") {
-            url += '/filtro?';
-            let filtered = false;
-            if (ciudad !== "noCity") {
-                url += 'ciudad=' + ciudad;
-                filtered = true;
-            }
-            if (animal !== "noAnimal"){
-                url += 'animal=' + animal;
-                filtered = true;
-            }
-            if (age !== "noAge"){
-                url += 'edad=' + age;
-                filtered = true;
-            }
-            if (sex !== "noSex"){
-                url += 'sexo=' + sex;
-                filtered = true;
-            }
-            if (shape !== "noShape"){
-                url += 'tamaño=' + shape;
-                filtered = true;
-            }
-            
-            
-        };
-
-        API.get(url)
+        
+        const url = 'https://luismrtinez.com/mascotas';
+        fetch(url)
+        .then(res => res.json())
+        .then(data => {
+            const datosFiltro= [];
+            data.forEach(animal => {
+                if (animal.ciudad.toLowerCase() === ciudad.toLowerCase())(
+                    console.log(animal)
+                )
+                if (animal.especie.toLowerCase() === especie.toLowerCase())(
+                    console.log(animal)
+                )
+                if (animal.sexo.toLowerCase() === sex.toLowerCase())(
+                    console.log(animal)
+                )
+                if (animal.tamano.toLowerCase() === shape.toLowerCase())(
+                    console.log(animal)
+                )
+            })
+        })
         .then((filtrado) => {
-            console.log(filtrado.data);
             setFiltroFinal(filtrado.data);
-            localStorage.setItem('mascotaFiltrada', JSON.stringify(filtrado.data));
-            setTimeout(() => {
+            localStorage.setItem('mascotaFiltrada', JSON.stringify(filtroFinal));
+            /*console.log(filtrado.data);*/
+            /*setTimeout(() => {
                 window.location.href = "/resultado"
-            }, 100);
+            }, 100);*/
         })
         .catch((error) => {
             console.log(error);
         })
-    }
+    };
 
 
     function filteredCity(selectedCity) {
@@ -100,14 +92,12 @@ function AnimalsFilter(props) {
     };
 
     const filteredAnimal = (selectedAnimal) =>{
-        if(selectedAnimal === animal ) {
-            setAnimal("noAnimal");
-            document.getElementById(selectedAnimal).classList.remove("c-filter-container__selected");
-            document.getElementById(selectedAnimal).classList.add("c-filter-container__noselected");
+        if(selectedAnimal === especie ) {
+            setEspecie("noEspecie");
+            document.getElementsByClassName("c-filter-container__icon").classList.replace("selected","no-selected")
         }else {
-            setAnimal(selectedAnimal);
-            document.getElementById(selectedAnimal).classList.remove("c-filter-container__noselceted");
-            document.getElementById(selectedAnimal).classList.add("c-filter-container__selected");
+            setEspecie(selectedAnimal);
+            document.getElementsByClassName("c-filter-container__icon").classList.replace("no-selected", "selected");
         };
     };
 
@@ -118,44 +108,39 @@ function AnimalsFilter(props) {
     function filteredSex (selectedSex) {
         if (selectedSex === sex){
             setSexo("noSex");
-            document.getElementById(selectedSex).classList.remove("c-filter-container__selected");
-            document.getElementById(selectedSex).classList.add("c-filter-container__noselected");
+            document.getElementById(selectedSex).classList.remove("selected");
+            document.getElementById(selectedSex).classList.add("no-selected");
         } else {
             setSexo(selectedSex);
-            document.getElementById(selectedSex).classList.remove("c-filter-container__noselected");
-            document.getElementById(selectedSex).classList.add("c-filter-container__selected");
+            document.getElementById(selectedSex).classList.remove("no-selected");
+            document.getElementById(selectedSex).classList.add("selected");
         };
     };
 
     const filteredShape = (selectedShape) => {
         if (selectedShape === shape){
             setShape("noShape");
-            document.getElementById(selectedShape).classList.remove("c-filter-container__noselected");
-            document.getElementById(selectedShape).classList.add("c-filter-container__selected");
+            document.getElementById(selectedShape).classList.remove("no-selected");
+            document.getElementById(selectedShape).classList.add("selected");
         } else {
             setShape(selectedShape);
-            document.getElementById(selectedShape).classList.remove("c-filter-container__selected");
-            document.getElementById(selectedShape).classList.add("c-filter-container__noselected");
+            document.getElementById(selectedShape).classList.remove("selected");
+            document.getElementById(selectedShape).classList.add("no-selected");
         };
     }
 function deleteFilter(){
     setCiudad("noCiudad");
-    setAnimal("noAnimal");
+    setEspecie("noEspecie");
     setAge("noAge");
     setSexo("noSex");
-    setShape("noShape");
-    console.log(ciudad, animal, age, sex, shape);    
+    setShape("noShape");    
 };
 
-console.log(ciudad, animal, age, sex, shape);
+console.log(ciudad, especie, age, sex, shape);
 
-
-
-    /*console.log(valoresFiltro);*/
 
 return (
     <section className="c-filter">
-        <form onSubmit={submit}>
             <Link to="/adopcion">
                 <img src={cross} alt="cross" className="x" />
             </Link>
@@ -164,7 +149,6 @@ return (
                 <h2 className="c-filter__category">Ciudad</h2>
                 <select className="c-filter__display" onChange= {filteredCity} name="cities" id="cityList">
                 <option value="noCity">Selecciona...</option>
-                <option value="">Cualquiera</option>                
                 <option value="barcelona">Barcelona</option>
                 <option value="bilbao">Bilbao</option>
                 <option value="madrid">Madrid</option>
@@ -178,18 +162,18 @@ return (
             <div>
                 <h2 className="c-filter__category">Especie</h2>
                 <ul className="c-filter-container">
-                    <li className="c-filter-container__noselected"><img src={ animal === 'perro' ? perroSecundario : perro } alt="perro" onClick={() => filteredAnimal("perro")} /> <p>Perro</p></li>
-                    <li className="c-filter-container__noselected"><img src={ animal === 'gato' ? gatoSecundario : gato } alt="gato" onClick={() => filteredAnimal("gato")} /> <p>Gato</p></li>
-                    <li className="c-filter-container__noselected"><img src={conejo} alt="conejo" onClick={() => filteredAnimal("conejo")} /> <p>Conejo</p></li>
-                    <li className="c-filter-container__noselected"><img src={cobaya} alt="cobaya" onClick={() => filteredAnimal("cobaya")} /> <p>Cobaya</p></li>
-                    <li className="c-filter-container__noselected"><img src={animal === 'mamifero' ? mamiferoSecundario : mamifero} alt="pequeño mamifero" onClick={() => filteredAnimal("mamifero")} /> <p>Pequeño mamífero</p></li>
+                    <li className="c-filter-container__icon no-selected" onClick={() => filteredAnimal("perro")}><img src={ especie === 'perro' ? perroSecundario : perro } alt="perro" /> <p>Perro</p></li>
+                    <li className="c-filter-container__icon no-selected" onClick={() => filteredAnimal("gato")}><img src={ especie === 'gato' ? gatoSecundario : gato } alt="gato" /> <p>Gato</p></li>
+                    <li className="c-filter-container__icon no-selected" onClick={() => filteredAnimal("conejo")}><img src={conejo} alt="conejo" /> <p>Conejo</p></li>
+                    <li className="c-filter-container__icon no-selected" onClick={() => filteredAnimal("cobaya")}><img src={cobaya} alt="cobaya" /> <p>Cobaya</p></li>
+                    <li className="c-filter-container__icon no-selected" onClick={() => filteredAnimal("mamifero")}><img src={especie === 'mamifero' ? mamiferoSecundario : mamifero} alt="pequeño mamifero" /> <p>Pequeño mamífero</p></li>
                     {/*en la api figura un 'pequeño mamífero', no hacen falta las dos palabras*/}
-                    <li className="c-filter-container__noselected"><img src={huron} alt="hurón" onClick={() => filteredAnimal("huron")} /> <p>Hurón</p></li>
-                    <li className="c-filter-container__noselected"><img src={pez} alt="pez" onClick={() => filteredAnimal("pez")} /> <p>Pez</p></li>
-                    <li className="c-filter-container__noselected"><img src={reptil} alt="reptil" onClick={() => filteredAnimal("reptil")} /> <p>Reptil</p></li>
-                    <li className="c-filter-container__noselected"><img src={anfibio} alt="anfíbio" onClick={() => filteredAnimal("anfibio")} /> <p>Anfíbio</p></li>
-                    <li className="c-filter-container__noselected"><img src={araña} alt="arácnido" onClick={() => filteredAnimal("aracnido")} /> <p>Arácnido o insecto</p></li>
-                    <li className="c-filter-container__noselected"><img src={ animal === 'ave' ? aveSecundario : ave} alt="ave" onClick={() => filteredAnimal("ave")} /> <p>Ave</p></li>
+                    <li className="c-filter-container__icon no-selected" onClick={() => filteredAnimal("huron")}><img src={huron} alt="hurón" /> <p>Hurón</p></li>
+                    <li className="c-filter-container__icon no-selected" onClick={() => filteredAnimal("pez")}><img src={pez} alt="pez" /> <p>Pez</p></li>
+                    <li className="c-filter-container__icon no-selected" onClick={() => filteredAnimal("reptil")}><img src={reptil} alt="reptil" /> <p>Reptil</p></li>
+                    <li className="c-filter-container__icon no-selected" onClick={() => filteredAnimal("anfibio")}><img src={anfibio} alt="anfíbio" /> <p>Anfíbio</p></li>
+                    <li className="c-filter-container__icon no-selected" onClick={() => filteredAnimal("aracnido")}><img src={araña} alt="arácnido" /> <p>Arácnido o insecto</p></li>
+                    <li className="c-filter-container__icon no-selected" onClick={() => filteredAnimal("ave")}><img src={ especie === 'ave' ? aveSecundario : ave} alt="ave" /> <p>Ave</p></li>
                 </ul>
             </div>
             <div>
@@ -204,25 +188,22 @@ return (
             <div>
                 <h2 className="c-filter__category">Sexo</h2>
                 <ul className="c-filter-container">
-                    <li><img src={ sex === 'macho' ? machoSecundario : macho } alt="macho" onClick={() => filteredSex("macho")} /><p className="c-shape-filter">Macho</p></li>
-                    <li><img src={ sex === 'hembra' ? hembraSecundario : hembra } alt="hembra" onClick={() => filteredSex("hembra")} /><p className="c-shape-filter">Hembra</p></li>
+                    <li className="c-filter-container__icon no-selected" onClick={() => filteredSex("macho")}><img src={ sex === 'macho' ? machoSecundario : macho } alt="macho" /><p className="c-shape-filter">Macho</p></li>
+                    <li className="c-filter-container__icon no-selected" onClick={() => filteredSex("hembra")}><img src={ sex === 'hembra' ? hembraSecundario : hembra } alt="hembra" /><p className="c-shape-filter">Hembra</p></li>
                 </ul>
             </div>
             <div>
                 <h2 className="c-filter__category">Tamaño</h2>
                 <ul className="c-filter-container">
-                    <li><img src={shape === 'pequeño' ? pequeñoSecundario : pequeño } alt="tamaño pequeño" onClick={() => filteredShape("pequeño")} /><p className="c-shape-filter">Pequeño</p></li>
-                    <li><img src={shape === 'mediano' ? medianoSecundario : mediano } alt="tamaño mediano" onClick={() => filteredShape("mediano")} /><p className="c-shape-filter">Mediano</p></li>
-                    <li><img src={shape === 'grande' ? grande : grande } alt="tamaño grande" onClick={() => filteredShape("grande")} /><p className="c-shape-filter">Grande</p></li>
+                    <li className="c-filter-container__icon no-selected" onClick={() => filteredShape("pequeño")}><img src={shape === 'pequeño' ? pequeñoSecundario : pequeño } alt="tamaño pequeño" /><p className="c-shape-filter">Pequeño</p></li>
+                    <li className="c-filter-container__icon no-selected" onClick={() => filteredShape("mediano")}><img src={shape === 'mediano' ? medianoSecundario : mediano } alt="tamaño mediano" /><p className="c-shape-filter">Mediano</p></li>
+                    <li className="c-filter-container__icon no-selected" onClick={() => filteredShape("grande")}><img src={shape === 'grande' ? grande : grande } alt="tamaño grande" /><p className="c-shape-filter">Grande</p></li>
                 </ul>        
             </div>
             <div>
-                <Link to="/adopcion">
-                    <button className="c-filter-button__delete" onClick={deleteFilter}>Borrar filtros</button>
-                </Link>
-                <button className="c-filter-button__submit">Aplicar</button>
+                <button className="c-filter-button__submit" onClick={submit}>Aplicar</button>
             </div>
-        </form>
+        <button className="c-filter-button__delete" onClick={deleteFilter}>Borrar filtros</button>
     </section>
 )};
 
