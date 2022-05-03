@@ -50,7 +50,7 @@ function AnimalsFilter(props) {
   const filteredData = [];
 
   mascotas.forEach((mascota) => {
-    if (mascota.especie.toLowerCase() === especie.toLowerCase() || mascota.sexo.toLowerCase() === sex.toLowerCase) {
+    if (mascota.especie.toLowerCase() === especie.toLowerCase() && mascota.sexo.toLowerCase() === sex.toLowerCase() && mascota.ciudad.toLowerCase() === ciudad.toLowerCase()) {
       filteredData.push(mascota);
     }
   });
