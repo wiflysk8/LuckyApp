@@ -9,7 +9,7 @@ import { useState } from "react";
 
 function FilteredAnimals({ filteredData }) {
   const [on, setOn] = useState(true);
-  console.log(on);
+
   return (
     <>
       {on ? (
