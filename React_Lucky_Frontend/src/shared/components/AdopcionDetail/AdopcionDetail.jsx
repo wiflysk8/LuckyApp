@@ -57,7 +57,7 @@ const AdopcionDetail = () => {
                 setActive3(false);
               }}
             >
-              Info adiccional
+              Info adicional
             </h3>
             <h3
               className={active3 ? "c-estado-adopcionDetail__sections__title c-estado-adopcionDetail__sections__title--active" : "c-estado-adopcionDetail__sections__title"}
