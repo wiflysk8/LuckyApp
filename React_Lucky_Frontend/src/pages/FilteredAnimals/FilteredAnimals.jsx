@@ -38,7 +38,9 @@ function FilteredAnimals({ filteredData }) {
             <Link className="c-link" to="/filtro">
               <img className="c-filtradosPage-filter__img" src={Filter} alt="filter" onClick={() => setOn(false)} />
             </Link>
-            <div className="c-filtradosPage__num">{filteredData.length}</div>
+            <div className="c-filtradosPage__num" onClick={() => setOn(false)}>
+              {filteredData.length}
+            </div>
           </div>
           <div className="c-gallery__mascotas">
             {mascotas.map((mascota) => (
