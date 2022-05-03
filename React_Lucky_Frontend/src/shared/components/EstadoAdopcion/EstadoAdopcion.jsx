@@ -10,6 +10,7 @@ import arrow from "../../../assets/Buscador/flechaatras.png";
 import CustomPopup from "../CustomPopup/CustomPopup";
 import PopAdopcion from "../../../shared/components/PopAdopciones/PopAdopciones";
 import { generatePath } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 const EstadoAdopcion = () => {
   const [filteredMascotas, setFilteredMascotas] = useState([]);
   const [mascotas, setMascotas] = useState([]);
@@ -18,6 +19,13 @@ const EstadoAdopcion = () => {
 
   const popupCloseHandler = (e) => {
     setVisibility(e);
+  };
+
+  const navigate = useNavigate();
+
+  const handleBack = () => {
+    navigate("/adopcion");
+    window.location.reload();
   };
 
   const localUser = JSON.parse(localStorage.getItem("user"));
@@ -48,9 +56,9 @@ const EstadoAdopcion = () => {
 
   return (
     <div className="c-estado">
-      <Link to="/adopcion">
-        <img className="c-estado__arrow" src={arrow} alt="flecha" />
-      </Link>
+      {/*  <Link to="/adopcion"> */}
+      <img className="c-estado__arrow" src={arrow} alt="flecha" onClick={handleBack} />
+
       <input type="text" className="c-estado__input" placeholder="Buscar" onChange={onSearch} />
       <img className="c-map__logo" src={SearchLogo} alt="lupa" />
       <img
@@ -66,7 +74,7 @@ const EstadoAdopcion = () => {
       />
 
       {user && (
-        <>
+        <section className="c-detailSection">
           {mascotas.map((mascota, index) => (
             <div key={index} className="c-estado-adopcion">
               <Link className="c-estado-adopcion__link" to={generatePath("/adopcionDetail/:nombre", { nombre: mascota.nombre })}>
@@ -89,7 +97,7 @@ const EstadoAdopcion = () => {
               </Link>
             </div>
           ))}
-        </>
+        </section>
       )}
       <CustomPopup onClose={popupCloseHandler} show={visibility} title="">
         <PopAdopcion setVisibility={setVisibility} />
