@@ -36,7 +36,7 @@ import medianoSecundario from "../../assets/IconosAnimales/perritoMedianoSecunda
 import cross from "../../assets/Filtros/X.png";
 import { UserContext } from "../../shared/contexts/UserContext";
 
-function AnimalsFilter(props) {
+function AnimalsFilter() {
   const [ciudad, setCiudad] = useState("noCity");
   const [especie, setEspecie] = useState("noEspecie");
   const [age, setAge] = useState("noAge");
@@ -50,7 +50,12 @@ function AnimalsFilter(props) {
   const filteredData = [];
 
   mascotas.forEach((mascota) => {
-    if (mascota.especie.toLowerCase() === especie.toLowerCase() && mascota.sexo.toLowerCase() === sex.toLowerCase() && mascota.ciudad.toLowerCase() === ciudad.toLowerCase()) {
+    if (
+      (mascota.especie.toLowerCase() === especie.toLowerCase() || especie === "noEspecie") &&
+      (mascota.sexo.toLowerCase() === sex.toLowerCase() || sex === "noSex") &&
+      (mascota.ciudad.toLowerCase() === ciudad.toLowerCase() || ciudad === "noCity") &&
+      (mascota.tamano.toLowerCase() === shape.toLowerCase() || shape === "noShape")
+    ) {
       filteredData.push(mascota);
     }
   });
@@ -149,8 +154,8 @@ function AnimalsFilter(props) {
                   Cobaya
                 </p>
               </div>
-              <div className={especie === "mamifero" ? "c-filter-container__icon selected" : "c-filter-container__icon no-selected"} onClick={() => filteredAnimal("mamifero")}>
-                <img className="c-filter-image" src={especie === "mamifero" ? mamiferoSecundario : mamifero} alt="mamifero" />
+              <div className={especie === "Pequeño mamifero" ? "c-filter-container__icon selected" : "c-filter-container__icon no-selected"} onClick={() => filteredAnimal("Pequeño mamifero")}>
+                <img className="c-filter-image" src={especie === "Pequeño mamifero" ? mamiferoSecundario : mamifero} alt="mamifero" />
                 <p>Pequeño mamífero</p>
               </div>
               <div className={especie === "huron" ? "c-filter-container__icon selected" : "c-filter-container__icon no-selected"} onClick={() => filteredAnimal("huron")}>
@@ -169,8 +174,8 @@ function AnimalsFilter(props) {
                 <img className="c-filter-image" src={especie === "anfibio" ? anfibioSecundario : anfibio} alt="anfíbio" />
                 <p>Anfíbio</p>
               </div>
-              <div className={especie === "aracnido" ? "c-filter-container__icon selected" : "c-filter-container__icon no-selected"} onClick={() => filteredAnimal("aracnido")}>
-                <img className="c-filter-image" src={especie === "aracnido" ? arañaSecundario : araña} alt="arácnido" />
+              <div className={especie === "Aracnido o insecto" ? "c-filter-container__icon selected" : "c-filter-container__icon no-selected"} onClick={() => filteredAnimal("Aracnido o insecto")}>
+                <img className="c-filter-image" src={especie === "Aracnido o insecto" ? arañaSecundario : araña} alt="arácnido" />
                 <p>Arácnido o insecto</p>
               </div>
               <div className={especie === "ave" ? "c-filter-container__icon selected" : "c-filter-container__icon no-selected"} onClick={() => filteredAnimal("ave")}>
