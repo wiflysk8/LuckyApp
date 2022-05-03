@@ -24,11 +24,9 @@ const HomePage = () => {
         el: ".swiper-pagination",
       },
     });
-    
   }, []);
 
   const user = JSON.parse(localStorage.getItem("user"));
-  
 
   return (
     <section className="c-home">
