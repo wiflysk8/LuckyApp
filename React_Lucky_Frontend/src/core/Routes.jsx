@@ -15,10 +15,13 @@ import MascotasDetailPage from "../pages/MascotasDetailPage/MascotasDetailPage";
 import Advertencia from "../shared/components/Advertencia/Advertencia";
 import Enviado from "../shared/components/Enviado/Enviado";
 import FormPage from "../pages/FormPage/FormPage";
+import AnimalsFilter from "../pages/AnimalsFilter/AnimalsFilter";
 import Fav from "../shared/components/Fav/Fav";
 import EstadoAdopcion from "../shared/components/EstadoAdopcion/EstadoAdopcion";
 import LandingPage from "../shared/components/LandingPage/LandingPage";
 import PopAdopciones from "../shared/components/PopAdopciones/PopAdopciones";
+import FilteredAnimals from "../pages/FilteredAnimals/FilteredAnimals";
+
 import AdopcionDetail from "../shared/components/AdopcionDetail/AdopcionDetail";
 
 const RoutesFile = () => {
@@ -144,6 +147,22 @@ const RoutesFile = () => {
           </RequireAuth>
         }
       />
+      <Route
+        path="/filtro"
+        element={
+          <RequireAuth>
+            <AnimalsFilter />
+          </RequireAuth>
+        }
+      />
+      <Route
+      path="/resultado"
+      element={
+        <RequireAuth>
+          <FilteredAnimals />
+        </RequireAuth>
+      }
+    />
       {/*   <Route path="/" element={<Navigate to="/slider" />} /> */}
     </Routes>
   );

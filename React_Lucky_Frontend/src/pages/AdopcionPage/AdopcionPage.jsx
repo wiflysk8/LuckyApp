@@ -31,7 +31,9 @@ const AdopcionPage = () => {
       </Link>
       <div className="c-adopcionPage-filter">
         <h3 className="c-adopcionPage-filter__h3">Animales en adopción</h3>
-        <img className="c-adopcionPage-filter__img" src={Filter} alt="filter" />
+        <Link className="c-link" to="/filtro">
+          <img className="c-adopcionPage-filter__img" src={Filter} alt="filter" />
+        </Link>
       </div>
       <Gallery mascotas={mascotas} />
 

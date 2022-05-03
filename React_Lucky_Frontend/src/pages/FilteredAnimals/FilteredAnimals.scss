@@ -1,0 +1,75 @@
+.c-filtradosPage {
+    width: 80vw;
+    margin: 0 30px;
+    height: 92vh;
+    overflow-x: hidden;
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+    &::-webkit-scrollbar {
+      display: none;
+      
+    }
+    &__num{
+        background-color: var(--color-primary);
+        border-radius: 50%;
+        color: white;
+        width: 30px;
+    }
+    &__tmp{
+      position:relative;
+      bottom: 2%;
+    }
+    &__button {
+      display: flex;
+      justify-content: space-between;
+      border: 1px solid var(--color-primary-transparent);
+      width: 99%;
+      height: 6vh;
+      border-radius: 6px;
+      padding-top: 4px;
+    }
+  
+    &-search {
+      width: 100%;
+      display: flex;
+      &__input {
+        margin-top: 24px;
+        width: 92%;
+        height: 28px;
+        border: 1px solid var(--color-primary-transparent);
+        border-radius: 18px;
+        font-size: 14px;
+        padding-left: 6%;
+        &:focus {
+          outline: none !important;
+          border-color: var(--color-secondary);
+        }
+      }
+      &__logo {
+        position: relative;
+        left: 88%;
+        bottom: 30px;
+        height: 24px;
+      }
+    }
+    &-filter {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 14px;
+      &__h3 {
+        margin: 0px;
+        color: var(--color-primary-quaternary);
+        font-weight: 500;
+      }
+      &__img {
+        width: 24px;
+        height: 24px;
+      }
+    }
+  }
+  
+  
+  .c-Link{
+    text-decoration: none;
+  }
