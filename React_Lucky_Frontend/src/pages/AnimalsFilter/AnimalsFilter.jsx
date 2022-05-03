@@ -50,8 +50,10 @@ function AnimalsFilter(props) {
   const filteredData = [];
 
   mascotas.forEach((mascota) => {
-    if (mascota.especie.toLowerCase() === especie.toLowerCase() || mascota.sexo.toLowerCase() === sex.toLowerCase) {
+    if (mascota.especie.toLowerCase() === especie.toLowerCase() && mascota.sexo.toLowerCase() === sex.toLowerCase() && mascota.ciudad.toLowerCase() === ciudad.toLowerCase()) {
       filteredData.push(mascota);
+      console.log(mascota.especie);
+      console.log(mascota.sexo);
     }
   });
 
@@ -98,6 +100,10 @@ function AnimalsFilter(props) {
     setSexo("noSex");
     setShape("noShape");
   }
+
+  console.log(especie);
+  console.log(sex);
+  console.log(filteredData);
 
   return (
     <>

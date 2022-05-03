@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import "./FilteredAnimals.scss";
+
 import Filter from "../../assets/Buscador/filtro.png";
 import Arrow from "../../assets/Buscador/flechaatras.png";
 import Card from "../../shared/components/Card/Card";
