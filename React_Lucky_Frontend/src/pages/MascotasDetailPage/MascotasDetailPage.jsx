@@ -14,7 +14,7 @@ import FavImg from "../../assets/PerfilAnimales/favoritos.png";
 import Compartir from "../../assets/PerfilAnimales/compartir.png";
 
 export default function MascotasDetailPage() {
-  const url = "http://localhost:5000/mascotas";
+  const url = "https://luismrtinez.com/mascotas";
   const [mascotaDetail, setMascotaDetail] = useState();
   let { name } = useParams("name");
 
@@ -39,14 +39,14 @@ export default function MascotasDetailPage() {
           <Link to="/adopcion">
             <img className="c-detail__arrow" src={flechaatras} alt="icon" />
           </Link>
-          <img className="c-detail__img" src={mascotaDetail[0].imagen} alt={mascotaDetail[0].nombre} />
+          <img className="c-detail__img" src={mascotaDetail.imagen} alt={mascotaDetail.nombre} />
         </div>
         <div className="c-detail__box">
           <div className="c-detail__box__left">
-            {mascotaDetail[0].sexo === "Macho" ? <img className="c-detail__box__img" src={MachoImg} alt="icon" /> : <img className="c-detail__box__img" src={HembraImg} alt="icon" />}
+            {mascotaDetail.sexo === "Macho" ? <img className="c-detail__box__img" src={MachoImg} alt="icon" /> : <img className="c-detail__box__img" src={HembraImg} alt="icon" />}
             <div className="c-detail__box__middle">
-              <p className="c-detail__box__middle__p1">{mascotaDetail[0].nombre}</p>
-              <p className="c-detail__box__middle__p2">{mascotaDetail[0].ciudad}</p>
+              <p className="c-detail__box__middle__p1">{mascotaDetail.nombre}</p>
+              <p className="c-detail__box__middle__p2">{mascotaDetail.ciudad}</p>
             </div>
           </div>
           <div className="c-detail__box__right">

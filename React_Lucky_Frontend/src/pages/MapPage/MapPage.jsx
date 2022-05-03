@@ -1,29 +1,39 @@
+import { useEffect, useMemo, useState } from "react";
+import { GoogleMap, useLoadScript, Marker } from "@react-google-maps/api";
 import Nav from "../../shared/components/Nav/Nav";
 import "./MapPage.scss";
 import SearchLogo from "../../assets/Buscador/lupa.png";
 import Filter from "../../assets/Buscador/filtro.png";
-import { GoogleMap, LoadScript } from "@react-google-maps/api";
 import React from "react";
 import CustomPopup from "../../shared/components/CustomPopup/CustomPopup";
-import { useState } from "react";
 import PopMaps from "../../shared/components/PopMaps/PopMaps";
 
 const containerStyle = {
   width: "100vw",
-  height: "81vh",
+  height: "80vh",
 };
 
-const center = {
-  lat: 43.36,
-  lng: -8.4,
-};
+export default function MapPage() {
+  const { isLoaded } = useLoadScript({
+    googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
+  });
 
-const MapPage = () => {
+  if (!isLoaded) return <div>Loading...</div>;
+  return <Map />;
+}
+
+function Map() {
   const [visibility, setVisibility] = useState(false);
 
   const popupCloseHandler = (e) => {
     setVisibility(e);
   };
+  useEffect(() => setIsMounted(true), []);
+  const [isMounted, setIsMounted] = useState(false);
+  const center = useMemo(() => ({ lat: 43.379360060003386, lng: -8.403517647434645 }), []);
+  const centerTest = useMemo(() => ({ lat: 43.377253666540504, lng: -8.400231913407705 }), []);
+  const centerTest2 = useMemo(() => ({ lat: 43.376253666540504, lng: -8.400231913407705 }), []);
+  const centerTest3 = useMemo(() => ({ lat: 43.377253666540504, lng: -8.402231913407705 }), []);
 
   return (
     <section className="c-map">
@@ -39,21 +49,18 @@ const MapPage = () => {
             e.preventDefault();
           }}
         />
-        <div className="c-map__googleMaps">
-          <LoadScript googleMapsApiKey={process.env.REACT_APP_GOOGLE_MAPS_API_KEY}>
-            <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={13}>
-              {/* Child components, such as markers, info windows, etc. */}
-              <></>
-            </GoogleMap>
-          </LoadScript>
-        </div>
-        <Nav />
-        <CustomPopup onClose={popupCloseHandler} show={visibility} title="">
-          <PopMaps setVisibility={setVisibility} />
-        </CustomPopup>
+        <div className="c-map__googleMaps"></div>
+        <GoogleMap zoom={14} center={center} mapContainerStyle={containerStyle}>
+          {isMounted && <Marker position={center} icon={"https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png"} />}
+          {isMounted && <Marker position={centerTest} icon={"http://maps.google.com/mapfiles/ms/icons/red-dot.png"} />}
+          {isMounted && <Marker position={centerTest2} icon={"http://maps.google.com/mapfiles/ms/icons/yellow-dot.png"} />}
+          {isMounted && <Marker position={centerTest3} icon={"http://maps.google.com/mapfiles/ms/icons/green-dot.png"} />}
+        </GoogleMap>
       </div>
+      <Nav />
+      <CustomPopup onClose={popupCloseHandler} show={visibility} title="">
+        <PopMaps setVisibility={setVisibility} />
+      </CustomPopup>
     </section>
   );
-};
-
-export default React.memo(MapPage);
+}

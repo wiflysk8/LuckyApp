@@ -10,39 +10,32 @@ import favoritos from "../../assets/PerfilAnimales/favoritos.png"
 import Gallery from "../../shared/components/Gallery/Gallery";
 import Card from "../../shared/components/Card/Card";
 
-function FilteredAnimals(props) {
-
-    const filter = JSON.parse(localStorage.getItem('mascotaFiltrada'));
-    const {mascotas, onSearch} = useContext(UserContext);
-
+function FilteredAnimals({filteredData}) {
     
-    console.log(filter);
+
+    console.log(filteredData.length);
 
     return (
-        <section className="c-filtradosPage">
+        <>
             <div className="c-filtradosPage-search">
-                <Link className="c-link" to="/filtro">
-                <img className="c-profile-top__button__right__img" src={Arrow} alt="icon" />
-                </Link>                
-                <input type="text" className="c-filtradosPage-search__input" placeholder="Buscar" onChange={onSearch} />
-                <img className="c-filtradosPage-search__logo" src={SearchLogo} alt="lupa" />
-                <Link className="c-link" to="/filtro">
-                  <img className="c-filtradosPage-filter__img" src={Filter} alt="filter" />
-                </Link>
-            </div>
-            <div className="c-filtradosPage-filtered">   
-                {/*<Gallery mascotas ={mascotas}>*/}
-                    {filter && filter.map((mascota, i) =>     
-                        <div key={i}>
-                                    {mascotas.map((mascota) => (
-                                        <Card key={mascota._id} mascota={mascota} />
-                                    ))}
-                        </div>
-                    )}
-                {/*</Gallery>*/}
-            </div>
-        </section>
-      );
-};
+                    <Link className="c-link" to="/filtro">
+                        <img className="c-profile-top__button__right__img" src={Arrow} alt="icon" />
+                    </Link>                
+                        <input type="text" className="c-filtradosPage-search__input" placeholder="Buscar" />
+                        <img className="c-filtradosPage-search__logo" src={SearchLogo} alt="lupa" />
+                    <Link className="c-link" to="/filtro">
+                        <img className="c-filtradosPage-filter__img" src={Filter} alt="filter" />
+                    </Link>
+                    <div className="c-filtradosPage__num">
+                        {filteredData.length}
+                    </div>
+                </div>
+                <div className="c-gallery">
+                    {filteredData.map((mascota) => (
+                    <Card key={mascota._id} mascota={mascota} />
+                    ))}
+                </div>
+    </>
+    )};
 
 export default FilteredAnimals;

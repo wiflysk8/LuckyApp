@@ -15,7 +15,7 @@ export default function Datos({ mascotaDetail }) {
 
   const handleAdopted = () => {
     user.mascotas.map((mascota) => {
-      if (mascota._id === mascotaDetail[0]._id) {
+      if (mascota._id === mascotaDetail._id) {
         setAdopted(true);
       }
     });
@@ -34,7 +34,7 @@ export default function Datos({ mascotaDetail }) {
             <p className="c-adopcion-datos__p">Especie</p>
           </div>
           <div className="c-adopcion-datos__row-right">
-            <p className="c-adopcion-datos__p">{mascotaDetail[0].especie}</p>
+            <p className="c-adopcion-datos__p">{mascotaDetail.especie}</p>
           </div>
         </div>
 
@@ -44,7 +44,7 @@ export default function Datos({ mascotaDetail }) {
             <p className="c-adopcion-datos__p">Fecha de nacimiento</p>
           </div>
           <div className="c-adopcion-datos__row-right">
-            <p className="c-adopcion-datos__p">{mascotaDetail[0].fecha}</p>
+            <p className="c-adopcion-datos__p">{mascotaDetail.fecha}</p>
           </div>
         </div>
 
@@ -54,7 +54,7 @@ export default function Datos({ mascotaDetail }) {
             <p className="c-adopcion-datos__p">Sexo</p>
           </div>
           <div className="c-adopcion-datos__row-right">
-            <p className="c-adopcion-datos__p">{mascotaDetail[0].sexo}</p>
+            <p className="c-adopcion-datos__p">{mascotaDetail.sexo}</p>
           </div>
         </div>
 
@@ -64,7 +64,7 @@ export default function Datos({ mascotaDetail }) {
             <p className="c-adopcion-datos__p">Tamaño</p>
           </div>
           <div className="c-adopcion-datos__row-right">
-            <p className="c-adopcion-datos__p">{mascotaDetail[0].tamano}</p>
+            <p className="c-adopcion-datos__p">{mascotaDetail.tamano}</p>
           </div>
         </div>
 
@@ -74,14 +74,14 @@ export default function Datos({ mascotaDetail }) {
             <p className="c-adopcion-datos__p">Peso</p>
           </div>
           <div className="c-adopcion-datos__row-right">
-            <p className="c-adopcion-datos__p">{mascotaDetail[0].peso}Kg</p>
+            <p className="c-adopcion-datos__p">{mascotaDetail.peso}Kg</p>
           </div>
         </div>
       </div>
       <div className="c-adopcion-datos__top">
         <h4 className="c-adopcion-datos__bottom__h4">Personalidad</h4>
         <div className="c-adopcion-datos__top-personalidad">
-          {mascotaDetail[0].personality.map((personalidad, index) => (
+          {mascotaDetail.personality.map((personalidad, index) => (
             <p key={index} className="c-adopcion-datos__top__bocadillos">
               {personalidad}
             </p>

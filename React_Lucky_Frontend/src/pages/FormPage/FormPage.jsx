@@ -21,7 +21,7 @@ export default function FormPage({ mascotaDetail }) {
   }; */
 
   const onSubmit = () => {
-    API.put("users/add-mascotas", { userId: user._id, mascotaId: mascotaDetail[0]._id }).then((res) => {});
+    API.put("users/add-mascotas", { userId: user._id, mascotaId: mascotaDetail._id }).then((res) => {});
   };
 
   return (

@@ -22,6 +22,7 @@ import LandingPage from "../shared/components/LandingPage/LandingPage";
 import PopAdopciones from "../shared/components/PopAdopciones/PopAdopciones";
 import FilteredAnimals from "../pages/FilteredAnimals/FilteredAnimals";
 
+import AdopcionDetail from "../shared/components/AdopcionDetail/AdopcionDetail";
 
 const RoutesFile = () => {
   return (
@@ -52,6 +53,14 @@ const RoutesFile = () => {
         element={
           <RequireAuth>
             <AdopcionPage />
+          </RequireAuth>
+        }
+      />
+      <Route
+        path="/adopcionDetail/:nombre"
+        element={
+          <RequireAuth>
+            <AdopcionDetail />
           </RequireAuth>
         }
       />

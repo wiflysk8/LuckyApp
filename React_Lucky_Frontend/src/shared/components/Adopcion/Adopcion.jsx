@@ -14,7 +14,7 @@ export default function Adopcion({ mascotaDetail }) {
 
   const handleAdopted = () => {
     user.mascotas.map((mascota) => {
-      if (mascota.id === mascotaDetail[0].id) {
+      if (mascota.id === mascotaDetail.id) {
         setAdopted(true);
       }
     });
@@ -28,18 +28,18 @@ export default function Adopcion({ mascotaDetail }) {
       <div className="c-adopcion-box">
         <div className="c-adopcion__bottom">
           <h4 className="c-adopcion__bottom__h4">Requisitos adopción</h4>
-          <p className="c-adopcion__p">{mascotaDetail[0].envio}</p>
+          <p className="c-adopcion__p">{mascotaDetail.envio}</p>
         </div>
         <div className="c-adopcion__bottom">
           <div className="c-adopcion__bottom__left">
             <h4 className="c-adopcion__bottom__h4">Tasa de adopción</h4>
             <img className="c-adopcion__bottom__img" src={Info} alt="icon" />
           </div>
-          <p className="c-adopcion__p">{mascotaDetail[0].tasa}€ </p>
+          <p className="c-adopcion__p">{mascotaDetail.tasa}€ </p>
         </div>
         <div className="c-adopcion__bottom">
           <h4 className="c-adopcion__bottom__h4">¿Se envía a otra ciudad?</h4>
-          <p className="c-adopcion__p"> {mascotaDetail[0].requisitos}</p>
+          <p className="c-adopcion__p"> {mascotaDetail.requisitos}</p>
         </div>
         <div className="btn">
           <button className="btn__2">Apadrinar</button>
