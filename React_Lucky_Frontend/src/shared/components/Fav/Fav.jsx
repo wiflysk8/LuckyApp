@@ -10,7 +10,7 @@ const Fav = ({ mascota }) => {
   const handleFav = () => {
     setFav(!fav);
   };
-  return <div>{fav ? <img className="c-card__fav" src={FavImg1} alt="hearth" onClick={handleFav} /> : <img className="c-card__fav" src={FavImg} alt="hearth" onClick={handleFav} />}</div>;
+  return <>{fav ? <img className="c-card__fav" src={FavImg1} alt="hearth" onClick={handleFav} /> : <img className="c-card__fav" src={FavImg} alt="hearth" onClick={handleFav} />}</>;
 };
 
 export default Fav;
