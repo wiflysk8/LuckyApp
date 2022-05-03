@@ -15,7 +15,7 @@ const containerStyle = {
 
 export default function MapPage() {
   const { isLoaded } = useLoadScript({
-    googleMapsApiKey: "AIzaSyAp49qIJ5OsAAMK83iyP31AWwKdFbBLhd0",
+    googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
   });
 
   if (!isLoaded) return <div>Loading...</div>;

@@ -60,7 +60,6 @@ export default function ProfilePage() {
       </div>
       <div className="c-profile-bottom">
         <Link to="/estado" className="c-Link">
-          {" "}
           <div className="c-profile-top__button">
             <div className="c-profile-top__button__left">
               <img className="c-profile-top__button__left__img" src={EstadoAdopcion} alt="icon" />
