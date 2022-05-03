@@ -2,6 +2,7 @@ import React from "react";
 import arrow from "../../../assets/Buscador/flechaatras.png";
 import Protectora from "../Protectora/Protectora";
 
+
 const Resumen = ({ mascotaDetail }) => {
   return (
     <>
