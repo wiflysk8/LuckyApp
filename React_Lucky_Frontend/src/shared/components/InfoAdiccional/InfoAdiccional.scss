@@ -1,3 +1,71 @@
 .c-infoAdiccional {
   width: 90vw;
+
+  &__line {
+    border-bottom: 1px var(--color-primary-transparent) solid;
+  }
+
+  &__box {
+    display: flex;
+    flex-direction: column;
+
+    &--mod {
+      width: 95%;
+    }
+
+    &__imgBox {
+      display: flex;
+      justify-content: center;
+    }
+    &__img {
+      width: 90%;
+    }
+    &__text {
+      font-weight: 500;
+      font-size: 18px;
+      margin-top: 0;
+
+      &--mod {
+        margin-top: 10px;
+      }
+    }
+
+    &__littleText {
+      font-weight: lighter;
+      color: black;
+      font-size: 14px;
+      margin-top: 0;
+    }
+    &__flecha {
+      width: 25px;
+    }
+    &__checkboxes {
+      display: flex;
+      flex-direction: column;
+
+      &__solo {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 10px;
+        font-weight: lighter;
+        color: black;
+        font-size: 14px;
+
+        &__checkbox {
+          transform: scale(1.7);
+        }
+
+        &__img {
+          width: 25px;
+          height: 25px;
+        }
+      }
+    }
+  }
+}
+
+.c-infoAdiccional__btn__margin {
+  margin-top: 10px;
+  width: 100%;
 }
