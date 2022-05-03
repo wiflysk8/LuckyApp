@@ -99,8 +99,6 @@ function AnimalsFilter(props) {
     setShape("noShape");
   }
 
-  console.log(ciudad, especie, age, sex, shape);
-
   return (
     <>
       {!submited ? (
@@ -235,15 +233,3 @@ function AnimalsFilter(props) {
 }
 
 export default AnimalsFilter;
-
-/*  useEffect(() => {
-    const getMascotas = async () => {
-        const res = await axios.get("https://luismrtinez.com/mascotas");
-        setMascotas(res.data);
-        setFilteredMascotas(res.data);
-      };
-
-
-{setSelected === true ? <button><img src={perro} alt="c-img-filtro-perro" /> <p className="c-filter__p">Perro</p></button> : <button><img src={perro} alt="c-img-filtro-perro" /> <p className="c-filter__p">Perro</p></button>}
-
-*/
