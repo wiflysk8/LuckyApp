@@ -50,7 +50,7 @@ function Map() {
           }}
         />
         <div className="c-map__googleMaps"></div>
-        <GoogleMap zoom={13} center={center} mapContainerStyle={containerStyle}>
+        <GoogleMap zoom={14} center={center} mapContainerStyle={containerStyle}>
           {isMounted && <Marker position={center} icon={"https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png"} />}
           {isMounted && <Marker position={centerTest} icon={"http://maps.google.com/mapfiles/ms/icons/red-dot.png"} />}
           {isMounted && <Marker position={centerTest2} icon={"http://maps.google.com/mapfiles/ms/icons/yellow-dot.png"} />}
