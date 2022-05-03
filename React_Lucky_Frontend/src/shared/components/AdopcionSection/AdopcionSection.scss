@@ -1,3 +1,68 @@
-.c-adopcionSection {
-  width: 90vw;
+.c-adopcionSection__bottomline{
+ padding-bottom: 10px;
+  border-bottom: 1px solid var(--color-primary-transparent);
+}
+
+.c-adopcionSection{
+
+padding: 20px;
+
+&__img{
+  width: 400px;
+}
+
+  &__btn{
+  display: flex;
+  justify-content: center;
+  }
+
+
+&__text{
+  font-weight: 500;
+  font-size: 20px;
+}
+
+&__select{
+  padding: 10px;
+  width: 50%;
+  height: 15px;
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: 1px solid var(--color-primary-transparent);
+  text-align: left;
+
+  &__img{
+    position: absolute;
+    width: 20px;
+    left: 50%;
+    top: 82.5%;
+  }
+}
+
+&__calendar{
+ padding: 10px;
+ width: 90%;
+ height: 26px;
+ border-radius: 8px;
+ border: 1px solid var(--color-primary-transparent);
+font-family: Arial, Helvetica, sans-serif;
+ }
+
+ ::-webkit-calendar-picker-indicator{
+     background-image: url("../../../assets/Protectora/calendar.png");
+     background-size: 30px;
+     margin-right: 10px;
+     margin-bottom: 5px;
+     width: 30px;
+     height: 30px;
+   }
+ 
+}
+.btn__adoptionSection{
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 44px;
+
 }

@@ -17,18 +17,19 @@
       color: rgb(100, 98, 98);
     }
     &__sections {
-      width: 100%;
+      width: 90%;
       margin: 0px;
       align-items: center;
+      text-align: center;
       justify-content: space-between;
+      margin-left: 20px;
       display: flex;
       &__title {
         font-weight: 400;
         color: black;
         &--active {
-          display: flex;
-          justify-content: center;
-          align-items: center;
+       
+      
           color: var(--color-primary);
           border-bottom: 2px solid var(--color-secondary);
         }
