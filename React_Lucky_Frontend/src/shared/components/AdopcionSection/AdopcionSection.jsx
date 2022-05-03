@@ -2,8 +2,18 @@ import React from "react";
 import "./AdopcionSection.scss";
 import Map2 from "../../../assets/Protectora/map2.png";
 import FlechaDown from "../../../assets/Filtros/down-arrow.png";
+import CustomPopup from "../CustomPopup/CustomPopup";
+import PopDetalle from "../PopDetalle/PopDetalle";
+import { useState } from "react";
 
 const AdopcionSection = ({ mascotaDetail }) => {
+
+  const [visibility, setVisibility] = useState(false);
+
+  const popupCloseHandler = (e) => {
+      setVisibility(e);
+    };
+
   return (
     <div>
       <div className="c-adopcionSection">
@@ -31,7 +41,14 @@ const AdopcionSection = ({ mascotaDetail }) => {
           </div>
         </div>
         <div className="c-adopcionSection__btn">
-          <button className="btn__1 btn__adoptionSection">Enviar</button>
+          <button onClick={(e) => {
+              setVisibility(!visibility);
+              e.preventDefault();
+            }}
+            className="btn__1 btn__adoptionSection">Enviar</button>
+            <CustomPopup onClose={popupCloseHandler} show={visibility} title="">
+            <PopDetalle />
+          </CustomPopup>
         </div>
       </div>
     </div>

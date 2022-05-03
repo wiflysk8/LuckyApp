@@ -3,8 +3,17 @@ import "./InfoAdiccional.scss";
 import Galeria from "../../../assets/Protectora/fotos.png";
 import Info from "../../../assets/Perfil/ayudarosa.png";
 import FlechaDown from "../../../assets/Filtros/down-arrow.png";
+import CustomPopup from "../CustomPopup/CustomPopup";
+import PopDetalle from "../PopDetalle/PopDetalle";
+import { useState } from "react";
 
 const InfoAdiccional = ({ mascotaDetail }) => {
+  const [visibility, setVisibility] = useState(false);
+
+  const popupCloseHandler = (e) => {
+      setVisibility(e);
+    };
+  
   return (
     <div className="c-infoAdiccional">
       <div className="c-infoAdiccional__box c-infoAdiccional__line">
@@ -46,7 +55,14 @@ const InfoAdiccional = ({ mascotaDetail }) => {
         </div>
       </div>
       <div className="c-adopcionSection__btn c-infoAdiccional__btn__margin">
-        <button className="btn__1 btn__adoptionSection">Enviar</button>
+        <button onClick={(e) => {
+              setVisibility(!visibility);
+              e.preventDefault();
+            }}
+            className="btn__1 btn__adoptionSection">Enviar</button>
+             <CustomPopup onClose={popupCloseHandler} show={visibility} title="">
+            <PopDetalle />
+          </CustomPopup>
       </div>
     </div>
   );
