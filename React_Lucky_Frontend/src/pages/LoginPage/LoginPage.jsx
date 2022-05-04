@@ -40,7 +40,6 @@ export default function LoginPage() {
           className="c-login-form__input"
           id="password"
           type="password"
-          // defaultValue={"Prueba123"}
           {...register("password", {
             required: true,
             pattern: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/,
