@@ -20,6 +20,7 @@ export default function LoginPage() {
       localStorage.setItem("user", JSON.stringify(res.data.data.user));
       setJwt(true);
       navigate("/home");
+      window.location.reload();
     });
   };
 
@@ -32,14 +33,14 @@ export default function LoginPage() {
       <form className="c-login-form" onSubmit={handleSubmit(onSubmit)}>
         {/* register your input into the hook by invoking the "register" function */}
         <label htmlFor="email"></label>
-        <input className="c-login-form__input" id="email" defaultValue="lucky@lucky.com" {...register("email", { required: true, pattern: /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/ })} />
+        <input className="c-login-form__input" id="email" defaultValue="" {...register("email", { required: true, pattern: /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/ })} />
         {/* include validation with required or other standard HTML validation rules */}
         <label htmlFor="password"></label>
         <input
           className="c-login-form__input"
           id="password"
           type="password"
-          defaultValue={"Prueba123"}
+          // defaultValue={"Prueba123"}
           {...register("password", {
             required: true,
             pattern: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/,
