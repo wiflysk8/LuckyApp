@@ -151,19 +151,19 @@
 }
 
 .no-selected {
+  text-align: center;
   width: 79px;
-  height: 80px;
+  height: 85px;
   border-radius: 13px;
   background-color: white;
-  border: 1px solid #01748e;
+  border: 1px solid #01748eb2;
   margin: 6px;
   overflow: hidden;
-  text-align: center;
 }
 
 .selected {
   width: 79px;
-  height: 80px;
+  height: 85px;
   border-radius: 13px;
   color: var(--color-secondary);
   border: 2px solid var(--color-secondary);

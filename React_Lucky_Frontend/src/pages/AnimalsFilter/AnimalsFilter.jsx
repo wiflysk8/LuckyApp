@@ -157,31 +157,31 @@ function AnimalsFilter() {
               </div>
               <div className={especie === "Pequeño mamifero" ? "c-filter-container__icon selected" : "c-filter-container__icon no-selected"} onClick={() => filteredAnimal("Pequeño mamifero")}>
                 <img className="c-filter-image" src={especie === "Pequeño mamifero" ? mamiferoSecundario : mamifero} alt="mamifero" />
-                <p>Pequeño mamífero</p>
+                <p className="c-filter__p">Pequeño mamífero</p>
               </div>
               <div className={especie === "huron" ? "c-filter-container__icon selected" : "c-filter-container__icon no-selected"} onClick={() => filteredAnimal("huron")}>
                 <img className="c-filter-image" src={especie === "huron" ? huronSecundario : huron} alt="hurón" />
-                <p>Hurón</p>
+                <p className="c-filter__p">Hurón</p>
               </div>
               <div className={especie === "pez" ? "c-filter-container__icon selected" : "c-filter-container__icon no-selected"} onClick={() => filteredAnimal("pez")}>
                 <img className="c-filter-image" src={especie === "pez" ? pezSecundario : pez} alt="pez" />
-                <p>Pez</p>
+                <p className="c-filter__p">Pez</p>
               </div>
               <div className={especie === "reptil" ? "c-filter-container__icon selected" : "c-filter-container__icon no-selected"} onClick={() => filteredAnimal("reptil")}>
                 <img className="c-filter-image" src={especie === "reptil" ? reptilSecundario : reptil} alt="reptil" />
-                <p>Reptil</p>
+                <p className="c-filter__p">Reptil</p>
               </div>
               <div className={especie === "anfibio" ? "c-filter-container__icon selected" : "c-filter-container__icon no-selected"} onClick={() => filteredAnimal("anfibio")}>
                 <img className="c-filter-image" src={especie === "anfibio" ? anfibioSecundario : anfibio} alt="anfíbio" />
-                <p>Anfíbio</p>
+                <p className="c-filter__p">Anfíbio</p>
               </div>
               <div className={especie === "Aracnido o insecto" ? "c-filter-container__icon selected" : "c-filter-container__icon no-selected"} onClick={() => filteredAnimal("Aracnido o insecto")}>
                 <img className="c-filter-image" src={especie === "Aracnido o insecto" ? arañaSecundario : araña} alt="arácnido" />
-                <p>Arácnido o insecto</p>
+                <p className="c-filter__p">Arácnido o insecto</p>
               </div>
               <div className={especie === "ave" ? "c-filter-container__icon selected" : "c-filter-container__icon no-selected"} onClick={() => filteredAnimal("ave")}>
                 <img className="c-filter-image" src={especie === "ave" ? aveSecundario : ave} alt="ave" />
-                <p>Ave</p>
+                <p className="c-filter__p">Ave</p>
               </div>
             </div>
           </div>
